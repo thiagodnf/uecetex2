@@ -1,0 +1,261 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright 2014 Thiago Nascimento											%%
+%% 																			%%
+%% Licensed under the Apache License, Version 2.0 (the "License");			%%
+%% you may not use this file except in compliance with the License.			%%
+%% You may obtain a copy of the License at									%%
+%% 																			%%
+%%     http://www.apache.org/licenses/LICENSE-2.0							%%
+%%     																		%%
+%% Unless required by applicable law or agreed to in writing, software		%%
+%% distributed under the License is distributed on an "AS IS" BASIS,		%%
+%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.	%%
+%% See the License for the specific language governing permissions and		%%
+%% limitations under the License.											%%
+%%																			%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo de trabalho acadêmico para Mestrado Acadêmico e Profissional		%%
+%% da Universidade Estadual do Ceará - UECE									%%
+%%																			%%
+%% Autor: Thiago Nascimento													%%
+%%																			%%
+%% Projeto hospedado em: https://github.com/thiagodnf/abntex2-uece			%%
+%%																			%%
+%% Informações:																%%
+%%		Codificação utilizada: UTF-8										%%
+%%  	Tamanho da tabulação: 4 (espaços)									%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Se você quer ver as margens do documento no PDF, descomente essa linha
+%\usepackage[showframe, pass]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 				Definições			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Define o espaço entre linhas para 1.5 cm
+\OnehalfSpacing
+
+% Define as margens do documento
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+
+% Define o comprimento da linha das assinaturas na Folha de Aprovacao
+\setlength{\ABNTEXsignwidth}{11cm}
+
+% Alterando a fonte do documento para Arial
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 				Funções			   	   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Verifica se uma determinada macro não está vazia
+\newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+
+% Verifica se uma determinada macro está vazia
+\newcommand{\ifempty}[2]{\ifthenelse{\equal{#1}{}}{#2}{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 				Variáveis			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ies}{\def \@ies}
+\newcommand{\centro}{\def \@centro}
+\newcommand{\programa}{\def \@programa}
+\newcommand{\mestrado}{\def \@mestrado}
+\newcommand{\curso}{\def \@curso}
+\newcommand{\mestreem}{\def \@mestreem}
+\newcommand{\areadeconcetracao}{\def \@areadeconcetracao}
+\newcommand{\dedicatoriaa}{\def \@dedicatoriaa}
+\newcommand{\dataaprovacao}{\def \@dataaprovacao}
+\newcommand{\membrodabancadois}{\def \@membrodabancadois}
+\newcommand{\membrodabancatres}{\def \@membrodabancatres}
+\newcommand{\membrodabancaquatro}{\def \@membrodabancaquatro}
+\newcommand{\membrodabancaumies}{\def \@membrodabancaumies}
+\newcommand{\membrodabancadoisies}{\def \@membrodabancadoisies}
+\newcommand{\membrodabancatresies}{\def \@membrodabancatresies}
+\newcommand{\membrodabancaquatroies}{\def \@membrodabancaquatroies}
+\newcommand{\orientadories}{\def \@orientadories}
+\newcommand{\coorientadories}{\def \@coorientadories}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   	  Imprimir as Variáveis		   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimiries}{\@ies}
+\newcommand{\imprimircentro}{\@centro}
+\newcommand{\imprimirprograma}{\@programa}
+\newcommand{\imprimirmestrado}{\@mestrado}
+\newcommand{\imprimircurso}{\@curso}
+\newcommand{\imprimirmestreem}{\@mestreem}
+\newcommand{\imprimirareadeconcetracao}{\@areadeconcetracao}
+\newcommand{\imprimirdedicatoriaa}{\@dedicatoriaa}
+\newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
+\newcommand{\imprimirmembrodabancadois}{\@membrodabancadois}
+\newcommand{\imprimirmembrodabancatres}{\@membrodabancatres}
+\newcommand{\imprimirmembrodabancaquatro}{\@membrodabancaquatro}
+\newcommand{\imprimirmembrodabancaumies}{\@membrodabancaumies}
+\newcommand{\imprimirmembrodabancadoisies}{\@membrodabancadoisies}
+\newcommand{\imprimirmembrodabancatresies}{\@membrodabancatresies}
+\newcommand{\imprimirmembrodabancaquatroies}{\@membrodabancaquatroies}
+\newcommand{\imprimirorientadories}{\@orientadories}
+\newcommand{\imprimircoorientadories}{\@coorientadories}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   	  Definições de Variáveis	   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\preambulo{
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 				  Capa				   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\imprimircapa}{%
+	\begin{capa}%
+		% Todos os elementos da capa devem esta centralizado
+		\center
+		% Todos os elementos da capa devem esta em negrito
+		\bfseries
+
+        \includegraphics[scale=0.11]{modelo/logo-uece} \\
+        \vspace{0.5cm}
+		\MakeUppercase{\imprimiries} \\
+		\MakeUppercase{\imprimircentro} \\
+		\abntex@ifnotempty{\imprimirprograma}{
+			\MakeUppercase{\imprimirprograma} \\
+		}		
+		\MakeUppercase{\imprimirmestrado} \\
+
+		\vspace{1.5cm}
+
+		\MakeUppercase{\imprimirautor}
+		
+		\vspace{4cm}
+		
+		\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}
+		
+		\vfill
+		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirdata
+	\end{capa}
+%    \pagebreak
+%	\setcounter{page}{1}
+}
+
+% % % % % % % % % % % % % % % % % % % % %
+% 			Folha de Rosto				%
+% % % % % % % % % % % % % % % % % % % % %
+
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+	\begin{center}
+		\normalsize\MakeUppercase\imprimirautor\par
+		\vspace{4.0cm}\par
+		\normalsize\MakeUppercase\imprimirtitulo
+	\end{center}
+	
+	\vspace{4cm}
+	
+	%\hspace{.35\textwidth}
+	\hspace*{-0.5cm}
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\begin{SingleSpace}
+			\imprimirpreambulo \\			
+			\newline
+			Orientador: \ignorespaces\imprimirorientador \\
+			\abntex@ifnotempty{\imprimircoorientador}{
+				\newline
+				Co-Orientadores: \ignorespaces\imprimircoorientador				
+			}
+		\end{SingleSpace}		
+	\end{minipage}
+	
+	\vfill
+	\centering
+	\normalsize\MakeUppercase\imprimirlocal \par
+	\normalsize\imprimirdata	
+}
+\makeatother
+
+% % % % % % % % % % % % % % % % % % % % %
+% 		  Folha de Aprovação			%
+% % % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\imprimirfolhadeaprovacao}{
+
+	\begin{center}
+		\normalsize\ABNTEXchapterfont
+		\MakeUppercase{\imprimirautor}\par
+		\vspace{1cm}
+		\MakeUppercase{\imprimirtitulo}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\hspace*{-0.5cm}
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\begin{SingleSpace}
+			\imprimirpreambulo \\			
+		\end{SingleSpace}		
+	\end{minipage}
+
+	\vspace{1cm}
+		
+	Aprovada em: \imprimirdataaprovacao
+	
+	\vspace{1cm}
+	\begin{center}
+		BANCA EXAMINADORA
+	\end{center}
+
+	\vspace{-1cm}
+
+	% Membro Um da banca é sempre o Orientador
+	\assinatura{\imprimirorientador\ (Orientador) \\ \imprimirorientadories}
+	
+	% Membro Dois da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimircoorientador}{
+		\assinatura{\imprimircoorientador \\ \imprimircoorientadories}
+	}	
+	\ifempty{\imprimircoorientador}{
+		\assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoisies}
+	}
+	
+	% Membro Três da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancatres}{
+		\assinatura{\imprimirmembrodabancatres \\ \imprimirmembrodabancatresies}
+	}
+	
+	% Membro Quatro da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancaquatro}{
+		\assinatura{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatroies}
+	}	
+	
+	\pagebreak
+}
+
+% % % % % % % % % % % % % % % % % % % % %
+% 		  	  Dedicatória				%
+% % % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\imprimirdedicatoria}{
+	\vspace*{20cm}
+	\vfill
+	\hspace*{-0.5cm}
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\imprimirdedicatoriaa
+	\end{minipage}
+	\pagebreak
+}

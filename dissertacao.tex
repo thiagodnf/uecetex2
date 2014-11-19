@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright 2014 Thiago Nascimento											%%
+%% 																			%%
+%% Licensed under the Apache License, Version 2.0 (the "License");			%%
+%% you may not use this file except in compliance with the License.			%%
+%% You may obtain a copy of the License at									%%
+%% 																			%%
+%%     http://www.apache.org/licenses/LICENSE-2.0							%%
+%%     																		%%
+%% Unless required by applicable law or agreed to in writing, software		%%
+%% distributed under the License is distributed on an "AS IS" BASIS,		%%
+%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.	%%
+%% See the License for the specific language governing permissions and		%%
+%% limitations under the License.											%%
+%%																			%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo de trabalho acadêmico para Mestrado Acadêmico e Profissional		%%
+%% da Universidade Estadual do Ceará - UECE									%%
+%%																			%%
+%% Autor: Thiago Nascimento													%%
+%%																			%%
+%% Projeto hospedado em: https://github.com/thiagodnf/abntex2-uece			%%
+%%																			%%
+%% Informações:																%%
+%%		Codificação utilizada: UTF-8										%%
+%%  	Tamanho da tabulação: 4 (espaços)									%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%																			%
+% 		Obs.: Deixe o campo em branco quando não existir a informação 		%
+%																			%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[a4paper,12pt,oneside]{abntex2}
+
+% Importações de pacotes
+\usepackage[alf, abnt-emphasize=bf, bibjustif, recuo=0cm, abnt-etal-cite=2, abnt-etal-list=0]{abntex2cite}  % Citações padrão ABNT
+\usepackage[utf8]{inputenc}                         % Acentuação direta
+\usepackage[T1]{fontenc}                            % Codificação da fonte em 8 bits
+\usepackage{graphicx}                               % Inserir figuras
+\usepackage{amsfonts, amssymb, amsmath}             % Fonte e símbolos matemáticos
+\usepackage{booktabs}                               % Comandos para tabelas
+\usepackage{verbatim}                               % Texto é interpretado como escrito no documento
+\usepackage{multirow, array}                        % Múltiplas linhas e colunas em tabelas
+\usepackage{indentfirst}                            % Endenta o primeiro parágrafo de cada seção.
+\usepackage{microtype}                              % Para melhorias de justificação?
+\usepackage[algoruled, portuguese]{algorithm2e}     % Escrever algoritmos
+\usepackage{float}                                  % Utilizado para criação de floats
+\usepackage{amsgen}
+%\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
+%\usepackage{times}                                 % Usa a fonte Times
+%\usepackage{lmodern}                               % Usa a fonte Latin Modern
+%\usepackage{subfig}                                % Posicionamento de figuras
+%\usepackage{scalefnt}                              % Permite redimensionar tamanho da fonte
+%\usepackage{color, colortbl}                       % Comandos de cores
+%\usepackage{lscape}                                % Permite páginas em modo "paisagem"
+%\usepackage{ae, aecompl}                           % Fontes de alta qualidade
+%\usepackage{picinpar}                              % Dispor imagens em parágrafos
+%\usepackage{latexsym}                              % Símbolos matemáticos
+%\usepackage{upgreek}                               % Fonte letras gregas
+\usepackage{modelo/abtnex2-uece-dissertacao}		% Biblioteca com as normas da UECE para dissertações
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 			 Informação sobre o Curso			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ies{Universidade Estadual do Ceará}
+\centro{Centro de Ciência e Tecnologia}
+\programa{Programa de Pós-Graduação Acadêmica}
+\mestrado{Mestrado Acadêmico em Ciência da Computação}
+\curso{Curso de Ciência da Computação}
+\mestreem{Ciência da Computação}
+
+% Se o seu mestrado tem area de concentracao
+% Exemplo: \areadeconcetracao{Área de Concentração: Saúde Coletiva.} 
+\areadeconcetracao{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 	Informação relacionadas a dissertação   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\autor{Nome Sobrenome}
+\titulo{Título do Trabalho}
+\data{2014}
+\local{Fortaleza -- Ceará}
+
+% Exemplo: \dataaprovacao{01 de Janeiro de 2012}
+\dataaprovacao{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 		Informação sobre o Orientador	   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\orientador{Nome do seu Orientador}
+\orientadories{Universidade Estadual do Ceará – UECE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 		Informação sobre o Co-orientador   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\coorientador{}
+\coorientadories{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 		Informação sobre a banca		   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Atenção! Se o seu trabalho tem coorientador, as informações sobre o
+% membro da banca Dois serão desconsideradas.
+
+% Exemplo:
+% \membrodabancadois{Prof. Dr. Fulano de Tal}
+% \membrodabancadoisies{Universidade Estadual do Ceará - UECE}
+
+\membrodabancadois{Membro da Banca Dois}
+\membrodabancadoisies{Universidade do Membro da Banca Dois}
+\membrodabancatres{Membro da Banca Três}
+\membrodabancatresies{Universidade do Membro da Banca Três}
+\membrodabancaquatro{}
+\membrodabancaquatroies{}
+
+\dedicatoriaa{
+	Dedico este trabalho a...	
+}
+
+\begin{document}
+	% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing
+	
+	% Elementos pré-textuais
+	\imprimircapa
+	\imprimirfolhaderosto{}
+	\imprimirfolhadeaprovacao
+	\imprimirdedicatoria
+	
+	%Elementos textuais
+	\input{capitulos/introducao}
+	
+	%Elementos pós-textuais	
+
+\end{document}
