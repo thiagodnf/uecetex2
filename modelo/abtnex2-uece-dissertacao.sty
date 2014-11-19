@@ -29,12 +29,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Se você quer ver as margens do documento no PDF, descomente essa linha
-%\usepackage[showframe, pass]{geometry}
+\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 				Definições			   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 % Define o espaço entre linhas para 1.5 cm
 \OnehalfSpacing
@@ -44,11 +43,14 @@
 \setulmarginsandblock{3cm}{2cm}{*}
 
 % Define o comprimento da linha das assinaturas na Folha de Aprovacao
-\setlength{\ABNTEXsignwidth}{11cm}
+\setlength{\ABNTEXsignwidth}{10cm}
 
-% Alterando a fonte do documento para Arial
-\renewcommand{\rmdefault}{phv} % Arial
-\renewcommand{\sfdefault}{phv} % Arial
+
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 				Funções			   	   %%
@@ -127,7 +129,7 @@
 		\bfseries
 
         \includegraphics[scale=0.11]{modelo/logo-uece} \\
-        \vspace{0.5cm}
+        \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
 		\MakeUppercase{\imprimircentro} \\
 		\abntex@ifnotempty{\imprimirprograma}{
@@ -141,7 +143,7 @@
 		
 		\vspace{4cm}
 		
-		\ABNTEXchapterfont\MakeUppercase{\imprimirtitulo}
+		\MakeUppercase{\imprimirtitulo}
 		
 		\vfill
 		\normalsize\MakeUppercase\imprimirlocal\par	
@@ -151,19 +153,19 @@
 %	\setcounter{page}{1}
 }
 
-% % % % % % % % % % % % % % % % % % % % %
-% 			Folha de Rosto				%
-% % % % % % % % % % % % % % % % % % % % %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 			Folha de Rosto			   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makeatletter
 \renewcommand{\folhaderostocontent}{
 	\begin{center}
 		\normalsize\MakeUppercase\imprimirautor\par
-		\vspace{4.0cm}\par
+		\vspace{6.5cm}\par
 		\normalsize\MakeUppercase\imprimirtitulo
 	\end{center}
 	
-	\vspace{4cm}
+	\vspace{3cm}
 	
 	%\hspace{.35\textwidth}
 	\hspace*{-0.5cm}
@@ -187,20 +189,19 @@
 }
 \makeatother
 
-% % % % % % % % % % % % % % % % % % % % %
-% 		  Folha de Aprovação			%
-% % % % % % % % % % % % % % % % % % % % %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 		  Folha de Aprovação		   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirfolhadeaprovacao}{
 
 	\begin{center}
-		\normalsize\ABNTEXchapterfont
 		\MakeUppercase{\imprimirautor}\par
-		\vspace{1cm}
+		\vspace{2cm}
 		\MakeUppercase{\imprimirtitulo}
 	\end{center}
 	
-	\vspace{1cm}
+	\vspace{2cm}
 	
 	\hspace*{-0.5cm}
 	\hspace*{8cm}	
