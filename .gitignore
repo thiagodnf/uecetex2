@@ -18,6 +18,6 @@
 *.log
 *.gz
 *.db
-*.pdf
+dissertacao.pdf
 *.backup
 *~
