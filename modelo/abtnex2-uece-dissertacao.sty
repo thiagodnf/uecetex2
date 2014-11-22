@@ -105,6 +105,10 @@
 \newcommand{\agradecimentoss}{\def \@agradecimentoss}
 \newcommand{\epigrafee}{\def \@epigrafee}
 \newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
+\newcommand{\resumoo}{\def \@resumoo}
+\newcommand{\palavraschave}{\def \@palavraschave}
+\newcommand{\abstractt}{\def \@abstractt}
+\newcommand{\keywords}{\def \@keywords}
 \newcommand{\membrodabancadois}{\def \@membrodabancadois}
 \newcommand{\membrodabancatres}{\def \@membrodabancatres}
 \newcommand{\membrodabancaquatro}{\def \@membrodabancaquatro}
@@ -133,6 +137,10 @@
 \newcommand{\imprimiragradecimentoss}{\@agradecimentoss}
 \newcommand{\imprimirepigrafee}{\@epigrafee}
 \newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
+\newcommand{\imprimirresumoo}{\@resumoo}
+\newcommand{\imprimirabstractt}{\@abstractt}
+\newcommand{\imprimirpalavraschave}{\@palavraschave}
+\newcommand{\imprimirkeywords}{\@keywords}
 \newcommand{\imprimirmembrodabancadois}{\@membrodabancadois}
 \newcommand{\imprimirmembrodabancatres}{\@membrodabancatres}
 \newcommand{\imprimirmembrodabancaquatro}{\@membrodabancaquatro}
@@ -335,4 +343,28 @@
 	{\raggedleft (\imprimirepigrafeeautor)\par}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Resumo                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\imprimirresumo}{
+	\begin{resumo}
+		\imprimirresumoo
+		\vspace{\onelineskip}\\
+		\noindent
+		\textbf{Palavras-chaves}: \imprimirpalavraschave
+	\end{resumo}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Abstract              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirabstract}{
+	\begin{resumo}[Abstract]
+		\imprimirabstractt
+		\vspace{\onelineskip}\\
+		\noindent
+		\textbf{Keywords}: \imprimirkeywords
+	\end{resumo}
+}
