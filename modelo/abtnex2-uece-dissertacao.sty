@@ -29,14 +29,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Se você quer ver as margens do documento no PDF, descomente essa linha
-\usepackage[showframe, pass]{geometry}
+%\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 				Definições			   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define o espaço entre linhas para 1.5 cm
-\OnehalfSpacing
+%\OnehalfSpacing	Bug no ABNTEX2?
+\renewcommand{\baselinestretch}{1.5}
 
 % Define as margens do documento
 \setlrmarginsandblock{3cm}{2cm}{*}
@@ -45,11 +46,19 @@
 % Define o comprimento da linha das assinaturas na Folha de Aprovacao
 \setlength{\ABNTEXsignwidth}{10cm}
 
+% Define a distância do capítulo até o texto
+\setlength\afterchapskip{0.4cm}
 
+% Define a distância da margem esquerda do parágrafo
+\setlength{\parindent}{2cm}
+
+% Estilo do chapter
 \renewcommand{\ABNTEXchapterfont}{\bfseries}
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 
-
+% Estilo da da section
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
