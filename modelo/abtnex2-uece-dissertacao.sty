@@ -32,7 +32,7 @@
 %\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 				Definições			   %%
+%%             Definições              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define o espaço entre linhas para 1.5 cm
@@ -80,7 +80,7 @@
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 				Funções			   	   %%
+%%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Verifica se uma determinada macro não está vazia
@@ -90,7 +90,7 @@
 \newcommand{\ifempty}[2]{\ifthenelse{\equal{#1}{}}{#2}{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 				Variáveis			   %%
+%%             Variáveis               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\ies}{\def \@ies}
@@ -114,7 +114,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%   	  Imprimir as Variáveis		   %%
+%%        Imprimir as Variáveis        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimiries}{\@ies}
@@ -137,7 +137,7 @@
 \newcommand{\imprimircoorientadories}{\@coorientadories}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%   	  Definições de Variáveis	   %%
+%%       Definições de Variáveis       %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \preambulo{
@@ -145,7 +145,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 				  Capa				   %%
+%%                Capa                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\imprimircapa}{%
@@ -181,7 +181,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 			Folha de Rosto			   %%
+%%           Folha de Rosto            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makeatletter
@@ -194,8 +194,9 @@
 	
 	\vspace{3cm}
 	
-	%\hspace{.35\textwidth}
-	\hspace*{-0.5cm}
+	%Retira o espaço do parágrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
 		\begin{SingleSpace}
@@ -217,7 +218,7 @@
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 		  Folha de Aprovação		   %%
+%%         Folha de Aprovação          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirfolhadeaprovacao}{
@@ -230,7 +231,9 @@
 	
 	\vspace{2cm}
 	
-	\hspace*{-0.5cm}
+	%Retira o espaço do parágrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
 		\begin{SingleSpace}
