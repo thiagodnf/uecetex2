@@ -103,6 +103,8 @@
 \newcommand{\dedicatoriaa}{\def \@dedicatoriaa}
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
 \newcommand{\agradecimentoss}{\def \@agradecimentoss}
+\newcommand{\epigrafee}{\def \@epigrafee}
+\newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
 \newcommand{\membrodabancadois}{\def \@membrodabancadois}
 \newcommand{\membrodabancatres}{\def \@membrodabancatres}
 \newcommand{\membrodabancaquatro}{\def \@membrodabancaquatro}
@@ -112,6 +114,7 @@
 \newcommand{\membrodabancaquatroies}{\def \@membrodabancaquatroies}
 \newcommand{\orientadories}{\def \@orientadories}
 \newcommand{\coorientadories}{\def \@coorientadories}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,6 +131,8 @@
 \newcommand{\imprimirdedicatoriaa}{\@dedicatoriaa}
 \newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
 \newcommand{\imprimiragradecimentoss}{\@agradecimentoss}
+\newcommand{\imprimirepigrafee}{\@epigrafee}
+\newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
 \newcommand{\imprimirmembrodabancadois}{\@membrodabancadois}
 \newcommand{\imprimirmembrodabancatres}{\@membrodabancatres}
 \newcommand{\imprimirmembrodabancaquatro}{\@membrodabancaquatro}
@@ -307,8 +312,27 @@
 %%            Agradecimentos           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimiragradecimentos}[1]{ 
+\newcommand{\imprimiragradecimentos}{ 
 	\begin{agradecimentos}
 		\imprimiragradecimentoss
 	\end{agradecimentos}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Epígrafe              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirepigrafe}{
+	\vspace*{20cm}
+	\vfill
+	%Retira o espaço do parágrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\imprimirepigrafee
+	\end{minipage}
+	\raggedleft(\imprimirepigrafeeautor)
+}
+
+
