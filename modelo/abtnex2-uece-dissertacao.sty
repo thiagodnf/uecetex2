@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Se você quer ver as margens do documento no PDF, descomente essa linha
-%\usepackage[showframe, pass]{geometry}
+\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Definições              %%
@@ -41,26 +41,39 @@
 % Importa o arquivo com as entradas do glassario
 \input{capitulos/glossario}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          Formataçãas Páginas        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Define o espaço entre linhas para 1.5 cm
 %\OnehalfSpacing	Bug no ABNTEX2?
 \renewcommand{\baselinestretch}{1.5}
 
 % Define as margens do documento
-\setlrmarginsandblock{3cm}{2cm}{*}
-\setulmarginsandblock{3cm}{2cm}{*}
+\setlrmarginsandblock{3cm}{2cm}{*} % externa / interna
+\setulmarginsandblock{3cm}{2cm}{*} % superior / inferior
 
-% Define o comprimento da linha das assinaturas na Folha de Aprovacao
-\setlength{\ABNTEXsignwidth}{10cm}
+% Espacamentos nos titulos:
+% chapter
+\setlength{\beforechapskip}{-\onelineskip} %com 0 nao funcionou
+\setlength{\afterchapskip}{\onelineskip} % antes do titulo de capitulo
+%\setlength\beforechapskip{-18pt}
 
-% Define a distância do capítulo até o texto
-%\setlength\afterchapskip{0.4cm}
-\setlength\afterchapskip{0.5cm}
+% section
+\setbeforesecskip{\onelineskip}
+\setaftersecskip{\onelineskip}
 
-% Espaçamento entre seções e subseções
-\titlespacing\section{0pt}{0.5cm}{0.5cm}
-\titlespacing\subsection{0pt}{0.5cm}{0.5cm}
-\titlespacing\subsubsection{0pt}{0.5cm}{0.5cm}
-\titlespacing\subsubsubsection{0pt}{0.5cm}{0.5cm}
+% subsection
+\setbeforesubsecskip{\onelineskip}
+\setaftersubsecskip{\onelineskip}
+
+% subsubsection
+\setbeforesubsubsecskip{\onelineskip}
+\setaftersubsubsecskip{\onelineskip}
+
+% subsubsubsection
+\setbeforeparaskip{\onelineskip}
+\setafterparaskip{\onelineskip}
 
 % Define a distância da margem esquerda do parágrafo
 \setlength{\parindent}{2cm}
@@ -85,11 +98,15 @@
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
+
 % Margen da legenda da figura e da tabela
 \captionsetup{justification=centering,margin=1cm}
 
 % Espaçamento entre o texto e a legenda
 \setlength{\belowcaptionskip}{0.5cm}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
@@ -266,15 +283,26 @@
 %%         Folha de Aprovação          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Define o comprimento da linha das assinaturas na Folha de Aprovacao
+\setlength{\ABNTEXsignwidth}{10cm}
+
+% Largura da linha da assinatura
+\setlength{\ABNTEXsignthickness}{1pt}
+
+% Espaço entre uma assintura e outra
+\setlength{\ABNTEXsignskip}{\onelineskip}
+
 \newcommand{\imprimirfolhadeaprovacao}{
 
 	\begin{center}
 		\MakeUppercase{\imprimirautor}\par
-		\vspace{2cm}
+		\vspace{\onelineskip}
+		\vspace{\onelineskip}
 		\MakeUppercase{\imprimirtitulo}
 	\end{center}
 	
-	\vspace{2cm}
+	\vspace{\onelineskip}
+	\vspace{\onelineskip}
 	
 	%Retira o espaço do parágrafo
 	\hspace*{-2cm}
@@ -286,28 +314,30 @@
 		\end{SingleSpace}		
 	\end{minipage}
 
-	\vspace{1cm}
+	\vspace{\onelineskip}
 		
 	Aprovada em: \imprimirdataaprovacao
 	
-	\vspace{1cm}
+	\vspace{\onelineskip}
+	
 	\begin{center}
 		BANCA EXAMINADORA
 	\end{center}
-
-	\vspace{-1cm}
+		\vspace{\onelineskip}
 
 	% Membro Um da banca é sempre o Orientador
 	\assinatura{\imprimirorientador\ (Orientador) \\ \imprimirorientadories}
 	
 	% Membro Dois da banca pode ser o coorientador ou outro membro
 	\ifnotempty{\imprimircoorientador}{
-		\assinatura{\imprimircoorientador \\ \imprimircoorientadories}
-	}	
-	\ifempty{\imprimircoorientador}{
-		\assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoisies}
+		\assinatura{\imprimircoorientador\ (Co-Orientador) \\ \imprimircoorientadories}
 	}
 	
+	% Membro Três da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancadois}{
+		\assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoisies}
+	}
+		
 	% Membro Três da banca pode ser o coorientador ou outro membro
 	\ifnotempty{\imprimirmembrodabancatres}{
 		\assinatura{\imprimirmembrodabancatres \\ \imprimirmembrodabancatresies}
@@ -403,13 +433,24 @@
 %%         Lista de Ilustrações        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirlistadeilustracoes}{\listoffigures\pagebreak}
+% A lista de Ilustrações não deve aparecer no sumário
+
+\newcommand{\imprimirlistadeilustracoes}{
+	\begin{KeepFromToc} %
+		\listoffigures\pagebreak %
+	\end{KeepFromToc} %
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            Lista de Tabelas         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirlistadetabelas}{\listoftables\pagebreak}
+% A lista de tabela não deve aparecer no sumário
+\newcommand{\imprimirlistadetabelas}{ %
+	\begin{KeepFromToc} %
+		\listoftables\pagebreak %
+	\end{KeepFromToc} %
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    Lista de Abreviaturas e Siglas   %%
@@ -419,3 +460,53 @@
 	\printglossary[type=\acronymtype,title=Lista de Abreviaturas e Siglas] %
 	\pagebreak %
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        Configuração do Sumário      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirsumario}{ %
+	\begin{KeepFromToc} %
+		\tableofcontents %
+	\end{KeepFromToc} %
+}
+
+
+% Modifica o espaçamento no sumário
+% Nao ha espacos
+\setlength{\cftbeforeparagraphskip}{0pt}
+\setlength{\cftbeforesubsectionskip}{0pt}
+\setlength{\cftbeforesectionskip}{0pt}
+\setlength{\cftbeforesubsubsectionskip}{0pt}
+\setlength{\cftbeforechapterskip}{0pt}
+
+\renewcommand\cftchapterfont{\normalsize}
+\renewcommand\cftsectionfont{\normalsize\normalfont}
+\renewcommand\cftsubsectionfont{\normalsize}
+\renewcommand\cftsubsubsectionfont{\normalsize\normalfont}
+% Altera a fonte da seção quinária
+\renewcommand*{\cftparagraphfont}{\normalsize\normalfont\itshape}
+
+% Páginas do sumário não podem ser negrito.
+\renewcommand\cftchapterpagefont{\normalfont}
+\renewcommand\cftsectionpagefont{\normalfont}
+\renewcommand\cftsubsectionpagefont{\normalfont}
+% Altera a fonte da seção quinária
+\renewcommand\cftparagraphpagefont{\normalfont}
+
+% Secao Secundaria (Section): Caixa alta, Não Negrito, tamanho 12
+\makeatletter
+\let\oldcontentsline\contentsline
+\def\contentsline#1#2{%
+	\expandafter\ifx\csname l@#1\endcsname\l@section %
+	\expandafter\@firstoftwo %
+	\else %
+	\expandafter\@secondoftwo %
+	\fi %
+	{%
+		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+	}{%
+	\oldcontentsline{#1}{#2}%
+}%
+}
+\makeatother

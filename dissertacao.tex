@@ -51,7 +51,9 @@
 \usepackage{float}                                  % Utilizado para criação de floats
 \usepackage{amsgen}
 \usepackage{lipsum}                                 % Usar a simulação de texto Lorem Ipsum
-\usepackage{titlesec}
+\usepackage{titlesec}                               % Permite alterar os títulos do documento
+\usepackage{tocloft}                                % Permite alterar a formatação do Sumário
+\usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
 \usepackage{glossaries}                             % Permite fazer o glossario
 \usepackage{caption}                                % Altera o comportamento da tag caption
 %\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
@@ -125,8 +127,8 @@
 \membrodabancadoisies{Universidade do Membro da Banca Dois - SIGLA}
 \membrodabancatres{Membro da Banca Três}
 \membrodabancatresies{Universidade do Membro da Banca Três - SIGLA}
-\membrodabancaquatro{}
-\membrodabancaquatroies{}
+\membrodabancaquatro{Membro da Banca Quatro}
+\membrodabancaquatroies{Universidade do Membro da Banca Quatro - SIGLA}
 
 \dedicatoriaa{
 	À minha família, por sua capacidade de acreditar em mim e investir em mim. Mãe, seu cuidado e dedicação foi que deram, em alguns momentos, a esperança para seguir. Pai, sua presença significou segurança e certeza de que não estou sozinho nessa caminhada.	
@@ -168,15 +170,12 @@
 % Separe as Keywords por ponto
 \keywords{Adult education. Community schools. Peasants. Popular culture}
 
-
-\begin{document}
-	% Retira espaço extra obsoleto entre as frases.
-	\frenchspacing
+\begin{document}	
 	
 	% Elementos pré-textuais
-	\imprimircapa
-	\imprimirfolhaderosto{}
-	\imprimirerrata{capitulos/errata} % Opcional
+	%\imprimircapa
+	%\imprimirfolhaderosto{}
+	%\imprimirerrata{capitulos/errata} % Opcional
 	\imprimirfolhadeaprovacao
 	\imprimirdedicatoria
 	\imprimiragradecimentos
@@ -186,7 +185,7 @@
 	\imprimirlistadeilustracoes
 	\imprimirlistadetabelas
 	\imprimirlistadeabreviaturasesiglas
-	\tableofcontents
+	\imprimirsumario
 	
 	%Elementos textuais
 	\input{capitulos/introducao}
