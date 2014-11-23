@@ -54,7 +54,7 @@
 \usepackage{titlesec}                               % Permite alterar os títulos do documento
 \usepackage{tocloft}                                % Permite alterar a formatação do Sumário
 \usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
-\usepackage{glossaries}                             % Permite fazer o glossario
+\usepackage[nogroupskip]{glossaries}                % Permite fazer o glossario
 \usepackage{caption}                                % Altera o comportamento da tag caption
 %\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
 %\usepackage{times}                                 % Usa a fonte Times
@@ -173,9 +173,9 @@
 \begin{document}	
 	
 	% Elementos pré-textuais
-	%\imprimircapa
-	%\imprimirfolhaderosto{}
-	%\imprimirerrata{capitulos/errata} % Opcional
+	\imprimircapa
+	\imprimirfolhaderosto{}
+	\imprimirerrata{capitulos/errata} % Opcional
 	\imprimirfolhadeaprovacao
 	\imprimirdedicatoria
 	\imprimiragradecimentos

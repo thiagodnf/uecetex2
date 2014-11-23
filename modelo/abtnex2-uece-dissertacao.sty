@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Se você quer ver as margens do documento no PDF, descomente essa linha
-\usepackage[showframe, pass]{geometry}
+%\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Definições              %%
@@ -284,7 +284,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define o comprimento da linha das assinaturas na Folha de Aprovacao
-\setlength{\ABNTEXsignwidth}{10cm}
+\setlength{\ABNTEXsignwidth}{12cm}
 
 % Largura da linha da assinatura
 \setlength{\ABNTEXsignthickness}{1pt}
@@ -316,7 +316,7 @@
 
 	\vspace{\onelineskip}
 		
-	Aprovada em: \imprimirdataaprovacao
+	\noindent Aprovada em: \imprimirdataaprovacao
 	
 	\vspace{\onelineskip}
 	
@@ -456,8 +456,11 @@
 %%    Lista de Abreviaturas e Siglas   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Largura da lista de abreviaturas
+\setlength{\glsdescwidth}{\linewidth}
+
 \newcommand{\imprimirlistadeabreviaturasesiglas}{ %
-	\printglossary[type=\acronymtype,title=Lista de Abreviaturas e Siglas] %
+	\printglossary[type=\acronymtype,style=long,nonumberlist,title=Lista de Abreviaturas e Siglas] %
 	\pagebreak %
 }
 
