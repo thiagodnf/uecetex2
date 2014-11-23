@@ -79,6 +79,12 @@
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
+% Margen da legenda da figura e da tabela
+\captionsetup{justification=centering,margin=1cm}
+
+% Espaçamento entre o texto e a legenda
+\setlength{\belowcaptionskip}{0.5cm}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,6 +94,24 @@
 
 % Verifica se uma determinada macro está vazia
 \newcommand{\ifempty}[2]{\ifthenelse{\equal{#1}{}}{#2}{}}
+
+% Imprime a fonte das imagens
+\newcommand{\fontedafigura}[2]{ %
+	\vspace{-0.5cm}
+	\begin{center} %
+		\parbox{#1}{%
+			\small{Fonte: #2}%
+		} %
+	\end{center} %
+}
+
+% Imprime a fonte das imagens
+\newcommand{\fontedatabela}[2]{ %
+	\\\hspace{\linewidth}%
+	\parbox{#1}{%
+		\small{Fonte: #2} %
+	} %
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Variáveis               %%
@@ -368,3 +392,9 @@
 		\textbf{Keywords}: \imprimirkeywords
 	\end{resumo}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Ilustrações        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirlistadeilustracoes}{\listoffigures}
