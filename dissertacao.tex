@@ -52,6 +52,7 @@
 \usepackage{amsgen}
 \usepackage{lipsum}                                 % Usar a simulação de texto Lorem Ipsum
 \usepackage{titlesec}
+\usepackage{glossaries}                             % Permite fazer o glossario
 \usepackage{caption}                                % Altera o comportamento da tag caption
 %\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
 %\usepackage{times}                                 % Usa a fonte Times
@@ -66,6 +67,7 @@
 %\usepackage{latexsym}                              % Símbolos matemáticos
 %\usepackage{upgreek}                               % Fonte letras gregas
 \usepackage{modelo/abtnex2-uece-dissertacao}		% Biblioteca com as normas da UECE para dissertações
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          Informação sobre o Curso               %%
@@ -166,6 +168,7 @@
 % Separe as Keywords por ponto
 \keywords{Adult education. Community schools. Peasants. Popular culture}
 
+
 \begin{document}
 	% Retira espaço extra obsoleto entre as frases.
 	\frenchspacing
@@ -182,11 +185,12 @@
 	\imprimirabstract
 	\imprimirlistadeilustracoes
 	\imprimirlistadetabelas
-		
+	\imprimirlistadeabreviaturasesiglas
+	\tableofcontents
+	
 	%Elementos textuais
 	\input{capitulos/introducao}
 	\input{capitulos/exemplo-de-capitulos-e-secoes}
 	
 	%Elementos pós-textuais	
-
 \end{document}

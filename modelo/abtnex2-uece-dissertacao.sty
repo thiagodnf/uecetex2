@@ -35,6 +35,12 @@
 %%             Definições              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Organiza e gera a lista de abreviaturas, simbolos e glossario
+\makeglossaries
+
+% Importa o arquivo com as entradas do glassario
+\input{capitulos/glossario}
+
 % Define o espaço entre linhas para 1.5 cm
 %\OnehalfSpacing	Bug no ABNTEX2?
 \renewcommand{\baselinestretch}{1.5}
@@ -404,3 +410,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirlistadetabelas}{\listoftables\pagebreak}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Lista de Abreviaturas e Siglas   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirlistadeabreviaturasesiglas}{ %
+	\printglossary[type=\acronymtype,title=Lista de Abreviaturas e Siglas] %
+	\pagebreak %
+}
