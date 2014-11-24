@@ -54,7 +54,7 @@
 \usepackage{titlesec}                               % Permite alterar os títulos do documento
 \usepackage{tocloft}                                % Permite alterar a formatação do Sumário
 \usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
-\usepackage[nogroupskip]{glossaries}                % Permite fazer o glossario
+\usepackage[nogroupskip,nonumberlist,acronym]{glossaries}                % Permite fazer o glossario
 \usepackage{caption}                                % Altera o comportamento da tag caption
 %\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
 %\usepackage{times}                                 % Usa a fonte Times
@@ -193,4 +193,8 @@
 	
 	%Elementos pós-textuais	
 	\imprimirreferencias{referencias}
+	\imprimirglossario
+	%\imprimirapendices
+	%\imprimiranexos
+	%\imprimirindice
 \end{document}

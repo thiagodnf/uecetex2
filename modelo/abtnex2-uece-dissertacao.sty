@@ -465,6 +465,38 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              Glossário              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newglossarystyle{list-uece}{%
+	\renewenvironment{theglossary}%
+	{\begin{description}}{\end{description}}%
+	\renewcommand*{\glossaryheader}{}%
+	\renewcommand*{\glsgroupheading}[1]{}%
+	\renewcommand*{\glossentry}[2]{%
+		\item[\glsentryitem{##1}%
+		\glstarget{##1}{\glossentryname{##1}}:]
+		\glossentrydesc{##1}\glspostdescription\space ##2}%
+	\renewcommand*{\subglossentry}[3]{%
+		\glssubentryitem{##2}%
+		\glstarget{##2}{\strut}%
+		\glossentrydesc{##2}\glspostdescription\space ##3.}%
+	\renewcommand*{\glsgroupskip}{\ifglsnogroupskip\else\indexspace\fi}%
+}
+
+\renewcommand{\glossarypreamble}{\vspace*{-\baselineskip}\vspace*{\onelineskip}\vspace*{\onelineskip}}
+
+\newglossarystyle{listgroup-uece}{%
+	\setglossarystyle{list-uece}%
+	\renewcommand*{\glsgroupheading}[1]{\item[\glsgetgrouptitle{##1}]}}
+
+\newcommand{\imprimirglossario}{ %
+	\glossarystyle{listgroup-uece} %
+	\printglossary[title=GLOSSÁRIO,toctitle=GLOSSÁRIO] %
+	\addcontentsline{toc}{chapter}{GLOSSÁRIO}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               Referências           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
