@@ -505,6 +505,56 @@
 	\bibliography{#1} %
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Apendices             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirpaginaapendices}{ %
+	\newpage %
+	\addcontentsline{toc}{chapter}{APÊNDICES} %
+	\begin{vplace}[0.7] %
+		\centering\textbf{APÊNDICES} %
+	\end{vplace} %
+	\clearpage
+}
+
+% Retira o negrito do apêndice e o coloca alinhado a esquerda
+\renewcommand{\printchaptertitle}[1]{%
+	\chaptitlefont%
+	\ifthenelse{\boolean{abntex@innonumchapter}}{\centering\ABNTEXchapterupperifneeded{#1}}{%
+		\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+			\normalfont
+			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+			\ABNTEXchapterupperifneeded{#1}%
+		}{%
+		\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+		\parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{#1}}}%
+}    
+}
+
+\newcommand{\imprimirapendices}{ %
+	\apendices %
+	% Retira o negrito da palavra "Apendice"
+	\PRIVATEapendiceconfig{\normalfont\apendicename}{\normalfont\apendicesname} %
+	
+}
+
+%\newcommand{\apendiceconfig}[2]{%
+%	\renewcommand{\PRIVATEapendiceousecao}{true}%
+%	\renewcommand{\normalfont\appendixname}{\normalfont#1}
+%	\renewcommand{\normalfont\appendixpagename}{\normalfont#2}
+%	\renewcommand{\normalfont\appendixtocname}{\normalfont#2}
+%	
+%	\switchchapname{#1}% Corrected from \switchapname -> \switchchapname
+%	\renewcommand*{\normalfont\cftappendixname}{#1 \space}
+%}
+%
+%% Apendices - comando 
+%\newcommand{\apendicesAAA}{%
+%	\apendiceconfig{\normalfont\apendicename}{\normalfont\apendicesname}
+%	\appendix
+%}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Configuração do Sumário      %%
@@ -516,7 +566,6 @@
 		\tableofcontents %
 	\end{KeepFromToc} %
 }
-
 
 % Modifica o espaçamento no sumário
 % Nao ha espacos
