@@ -21,3 +21,11 @@
 dissertacao.pdf
 *.backup
 *~
+*.syi
+*.syg
+*.slg
+*.ind
+*.idx
+*.gls
+*.glo
+*.glg
