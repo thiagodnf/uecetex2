@@ -1,0 +1,99 @@
+\chapter{Conclusão}
+\label{chap:conclusao}
+
+\lipsum[2]
+
+Ola \cite{lamport1986latex}
+\cite{Maia2011}
+
+\begin{table}[htb]
+	\IBGEtab{%
+		\caption{Um Exemplo de tabela alinhada que pode ser longa ou curta,
+			conforme padrão IBGE.}%
+		\label{tabela-ibge}
+	}{%
+	\begin{tabular}{ccc}
+		\toprule
+		Nome & Nascimento & Documento \\
+		\midrule \midrule
+		Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+			Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+				Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+		\bottomrule
+	\end{tabular}%
+}{%
+\fonte{Produzido pelos autores}%
+\nota{Esta éuma nota, que diz que os dados são baseados na
+	regressão linear.}%
+\nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
+}
+\end{table}
+
+\cite{Huetal2000}
+
+\section{Exemplo de Algoritmos}
+\lipsum[2]
+
+\vspace{\onelineskip}
+\begin{algorithm}[H]
+	\Entrada{o proprio texto}
+	\Saida{como escrever algoritmos com \LaTeX2e }
+	\Inicio{
+		inicializa\c{c}\~ao\;
+		\Repita{fim do texto}{
+			leia o atual\;
+			\Se{entendeu}{
+				vá para o próximo\;
+				próximo se torna o atual\;}
+			\Senao{volte ao início da seção\;}
+		}
+	}
+	\caption{Como escrever algoritmos no \LaTeX2e}
+\end{algorithm}
+\vspace*{\onelineskip}
+
+\lipsum[2]
+%\begin{algorithm}[H]
+%	\Entrada{o proprio texto}
+%	\Saida{como escrever algoritmos com \LaTeX2e }
+%	\Inicio{
+%		inicializa\c{c}\~ao\;
+%		\Repita{fim do texto}{
+%			leia o atual\;
+%			\Se{entendeu}{
+%				vá para o próximo\;
+%				próximo se torna o atual\;}
+%			\Senao{volte ao início da seção\;}
+%		}
+%	}
+%	\caption{Exemplo de Algoritmo Versao 02}
+%\end{algorithm}
+
+%\begin{algorithm}
+%	\begin{algorithmic}
+%	\Entrada{o proprio texto}
+%	\Saida{como escrever algoritmos com \LaTeX2e }	
+%	\end{algorithmic}
+%\end{algorithm}
+
+\begin{table}[h!]	
+	\caption{Internal exon scores}
+	\label{tab:internal}
+	\centering
+	\begin{tabular}{|c|l|l|}
+		\hline
+		Ranking & Exon Coverage & Splice Site Support\\
+		\hline
+		E1 & Complete coverage by a single transcript & Both splice sites\\
+		E2 & Complete coverage by more than a single transcript & Both splice sites\\
+		E3 & Partial coverage & Both splice sites\\
+		E4 & Partial coverage & One splice site\\
+		E5 & Complete or partial coverage & No splice sites\\
+		E6 & No coverage & No splice sites\\
+		\hline
+	\end{tabular}
+%	\legend{\small{Fonte: os autores}}
+
+	%\fontedatabela{14.6cm}{os autores}
+\end{table}
+\lipsum[2]

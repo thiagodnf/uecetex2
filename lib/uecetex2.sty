@@ -1,53 +1,46 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Copyright 2014 Thiago Nascimento                                         %%
-%%                                                                          %%
-%% Licensed under the Apache License, Version 2.0 (the "License");          %%
-%% you may not use this file except in compliance with the License.         %%
-%% You may obtain a copy of the License at                                  %%
-%%                                                                          %%
-%%     http://www.apache.org/licenses/LICENSE-2.0                           %%
-%%                                                                          %%
-%% Unless required by applicable law or agreed to in writing, software      %%
-%% distributed under the License is distributed on an "AS IS" BASIS,        %%
-%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %%
-%% See the License for the specific language governing permissions and      %%
-%% limitations under the License.                                           %%
-%%                                                                          %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Modelo de trabalho acadêmico para Mestrado Acadêmico e Profissional      %%
-%% da Universidade Estadual do Ceará - UECE                                 %%
-%%                                                                          %%
-%% Autor: Thiago Nascimento                                                 %%
-%%                                                                          %%
-%% Projeto hospedado em: https://github.com/thiagodnf/abntex2-uece          %%
-%%                                                                          %%
-%% Informações:                                                             %%
-%%        Codificação utilizada: UTF-8                                      %%
-%%      Tamanho da tabulação: 4 (espaços)                                   %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com)           %%
+%% para a Universidade Estadual do Ceara - UECE                       %%
+%%                                                                    %%
+%% This work may be distributed and/or modified under the             %% 
+%% conditions of the LaTeX Project Public License, either version 1.3 %%
+%% of this license or (at your option) any later version.             %%
+%% The latest version of this license is in                           %%
+%%   http://www.latex-project.org/lppl.txt                            %%
+%% and version 1.3 or later is part of all distributions of LaTeX     %%
+%% version 2005/12/01 or later.                                       %%
+%%                                                                    %%
+%% This work has the LPPL maintenance status `maintained'.            %%
+%%                                                                    %%
+%% The Current Maintainer of this work is Thiago Nascimento           %%
+%%                                                                    %%
+%% Project available on: https://github.com/thiagodnf/uecetex2        %%
+%%                                                                    %%
+%% Further information about abnTeX2                                  %%
+%% are available on http://abntex2.googlecode.com/                    %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Se você quer ver as margens do documento no PDF, descomente essa linha
+% As linhas das margens serao impressas
 %\usepackage[showframe, pass]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Definições              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Organiza e gera a lista de abreviaturas, simbolos e glossario
-\makeglossaries
-
 % Importa o arquivo com as entradas do glassario
-\input{capitulos/glossario}
+\input{elementos-pos-textuais/glossario}
+\input{elementos-pre-textuais/lista-de-abreviaturas-e-siglas}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%          Formataçãas Páginas        %%
+%%       Formatação das Páginas        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define o espaço entre linhas para 1.5 cm
 %\OnehalfSpacing	Bug no ABNTEX2?
 \renewcommand{\baselinestretch}{1.5}
+%\OnehalfSpacing
 
 % Define as margens do documento
 \setlrmarginsandblock{3cm}{2cm}{*} % externa / interna
@@ -58,6 +51,7 @@
 \setlength{\beforechapskip}{-\onelineskip} %com 0 nao funcionou
 \setlength{\afterchapskip}{\onelineskip} % antes do titulo de capitulo
 %\setlength\beforechapskip{-18pt}
+%\setlength{\afterchapskip}{2cm}
 
 % section
 \setbeforesecskip{\onelineskip}
@@ -98,16 +92,46 @@
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
-
 % Margen da legenda da figura e da tabela
-\captionsetup{justification=centering,margin=1cm}
+\captionsetup{
+	justification=centering,
+	singlelinecheck=false
+}
+%\captionsetup[figure]{font=doublespacing}
+%\captionsetup[figure]{font={stretch=1.5}} 
 
 % Espaçamento entre o texto e a legenda
-\setlength{\belowcaptionskip}{0.5cm}
+%\setlength{\belowcaptionskip}{\onelineskip}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing
+%\frenchspacing
 
+\addto\captionsbrazil{
+	\renewcommand{\bibname}{REFER\^ENCIAS}
+	\renewcommand{\indexname}{\'INDICE}
+}
+
+% Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
+% Acredito que seja porque os comandos \para seja idêntico nos dois idiomas.
+% Esses comando resolvem o problema
+\SetKwFor{Para}{para}{fa\c{c}a}{fim para}
+\SetKwBlock{Inicio}{inicio}{fim}
+
+% Altera o titulo para esse
+\renewcommand{\listalgorithmcfname}{Lista de Algoritmos}%
+
+% Espaco entre o caption e o algoritmo
+%\SetAlCapSkip{\onelineskip}
+
+% Espaco entre o texto
+%\setlength{\textfloatsep}{\onelineskip}
+
+%\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+% Distance between floats on the top or the bottom and the text;
+\setlength{\textfloatsep}{18pt plus 2pt minus 2pt}
+
+% Distance between floats inserted inside the page text (using h) and the text proper.
+\setlength{\intextsep}{18pt plus 2pt minus 2pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,12 +144,15 @@
 
 % Imprime a fonte das imagens
 \newcommand{\fontedafigura}[2]{ %
-	\vspace{-0.5cm}
-	\begin{center} %
-		\parbox{#1}{%
-			\small{Fonte: #2}%
-		} %
-	\end{center} %
+	\vspace{12pt}
+		\legend{\small{Fonte: #1}}
+	\vspace{-18pt}
+%	\vspace{-0.5cm}	
+%	\begin{center} %
+%		\parbox{#1}{%
+%			\small{Fonte: #2}%
+%		} %
+%	\end{center} %
 }
 
 % Imprime a fonte das imagens
@@ -147,14 +174,10 @@
 \newcommand{\curso}{\def \@curso}
 \newcommand{\mestreem}{\def \@mestreem}
 \newcommand{\areadeconcetracao}{\def \@areadeconcetracao}
-\newcommand{\dedicatoriaa}{\def \@dedicatoriaa}
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
-\newcommand{\agradecimentoss}{\def \@agradecimentoss}
 \newcommand{\epigrafee}{\def \@epigrafee}
 \newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
-\newcommand{\resumoo}{\def \@resumoo}
 \newcommand{\palavraschave}{\def \@palavraschave}
-\newcommand{\abstractt}{\def \@abstractt}
 \newcommand{\keywords}{\def \@keywords}
 \newcommand{\membrodabancadois}{\def \@membrodabancadois}
 \newcommand{\membrodabancatres}{\def \@membrodabancatres}
@@ -166,8 +189,8 @@
 \newcommand{\orientadories}{\def \@orientadories}
 \newcommand{\coorientadories}{\def \@coorientadories}
 
-
-
+% Define o nome da universidade do documento
+\ies{Universidade Estadual do Ceará}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Imprimir as Variáveis        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,13 +202,9 @@
 \newcommand{\imprimircurso}{\@curso}
 \newcommand{\imprimirmestreem}{\@mestreem}
 \newcommand{\imprimirareadeconcetracao}{\@areadeconcetracao}
-\newcommand{\imprimirdedicatoriaa}{\@dedicatoriaa}
 \newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
-\newcommand{\imprimiragradecimentoss}{\@agradecimentoss}
 \newcommand{\imprimirepigrafee}{\@epigrafee}
 \newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
-\newcommand{\imprimirresumoo}{\@resumoo}
-\newcommand{\imprimirabstractt}{\@abstractt}
 \newcommand{\imprimirpalavraschave}{\@palavraschave}
 \newcommand{\imprimirkeywords}{\@keywords}
 \newcommand{\imprimirmembrodabancadois}{\@membrodabancadois}
@@ -217,7 +236,7 @@
 		% Todos os elementos da capa devem esta em negrito
 		\bfseries
 
-        \includegraphics[scale=0.11]{modelo/logo-uece} \\
+        \includegraphics[scale=0.12]{lib/logo-uece} \\
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
 		\MakeUppercase{\imprimircentro} \\
@@ -226,7 +245,7 @@
 		}		
 		\MakeUppercase{\imprimirmestrado} \\
 
-		\vspace{1.0cm}
+		\vspace{\onelineskip}
 
 		\MakeUppercase{\imprimirautor}
 		
@@ -239,7 +258,7 @@
 		\normalsize\imprimirdata
 	\end{capa}
 %    \pagebreak
-%	\setcounter{page}{1}
+	\setcounter{page}{0}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,7 +273,7 @@
 		\normalsize\MakeUppercase\imprimirtitulo
 	\end{center}
 	
-	\vspace{3cm}
+	\vspace{2.5cm}
 	
 	%Retira o espaço do parágrafo
 	\hspace*{-2cm}
@@ -355,7 +374,7 @@
 %%             Dedicatória             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirdedicatoria}{
+\newcommand{\imprimirdedicatoria}[1]{
 	\vspace*{20cm}
 	\vfill
 	%Retira o espaço do parágrafo
@@ -363,7 +382,7 @@
 	%Adiciona o espaço da margem
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
-		\imprimirdedicatoriaa
+		\input{#1}
 	\end{minipage}
 	\pagebreak
 }
@@ -380,9 +399,13 @@
 %%            Agradecimentos           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimiragradecimentos}{ 
+\newcommand{\imprimiragradecimentos}[1]{ 
 	\begin{agradecimentos}
-		\imprimiragradecimentoss
+		%\imprimiragradecimentoss
+		\begin{paracol}{1}
+			\setlength{\parindent}{0pt}%
+			\input{#1}
+		\end{paracol}		
 	\end{agradecimentos}
 }
 
@@ -390,7 +413,7 @@
 %%               Epígrafe              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirepigrafe}{
+\newcommand{\imprimirepigrafe}[2]{
 	\vspace*{20cm}
 	\vfill
 	%Retira o espaço do parágrafo
@@ -398,21 +421,22 @@
 	%Adiciona o espaço da margem
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
-		\imprimirepigrafee
+%		\imprimirepigrafee
+		\input{#2}
 	\end{minipage}
-	{\raggedleft (\imprimirepigrafeeautor)\par}
+	{\raggedleft (#1)\par}
+	\pagebreak
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               Resumo                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirresumo}{
-	\begin{resumo}
-		\imprimirresumoo
-		\vspace{\onelineskip}\\
-		\noindent
-		\textbf{Palavras-chaves}: \imprimirpalavraschave
+\newcommand{\imprimirresumo}[1]{ %
+	\begin{resumo} %
+		\input{#1}
+		\vspace{\onelineskip}\\ %
+		\noindent \textbf{Palavras-chaves}: \imprimirpalavraschave %
 	\end{resumo}
 }
 
@@ -420,9 +444,9 @@
 %%               Abstract              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirabstract}{
+\newcommand{\imprimirabstract}[1]{
 	\begin{resumo}[Abstract]
-		\imprimirabstractt
+		\input{#1}
 		\vspace{\onelineskip}\\
 		\noindent
 		\textbf{Keywords}: \imprimirkeywords
@@ -442,13 +466,23 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Algoritmos         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A lista de Algoritmos não deve aparecer no sumário
+
+\newcommand{\imprimirlistadealgoritmos}{
+	\listofalgorithms
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            Lista de Tabelas         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % A lista de tabela não deve aparecer no sumário
 \newcommand{\imprimirlistadetabelas}{ %
 	\begin{KeepFromToc} %
-		\listoftables\pagebreak %
+		\listoftables %
 	\end{KeepFromToc} %
 }
 
@@ -460,62 +494,86 @@
 \setlength{\glsdescwidth}{\linewidth}
 
 \newcommand{\imprimirlistadeabreviaturasesiglas}{ %
-	\printglossary[type=\acronymtype,style=long,nonumberlist,title=Lista de Abreviaturas e Siglas] %
+	\printglossary[type=\acronymtype,style=long,nonumberlist,title={Lista de Abreviaturas e Siglas\vspace{-0.3cm}}] %
 	\pagebreak %
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Simbolos           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirlistadesimbolos}[1]{
+	\input{#1}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Glossário              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newglossarystyle{list-uece}{%
+%% Glossario desenvolvido para a UECE
+\setlist{nosep}
+\newglossarystyle{glossario-uece}{%
+	%
 	\renewenvironment{theglossary}%
-	{\begin{description}}{\end{description}}%
+	{\vspace{-0.3cm}\begin{description}[leftmargin=0cm]\itemsep -1pt}{\end{description}}%
+	%
 	\renewcommand*{\glossaryheader}{}%
-	\renewcommand*{\glsgroupheading}[1]{}%
-	\renewcommand*{\glossentry}[2]{%
-		\item[\glsentryitem{##1}%
-		\glstarget{##1}{\glossentryname{##1}}:]
-		\glossentrydesc{##1}\glspostdescription\space ##2}%
-	\renewcommand*{\subglossentry}[3]{%
-		\glssubentryitem{##2}%
-		\glstarget{##2}{\strut}%
-		\glossentrydesc{##2}\glspostdescription\space ##3.}%
-	\renewcommand*{\glsgroupskip}{\ifglsnogroupskip\else\indexspace\fi}%
+	
+	% indicate what to do at the start of each logical group
+	
+	\renewcommand*{\glsgroupheading}[1]{%
+		\vspace{0cm}\item[{\glsgetgrouptitle{##1}}] \vspace{\onelineskip}		
+	}
+	%
+	\renewcommand*{\glsgroupskip}{}%
+	% Depois da palavra, colocar o ":" e no fim o ponto final "."
+	\renewcommand*{\glossaryentryfield}[5]{%
+		\item[\glstarget{##1}{##2}:] ##3.%
+	}%
 }
 
-\renewcommand{\glossarypreamble}{\vspace*{-\baselineskip}\vspace*{\onelineskip}\vspace*{\onelineskip}}
-
-\newglossarystyle{listgroup-uece}{%
-	\setglossarystyle{list-uece}%
-	\renewcommand*{\glsgroupheading}[1]{\item[\glsgetgrouptitle{##1}]}}
-
 \newcommand{\imprimirglossario}{ %
-	\glossarystyle{listgroup-uece} %
+	\glossarystyle{glossario-uece} %	
 	\printglossary[title=GLOSSÁRIO,toctitle=GLOSSÁRIO] %
 	\addcontentsline{toc}{chapter}{GLOSSÁRIO}
 }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               Referências           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirreferencias}[1]{ %
-	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\bibliography{#1} %
+	% TODO Por algum motivo, colocar esse comando antes da bibliografia faz com que o 
+	% ultimo capitulo dos elem fique sem o numero da pagina. 
+	\postextual %
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               Apendices             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Define o titulo no sumario do Apendice para nao negrito
+\newcommand{\apendice}[1]{\chapter{\normalfont{#1}}}
+
+% O nome APÊNDICES deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaapendices}{ %
 	\newpage %
-	\addcontentsline{toc}{chapter}{APÊNDICES} %
+	\addcontentsline{toc}{chapter}{AP\^ENDICES} %
 	\begin{vplace}[0.7] %
-		\centering\textbf{APÊNDICES} %
+		\centering\textbf{AP\^ENDICES} %
 	\end{vplace} %
 	\clearpage
+}
+
+% Altera a fonte da letra titulo do apendice para nao negrito
+\renewcommand{\chaptitlefont}{ %
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{ %
+		\normalfont\normalsize %
+	}{%
+		\ABNTEXchapterfont\ABNTEXchapterfontsize %
+	}%
 }
 
 % Retira o negrito do apêndice e o coloca alinhado a esquerda
@@ -525,46 +583,93 @@
 		\ifthenelse{\boolean{abntex@apendiceousecao}}{%
 			\normalfont
 			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-			\ABNTEXchapterupperifneeded{#1}%
+			\hspace{-0.3cm} %
+			#1 %	\ABNTEXchapterupperifneeded{#1}%
 		}{%
-		\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
-		\parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{#1}}}%
-}    
+			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
+			\parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{#1}}
+		}%
+	}    
 }
 
 \newcommand{\imprimirapendices}{ %
+	\imprimirpaginaapendices
 	\apendices %
 	% Retira o negrito da palavra "Apendice"
 	\PRIVATEapendiceconfig{\normalfont\apendicename}{\normalfont\apendicesname} %
 	
 }
 
-%\newcommand{\apendiceconfig}[2]{%
-%	\renewcommand{\PRIVATEapendiceousecao}{true}%
-%	\renewcommand{\normalfont\appendixname}{\normalfont#1}
-%	\renewcommand{\normalfont\appendixpagename}{\normalfont#2}
-%	\renewcommand{\normalfont\appendixtocname}{\normalfont#2}
-%	
-%	\switchchapname{#1}% Corrected from \switchapname -> \switchchapname
-%	\renewcommand*{\normalfont\cftappendixname}{#1 \space}
-%}
-%
-%% Apendices - comando 
-%\newcommand{\apendicesAAA}{%
-%	\apendiceconfig{\normalfont\apendicename}{\normalfont\apendicesname}
-%	\appendix
-%}
+% Correcao do problema de espacamento entre as palavras
+\renewcommand{\printchapternum}{%
+	\tocprintchapter
+	\setboolean{abntex@innonumchapter}{false}
+	\chapnumfont%
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+		\hspace{-0.3cm} %
+	}{}%
+	\space\thechapter\space%
+	\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+		\tocinnonumchapter
+		~\textendash~%
+	}{} % else
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           Número das Páginas        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+%\makeheadrule{abntheadings}{}{}
+
+% Cabecalho do inicio do capitulo
+\makepagestyle{abntchapfirst}
+\makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                Anexos               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Define o titulo no sumario do Anexo para nao negrito
+\newcommand{\anexo}[1]{\chapter{\normalfont{#1}}}
+
+% O nome ANEXOS deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
+\newcommand{\imprimirpaginaanexo}{ %
+	\newpage %
+	\addcontentsline{toc}{chapter}{ANEXOS} %
+	\begin{vplace}[0.7] %
+		\centering\textbf{ANEXOS} %
+	\end{vplace} %
+	\clearpage
+}
+
+\newcommand{\imprimiranexos}{ %
+	\imprimirpaginaanexo
+	\anexos %
+	% Retira o negrito da palavra "Apendice"
+	\PRIVATEapendiceconfig{\normalfont\anexoname}{\normalfont\anexosname} %
+	
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                Indice               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\imprimirindice}{ %
+	\printindex
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Configuração do Sumário      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirsumario}{ %
-	\begin{KeepFromToc} %
-		\pdfbookmark[0]{\contentsname}{toc} %
-		\tableofcontents %
-	\end{KeepFromToc} %
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\cleardoublepage
 }
 
 % Modifica o espaçamento no sumário
@@ -575,7 +680,7 @@
 \setlength{\cftbeforesubsubsectionskip}{0pt}
 \setlength{\cftbeforechapterskip}{0pt}
 
-\renewcommand\cftchapterfont{\normalsize}
+%\renewcommand\cftchapterfont{\normalsize}
 \renewcommand\cftsectionfont{\normalsize\normalfont}
 \renewcommand\cftsubsectionfont{\normalsize}
 \renewcommand\cftsubsubsectionfont{\normalsize\normalfont}

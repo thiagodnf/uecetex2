@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com)           %%
+%% para a Universidade Estadual do Ceara - UECE                       %%
+%%                                                                    %%
+%% This work may be distributed and/or modified under the             %% 
+%% conditions of the LaTeX Project Public License, either version 1.3 %%
+%% of this license or (at your option) any later version.             %%
+%% The latest version of this license is in                           %%
+%%   http://www.latex-project.org/lppl.txt                            %%
+%% and version 1.3 or later is part of all distributions of LaTeX     %%
+%% version 2005/12/01 or later.                                       %%
+%%                                                                    %%
+%% This work has the LPPL maintenance status `maintained'.            %%
+%%                                                                    %%
+%% The Current Maintainer of this work is Thiago Nascimento           %%
+%%                                                                    %%
+%% Project available on: https://github.com/thiagodnf/uecetex2        %%
+%%                                                                    %%
+%% Further information about abnTeX2                                  %%
+%% are available on http://abntex2.googlecode.com/                    %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[        
+    a4paper,          % Tamanho da folha A4
+    12pt,             % Tamanho da fonte 12pt
+    chapter=TITLE,    % Todos os capitulos devem ter caixa alta
+    section=TITLE,    % Todas as secoes devem ter caixa alta
+    oneside,          % Usada para impressao em apenas uma face do papel
+    english,          % Hifenizacoes em ingles
+    french,           % Hifenizacoes em frances
+    spanish,          % Hifenizacoes em espanhol
+    brazil            % Ultimo idioma eh o idioma padrao do documento
+]{abntex2}
+
+% Importações de pacotes
+\usepackage[alf, abnt-emphasize=bf, bibjustif, recuo=0cm, abnt-etal-cite=2, abnt-etal-list=0]{abntex2cite}  % Citações padrão ABNT
+\usepackage[utf8]{inputenc}                         % Acentuação direta
+\usepackage[T1]{fontenc}                            % Codificação da fonte em 8 bits
+\usepackage{graphicx}                               % Inserir figuras
+\usepackage{amsfonts, amssymb, amsmath}             % Fonte e símbolos matemáticos
+\usepackage{booktabs}                               % Comandos para tabelas
+\usepackage{verbatim}                               % Texto é interpretado como escrito no documento
+\usepackage{multirow, array}                        % Múltiplas linhas e colunas em tabelas
+\usepackage{indentfirst}                            % Endenta o primeiro parágrafo de cada seção.
+\usepackage{microtype}                              % Para melhorias de justificação?
+\usepackage[portuguese,ruled,lined]{algorithm2e}    % Escrever algoritmos
+\usepackage{algorithmic}                            % Criar Algoritmos  
+\usepackage{float}                                  % Utilizado para criação de floats
+\usepackage{amsgen}
+\usepackage{lipsum}                                 % Usar a simulação de texto Lorem Ipsum
+\usepackage{titlesec}                               % Permite alterar os títulos do documento
+\usepackage{tocloft}                                % Permite alterar a formatação do Sumário
+\usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
+\usepackage[nogroupskip,nonumberlist,acronym]{glossaries}                % Permite fazer o glossario
+\usepackage{setspace}
+\usepackage{caption}                                % Altera o comportamento da tag caption
+
+%\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
+%\usepackage{times}                                 % Usa a fonte Times
+\usepackage{mathptmx}                               % Usa a fonte Times New Roman										
+%\usepackage{lmodern}                               % Usa a fonte Latin Modern
+%\usepackage{subfig}                                % Posicionamento de figuras
+%\usepackage{scalefnt}                              % Permite redimensionar tamanho da fonte
+%\usepackage{color, colortbl}                       % Comandos de cores
+%\usepackage{lscape}                                % Permite páginas em modo "paisagem"
+%\usepackage{ae, aecompl}                           % Fontes de alta qualidade
+%\usepackage{picinpar}                              % Dispor imagens em parágrafos
+%\usepackage{latexsym}                              % Símbolos matemáticos
+%\usepackage{upgreek}                               % Fonte letras gregas
+\usepackage{appendix}                               % Gerar o apendice no final do documento
+\usepackage{paracol}                                % Criar paragrafos sem identacao
+\usepackage{lib/uecetex2}		                    % Biblioteca com as normas da UECE para trabalhos academicos
+
+% Organiza e gera a lista de abreviaturas, simbolos e glossario
+\makeglossaries
+
+% Gera o Indice do documento
+\makeindex

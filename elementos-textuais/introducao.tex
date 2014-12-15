@@ -7,7 +7,7 @@
 	\caption{Mapa conceitual do estudo da história e relações com o objeto de estudo}
 	\label{fig_mapa}
 	\begin{center}
-		\includegraphics[width=8cm]{capitulos/figuras/figura-1}		
+		\includegraphics[width=8cm]{figuras/figura-1}		
 	\end{center}
 	\fontedafigura{8cm}{os autores}
 \end{figure}
@@ -16,18 +16,23 @@
 \lipsum[2]
 \lipsum[2]
 
-\Gls{latex} e \gls{maths}
-\Gls{Ambiguidade}
-\Gls{Braile}
-\Gls{Coerencia}
-\Gls{Dialetos}
-\Gls{Dialetos2}
+%\Gls{latex} e \gls{maths}
+\Gls{ambiguidade}
+\Gls{braile}
+\Gls{coerencia}
+\Gls{dialetos}
+\Gls{elipse}
+\Gls{locucao-adjetiva}
+\Gls{modificadores}
+\Gls{paronimos}
+\Gls{sintese}
+\Gls{borboleta}
 
 \begin{figure}[h!]
 	\caption{Paradigma segundo processos que caracterizam a EFSFVS como Escola do SUS}
 	\label{fig_paradigma}
 	\begin{center}
-		\includegraphics[width=8cm]{capitulos/figuras/figura-2}
+		\includegraphics[width=8cm]{figuras/figura-2}
 	\end{center}
 	\fontedafigura{8cm}{Adaptado de}
 \end{figure}
@@ -42,10 +47,7 @@
 \section{Objetivos}
 
 \lipsum[2]
-\lipsum[2]
-\lipsum[2]
-\lipsum[2]
-\lipsum[2]
+
 \begin{table}[h!]	
 	\caption{Internal exon scores}
 	\label{tab:internal}
@@ -62,7 +64,7 @@
 		E6 & No coverage & No splice sites\\
 		\hline
 	\end{tabular}
-	\fontedatabela{14.6cm}{os autores}
+	%\fontedatabela{14.6cm}{os autores}
 \end{table}
 
 \lipsum[2]
@@ -83,6 +85,25 @@
 	\end{alineas}
 	
 	\lipsum[2]
+	
+	\begin{table}[h!]	
+		\caption{Fatores de risco intermediários, não ajustados para a mortalidade infantil com malformação congênita, de acordo com as características maternas, Fortaleza, CE, BR, 2001 a 2010}
+		\label{tab:internal-1}
+		\centering
+		\begin{tabular}{|c|l|l|}
+			\hline
+			Ranking & Exon Coverage & Splice Site Support\\
+			\hline
+			E1 & Complete coverage by a single transcript & Both splice sites\\
+			E2 & Complete coverage by more than a single transcript & Both splice sites\\
+			E3 & Partial coverage & Both splice sites\\
+			E4 & Partial coverage & One splice site\\
+			E5 & Complete or partial coverage & No splice sites\\
+			E6 & No coverage & No splice sites\\
+			\hline
+		\end{tabular}
+		\fontedatabela{14.6cm}{os autores}
+	\end{table}
 \subsubsection{Objetivo Geral}
 	\lipsum[2]
 %	\cite{lamport1986latex} e \cite{wessberg2000real} e \cite{knuth} e \cite{lamport} e \cite{Maia2011} e \cite{mortalidade}
@@ -90,4 +111,21 @@
 \subsubsection{Objetivo Geral}
 	\lipsum[2]
 	\acrlong{DATASUS},\acrlong{DNV},\acrlong{DO},\acrlong{ESF},\acrlong{IBGE},\acrlong{MFC},\acrlong{MI},\acrlong{MS},\acrlong{NV},\acrlong{ODM},\acrlong{OI},\acrlong{OMS},\acrlong{ONU},\acrlong{PNI},\acrlong{PSF},\acrlong{RIPSA},\acrlong{RN},\acrlong{SIM},\acrlong{SINASC},\acrlong{SUS},\acrlong{TMI},\acrlong{TMMFC}
+
+\lipsum[2]
+	\begin{algorithm}[H]
+		\Entrada{o proprio texto}
+		\Saida{como escrever algoritmos com \LaTeX2e }
+		\Inicio{
+			inicializa\c{c}\~ao\;
+			\Repita{fim do texto}{
+				leia o atual\;
+				\Se{entendeu}{
+					vá para o próximo\;
+					próximo se torna o atual\;}
+				\Senao{volte ao início da seção\;}
+			}
+		}
+		\caption{Exemplo de Algoritmo Versao 3}
+	\end{algorithm}
 	
