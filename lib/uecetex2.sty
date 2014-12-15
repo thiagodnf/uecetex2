@@ -40,6 +40,7 @@
 % Define o espaço entre linhas para 1.5 cm
 %\OnehalfSpacing	Bug no ABNTEX2?
 \renewcommand{\baselinestretch}{1.5}
+
 %\OnehalfSpacing
 
 % Define as margens do documento
@@ -94,11 +95,9 @@
 
 % Margen da legenda da figura e da tabela
 \captionsetup{
-	justification=centering,
-	singlelinecheck=false
+	justification=centering,% Centraliza o caption
+	skip=0pt                %Retira o espaco entre a figura/tabela e o caption
 }
-%\captionsetup[figure]{font=doublespacing}
-%\captionsetup[figure]{font={stretch=1.5}} 
 
 % Espaçamento entre o texto e a legenda
 %\setlength{\belowcaptionskip}{\onelineskip}
@@ -123,15 +122,38 @@
 % Espaco entre o caption e o algoritmo
 %\SetAlCapSkip{\onelineskip}
 
-% Espaco entre o texto
-%\setlength{\textfloatsep}{\onelineskip}
-
-%\setlength{\floatsep}{5pt plus 2pt minus 2pt}
 % Distance between floats on the top or the bottom and the text;
 \setlength{\textfloatsep}{18pt plus 2pt minus 2pt}
 
 % Distance between floats inserted inside the page text (using h) and the text proper.
 \setlength{\intextsep}{18pt plus 2pt minus 2pt}
+
+\newcommand{\Caption}[1]{ %
+	\begin{Spacing}{1.5} %
+       	\caption{#1} %
+   	\end{Spacing} %
+}
+
+\newcommand{\Fonte}[2][\fontename]{ %
+%	\vspace{-3pt}
+	\vspace{8pt}
+ 		\fonte[#1]{#2}
+ 	\vspace{-5pt}
+}
+
+% Cria o comando para fazer notas e anotacoes na figura e na tabela
+\newcommand{\Nota}[2][\notaname]{\Fonte[#1]{#2}} 
+
+
+%Remove as bordas do hyperlinks.
+\newcommand{\RemoveHyperlinkBorders}[1]{%
+	\ifthenelse{\equal{#1}{true}}{%
+  		\hypersetup{%
+  		    pdfborder = {0 0 0}
+  		}
+    }
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,27 +163,6 @@
 
 % Verifica se uma determinada macro está vazia
 \newcommand{\ifempty}[2]{\ifthenelse{\equal{#1}{}}{#2}{}}
-
-% Imprime a fonte das imagens
-\newcommand{\fontedafigura}[2]{ %
-	\vspace{12pt}
-		\legend{\small{Fonte: #1}}
-	\vspace{-18pt}
-%	\vspace{-0.5cm}	
-%	\begin{center} %
-%		\parbox{#1}{%
-%			\small{Fonte: #2}%
-%		} %
-%	\end{center} %
-}
-
-% Imprime a fonte das imagens
-\newcommand{\fontedatabela}[2]{ %
-	\\\hspace{\linewidth}%
-	\parbox{#1}{%
-		\small{Fonte: #2} %
-	} %
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Variáveis               %%
