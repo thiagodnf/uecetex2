@@ -18,7 +18,7 @@
 *.log
 *.gz
 *.db
-dissertacao.pdf
+documento.pdf
 *.backup
 *~
 *.syi
