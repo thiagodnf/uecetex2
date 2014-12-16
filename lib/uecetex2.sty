@@ -146,13 +146,67 @@
 
 
 %Remove as bordas do hyperlinks.
-\newcommand{\RemoveHyperlinkBorders}[1]{%
-	\ifthenelse{\equal{#1}{true}}{%
+\newcommand{\removerbordasdohyperlink}[1]{%
+	\ifthenelse{\equal{#1}{sim}}{%
   		\hypersetup{%
   		    pdfborder = {0 0 0}
   		}
     }
 }
+
+% Adiciona o sexo do orientador e do co-orientador no documento atraves
+% do artigo "a".
+
+\provideboolean{uecetex2@orientadorfeminino}
+\provideboolean{uecetex2@coorientadorfeminino}
+
+\setboolean{uecetex2@orientadorfeminino}{false}
+\setboolean{uecetex2@coorientadorfeminino}{false}
+
+\newcommand{\orientadorfeminino}[1]{
+	 \ifthenelse{\equal{#1}{sim}}{%
+	 	\setboolean{uecetex2@orientadorfeminino}{true}
+	 }
+}
+
+\newcommand{\coorientadorfeminino}[1]{
+	\ifthenelse{\equal{#1}{sim}}{%
+		\setboolean{uecetex2@coorientadorfeminino}{true}
+	}
+}
+
+\newcommand{\artigoorientador}{ %
+	\ifthenelse{\boolean{uecetex2@orientadorfeminino}}{ %
+		\unskip Orientadora\ignorespaces%
+	}{ %
+		\unskip Orientador\ignorespaces%
+	} %
+}
+
+\newcommand{\artigocoorientador}{ %
+	\ifthenelse{\boolean{uecetex2@orientadorfeminino}}{ %
+		Co-Orientadora\ignorespaces%
+	}{ %
+		Co-Orientador\ignorespaces%
+	} %
+}
+
+\newcommand{\artigoorientadorcomparenteses}{ %
+	\ifthenelse{\boolean{uecetex2@orientadorfeminino}}{ %
+		(Orientadora)\ignorespaces%
+	}{ %
+		(Orientador)\ignorespaces%
+	} %
+}
+
+\newcommand{\artigocoorientadorcomparenteses}{ %
+	\ifthenelse{\boolean{uecetex2@orientadorfeminino}}{ %
+		(Co-Orientadora)\ignorespaces%
+	}{ %
+		(Co-Orientador)\ignorespaces%
+	} %
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
@@ -282,12 +336,12 @@
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
 		\begin{SingleSpace}
-			\imprimirpreambulo \\			
+			\imprimirpreambulo \\	
 			\newline
-			Orientador: \ignorespaces\imprimirorientador \\
+			\artigoorientador: \ignorespaces\imprimirorientador \\
 			\abntex@ifnotempty{\imprimircoorientador}{
 				\newline
-				Co-Orientadores: \ignorespaces\imprimircoorientador				
+				\artigocoorientador: \ignorespaces\imprimircoorientador				
 			}
 		\end{SingleSpace}		
 	\end{minipage}
@@ -346,11 +400,11 @@
 		\vspace{\onelineskip}
 
 	% Membro Um da banca é sempre o Orientador
-	\assinatura{\imprimirorientador\ (Orientador) \\ \imprimirorientadories}
+	\assinatura{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadories}
 	
 	% Membro Dois da banca pode ser o coorientador ou outro membro
 	\ifnotempty{\imprimircoorientador}{
-		\assinatura{\imprimircoorientador\ (Co-Orientador) \\ \imprimircoorientadories}
+		\assinatura{\imprimircoorientador\ \artigocoorientadorcomparenteses \\ \imprimircoorientadories}
 	}
 	
 	% Membro Três da banca pode ser o coorientador ou outro membro

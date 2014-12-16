@@ -23,7 +23,8 @@
 
 \input{lib/preambulo}
 
-\RemoveHyperlinkBorders{false}
+% Remove as bordas vermelhas e verdes do PDF gerado
+\removerbordasdohyperlink{nao} % Coloque 'sim' pare remover
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          Informação sobre o Curso               %%
@@ -57,6 +58,7 @@
 
 \orientador{Nome do seu Orientador}
 \orientadories{Universidade Estadual do Ceará – UECE}
+\orientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Informação sobre o Co-orientador   %%
@@ -64,17 +66,19 @@
 
 \coorientador{}
 \coorientadories{}
+\coorientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Informação sobre a banca           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Atenção! Se o seu trabalho tem coorientador, as informações sobre o
-% membro da banca Dois serão desconsideradas.
+% Atenção! Deixe o nome do membro da banca para remover da folha de aprovacao
 
 % Exemplo:
 % \membrodabancadois{Prof. Dr. Fulano de Tal}
 % \membrodabancadoisies{Universidade Estadual do Ceará - UECE}
+
+% 
 
 \membrodabancadois{Membro da Banca Dois}
 \membrodabancadoisies{Universidade do Membro da Banca Dois - SIGLA}
