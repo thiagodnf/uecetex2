@@ -531,6 +531,31 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Quadro             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Novo list of (listings) para QUADROS
+
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+
+% configurações para atender às regras da ABNT
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+
+\newcommand{\imprimirlistadequadros}{ %
+	\pdfbookmark[0]{\listofquadrosname}{loq} %
+	\listofquadros* %
+	\pagebreak %
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         Lista de Ilustrações        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -559,7 +584,7 @@
 % A lista de tabela não deve aparecer no sumário
 \newcommand{\imprimirlistadetabelas}{ %
 	\begin{KeepFromToc} %
-		\listoftables %
+		\listoftables \pagebreak%
 	\end{KeepFromToc} %
 }
 
