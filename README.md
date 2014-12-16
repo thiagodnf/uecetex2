@@ -36,6 +36,12 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 **Linux**
 
  - Em construção...
+ 
+##  Limitações
+ 
+ O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
+ 
+  - O modelo permite a participação de somente um co-orientador
 
 ##  Atenção
 
