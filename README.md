@@ -4,6 +4,16 @@
 
 O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
 
+## Modelos Disponíveis
+
+**Trabalhos Acadêmicos**
+
+ - Dissertação de Mestrado Acadêmico e Profisional
+ 
+**Qualificações**
+
+ - Nenhuma Disponível
+
 ## Você é iniciante em LaTeX ou em abnTeX2?
 
 Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessar a página desenvolvida pela equipe do abnTeX2. Nesta página é possível acessar diversos links sobre o LaTeX e sobre o abnTeX2 como, por exemplo, a história do LaTeX e alguns minicursos desenvolvidos em outras universidades
