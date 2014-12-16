@@ -207,6 +207,15 @@
 	} %
 }
 
+% Variaveis utilizada para gerar o documento de qualificacao
+\provideboolean{uecetex2@ehqualificacao}
+\setboolean{uecetex2@ehqualificacao}{false}
+
+\newcommand{\ehqualificacao}[1]{
+	\ifthenelse{\equal{#1}{sim}}{%
+		\setboolean{uecetex2@ehqualificacao}{true}
+	}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
@@ -223,6 +232,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\ies}{\def \@ies}
+\newcommand{\iessigla}{\def \@iessigla}
 \newcommand{\centro}{\def \@centro}
 \newcommand{\programa}{\def \@programa}
 \newcommand{\mestrado}{\def \@mestrado}
@@ -246,11 +256,13 @@
 
 % Define o nome da universidade do documento
 \ies{Universidade Estadual do Ceará}
+\iessigla{UECE}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Imprimir as Variáveis        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimiries}{\@ies}
+\newcommand{\imprimiriessigla}{\@iessigla}
 \newcommand{\imprimircentro}{\@centro}
 \newcommand{\imprimirprograma}{\@programa}
 \newcommand{\imprimirmestrado}{\@mestrado}
@@ -277,7 +289,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \preambulo{
-	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{ %
+		Proposta de qualificação apresentada ao Curso de \imprimirmestrado\  da \imprimiries\ (\imprimiriessigla) como requisito parcial para a defesa de dissertação.
+	}{ %
+		Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao
+	} %	
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -430,16 +446,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirdedicatoria}[1]{
-	\vspace*{20cm}
-	\vfill
-	%Retira o espaço do parágrafo
-	\hspace*{-2cm}
-	%Adiciona o espaço da margem
-	\hspace*{8cm}	
-	\begin{minipage}{8cm}
-		\input{#1}
-	\end{minipage}
-	\pagebreak
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{
+		\vspace*{20cm}
+		\vfill
+		%Retira o espaço do parágrafo
+		\hspace*{-2cm}
+		%Adiciona o espaço da margem
+		\hspace*{8cm}	
+		\begin{minipage}{8cm}
+			\input{#1}
+		\end{minipage}
+		\pagebreak
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,13 +473,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimiragradecimentos}[1]{ 
-	\begin{agradecimentos}
-		%\imprimiragradecimentoss
-		\begin{paracol}{1}
-			\setlength{\parindent}{0pt}%
-			\input{#1}
-		\end{paracol}		
-	\end{agradecimentos}
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{
+		\begin{agradecimentos}
+			%\imprimiragradecimentoss
+			\begin{paracol}{1}
+				\setlength{\parindent}{0pt}%
+				\input{#1}
+			\end{paracol}		
+		\end{agradecimentos}
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,18 +489,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirepigrafe}[2]{
-	\vspace*{20cm}
-	\vfill
-	%Retira o espaço do parágrafo
-	\hspace*{-2cm}
-	%Adiciona o espaço da margem
-	\hspace*{8cm}	
-	\begin{minipage}{8cm}
-%		\imprimirepigrafee
-		\input{#2}
-	\end{minipage}
-	{\raggedleft (#1)\par}
-	\pagebreak
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{
+		\vspace*{20cm}
+		\vfill
+		%Retira o espaço do parágrafo
+		\hspace*{-2cm}
+		%Adiciona o espaço da margem
+		\hspace*{8cm}	
+		\begin{minipage}{8cm}
+	%		\imprimirepigrafee
+			\input{#2}
+		\end{minipage}
+		{\raggedleft (#1)\par}
+		\pagebreak
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

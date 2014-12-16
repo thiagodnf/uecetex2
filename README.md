@@ -12,7 +12,7 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
  
 **Qualificações**
 
- - Nenhuma Disponível
+ - Qualificação para Mestrado Acadêmico e Profisional
 
 ## Você é iniciante em LaTeX ou em abnTeX2?
 
