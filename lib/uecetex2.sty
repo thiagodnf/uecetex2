@@ -217,6 +217,44 @@
 	}
 }
 
+% Determina o tipo do trabalho apresentado
+% Definicao das variaveis
+\provideboolean{uecetex2@ehtccgraduacao}
+\provideboolean{uecetex2@ehtccespecializacao}
+\provideboolean{uecetex2@ehdissertacao}
+\provideboolean{uecetex2@ehtese}
+
+% Valores Iniciais
+\setboolean{uecetex2@ehtccgraduacao}{false}
+\setboolean{uecetex2@ehtccespecializacao}{false}
+\setboolean{uecetex2@ehdissertacao}{true}
+\setboolean{uecetex2@ehtese}{false}
+
+\newcommand{\trabalhoacademico}[1]{
+	\setboolean{uecetex2@ehtccgraduacao}{false}
+	\setboolean{uecetex2@ehtccespecializacao}{false}
+	\setboolean{uecetex2@ehdissertacao}{false}
+	\setboolean{uecetex2@ehtese}{false}
+	
+	\ifthenelse{\equal{#1}{tccgraduacao}}{%
+		\setboolean{uecetex2@ehtccgraduacao}{true}
+	}{
+		\ifthenelse{\equal{#1}{tccespecializacao}}{%
+			\setboolean{uecetex2@ehtccespecializacao}{true}
+		}{
+			\ifthenelse{\equal{#1}{dissertacao}}{%
+				\setboolean{uecetex2@ehdissertacao}{true}
+			}{
+				\ifthenelse{\equal{#1}{tese}}{%
+					\setboolean{uecetex2@ehtese}{true}
+				}{
+					\setboolean{uecetex2@ehdissertacao}{true}
+				}
+			}
+		}	
+	}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,8 +274,10 @@
 \newcommand{\centro}{\def \@centro}
 \newcommand{\programa}{\def \@programa}
 \newcommand{\mestrado}{\def \@mestrado}
+\newcommand{\doutorado}{\def \@doutorado}
 \newcommand{\curso}{\def \@curso}
 \newcommand{\mestreem}{\def \@mestreem}
+\newcommand{\doutorem}{\def \@doutorem}
 \newcommand{\areadeconcetracao}{\def \@areadeconcetracao}
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
 \newcommand{\epigrafee}{\def \@epigrafee}
@@ -266,8 +306,10 @@
 \newcommand{\imprimircentro}{\@centro}
 \newcommand{\imprimirprograma}{\@programa}
 \newcommand{\imprimirmestrado}{\@mestrado}
+\newcommand{\imprimirdoutorado}{\@doutorado}
 \newcommand{\imprimircurso}{\@curso}
 \newcommand{\imprimirmestreem}{\@mestreem}
+\newcommand{\imprimirdoutorem}{\@doutorem}
 \newcommand{\imprimirareadeconcetracao}{\@areadeconcetracao}
 \newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
 \newcommand{\imprimirepigrafee}{\@epigrafee}
@@ -288,11 +330,35 @@
 %%       Definições de Variáveis       %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\preambulotese}{
+	Tese apresentada ao Curso de \imprimirdoutorado\ do \imprimirprograma\ da \imprimiries, como requisito parcial à obtenção do título de doutor em \imprimirdoutorem. \imprimirareadeconcetracao \\
+}
+
+\newcommand{\preambulodissertacao}{
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao \\
+}
+
+\newcommand{\preambulotccgraduacao}{
+	Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em Serviço Social do Centro de Estudos Sociais Aplicado da Universidade Estadual do Ceará, como requisito parcial à obtenção do grau de bacharel em Serviço Social.
+}
+
 \preambulo{
 	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{ %
 		Proposta de qualificação apresentada ao Curso de \imprimirmestrado\  da \imprimiries\ (\imprimiriessigla) como requisito parcial para a defesa de dissertação.
 	}{ %
-		Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao
+		\ifthenelse{\boolean{uecetex2@ehdissertacao}}{ %
+			\preambulodissertacao %	
+		}{
+			\ifthenelse{\boolean{uecetex2@ehtese}}{ %
+				\preambulotese	 %
+			}{
+				\ifthenelse{\boolean{uecetex2@ehtccgraduacao}}{ %
+					\preambulotccgraduacao	 %
+				}{
+					testando
+				}
+			}
+		}
 	} %	
 }
 
@@ -352,7 +418,7 @@
 	\hspace*{8cm}	
 	\begin{minipage}{8cm}
 		\begin{SingleSpace}
-			\imprimirpreambulo \\	
+			\imprimirpreambulo	
 			\newline
 			\artigoorientador: \ignorespaces\imprimirorientador \\
 			\abntex@ifnotempty{\imprimircoorientador}{
