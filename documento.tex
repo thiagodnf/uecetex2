@@ -23,28 +23,68 @@
 
 \input{lib/preambulo}
 
-\trabalhoacademico{dissertacao}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          Configuracoes do ueceTeX2              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Opcoes disponiveis
+
+%\trabalhoacademico{tccgraduacao}
+%\trabalhoacademico{tccespecializacao}
+%\trabalhoacademico{dissertacao}
+%\trabalhoacademico{tese}
 
 % Define se o trabalho eh uma qualificacao
 % Coloque 'nao' para versao final do trabalho
+
 \ehqualificacao{nao}
 
 % Remove as bordas vermelhas e verdes do PDF gerado
 % Coloque 'sim' pare remover
+
 \removerbordasdohyperlink{nao} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%          Informação sobre o Curso               %%
+%%          Informação sobre a IES                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\centro{Centro de Ciência e Tecnologia}
-\programa{Programa de Pós-Graduação em Ciência da Computação}
-%\graduacao{Serviço Social}
-\mestrado{Mestrado Acadêmico em Ciência da Computação}
-\doutorado{Doutorado em Saúde Coletiva}
-\curso{Curso de Ciência da Computação}
+\ies{Universidade Estadual do Ceará}
+\iessigla{UECE}
+\centro{Centro de Ciências e Tecnologia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%        Informação para TCC de Graduacao         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graduacaoem{Ciência da Computação}
+\habilitacao{bacharel} % Pode colocar tambem 'licenciada'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     Informação para TCC de Especializacao       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\especializacaoem{Alfabetização de Crianças}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Informação para Dissertacao             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\programamestrado{Programa de Pós-Graduação em Ciência da Computação}
+\nomedomestrado{Mestrado Acadêmico em Ciência da Computação}
 \mestreem{Ciência da Computação}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               Informação para Tese              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\programadoutorado{Programa de Pós-Graduação em Saúde Coletiva}
+\nomedodoutorado{Doutorado em Saúde Coletiva}
 \doutorem{Saúde Coletiva}
+
+
+\curso{Curso de Ciência da Computação}
+
+
 
 % Se o seu mestrado tem area de concentracao
 % Exemplo: \areadeconcetracao{Área de Concentração: Saúde Coletiva.} 
@@ -68,14 +108,18 @@
 
 \orientador{Nome do seu Orientador}
 \orientadories{Universidade Estadual do Ceará – UECE}
+\orientadorcentro{Centro de Ciências e Tecnologia - CCT}
 \orientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%      Informação sobre o Co-orientador   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Deixe o nome do coorientador em branco para remover do documento
+
 \coorientador{}
-\coorientadories{}
+\coorientadories{Universidade Co-orientador - SIGLA}
+\coorientadorcentro{Centro do Co-orientador - SIGLA}
 \coorientadorfeminino{nao} % Coloque 'sim' se for do sexo feminino
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,16 +128,25 @@
 
 % Atenção! Deixe o nome do membro da banca para remover da folha de aprovacao
 
-% Exemplo:
+% Exemplo de uso:
 % \membrodabancadois{Prof. Dr. Fulano de Tal}
 % \membrodabancadoisies{Universidade Estadual do Ceará - UECE}
 
 \membrodabancadois{Membro da Banca Dois}
+\membrodabancadoiscentro{Faculdade de Filosofia Dom Aureliano Matos – FAFIDAM}
 \membrodabancadoisies{Universidade do Membro da Banca Dois - SIGLA}
 \membrodabancatres{Membro da Banca Três}
+\membrodabancatrescentro{Centro de Ciências e Tecnologia - CCT}
 \membrodabancatresies{Universidade do Membro da Banca Três - SIGLA}
 \membrodabancaquatro{Membro da Banca Quatro}
+\membrodabancaquatrocentro{Centro de Ciências e Tecnologia - CCT}
 \membrodabancaquatroies{Universidade do Membro da Banca Quatro - SIGLA}
+\membrodabancacinco{Membro da Banca Cinco}
+\membrodabancacincocentro{Teste}
+\membrodabancacincoies{Universidade do Membro da Banca Cinco - SIGLA}
+\membrodabancaseis{Membro da Banca Seis}
+\membrodabancaseiscentro{}
+\membrodabancaseisies{Universidade do Membro da Banca Seis - SIGLA}
 
 % Separe as palavras-chave por ponto
 \palavraschave{Palavra Chave 1. Palavra Chave 2. Palavra Chave 3. Palavra Chave 4}

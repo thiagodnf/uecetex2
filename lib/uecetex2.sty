@@ -260,10 +260,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Verifica se uma determinada macro não está vazia
-\newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\newcommand{\ifnotempty}[3]{\ifthenelse{\not\equal{#1}{}}{#2}{#3}}
 
 % Verifica se uma determinada macro está vazia
-\newcommand{\ifempty}[2]{\ifthenelse{\equal{#1}{}}{#2}{}}
+\newcommand{\ifempty}[3]{\ifthenelse{\equal{#1}{}}{#2}{#3}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Variáveis               %%
@@ -272,9 +272,10 @@
 \newcommand{\ies}{\def \@ies}
 \newcommand{\iessigla}{\def \@iessigla}
 \newcommand{\centro}{\def \@centro}
-\newcommand{\programa}{\def \@programa}
-\newcommand{\mestrado}{\def \@mestrado}
-\newcommand{\doutorado}{\def \@doutorado}
+\newcommand{\programamestrado}{\def \@programamestrado}
+\newcommand{\programadoutorado}{\def \@programadoutorado}
+\newcommand{\nomedomestrado}{\def \@mestrado}
+\newcommand{\nomedodoutorado}{\def \@doutorado}
 \newcommand{\curso}{\def \@curso}
 \newcommand{\mestreem}{\def \@mestreem}
 \newcommand{\doutorem}{\def \@doutorem}
@@ -284,19 +285,30 @@
 \newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
 \newcommand{\palavraschave}{\def \@palavraschave}
 \newcommand{\keywords}{\def \@keywords}
+\newcommand{\graduacaoem}{\def \@graduacaoem}
+\newcommand{\especializacaoem}{\def \@especializacaoem}
+\newcommand{\habilitacao}{\def \@habilitacao}
 \newcommand{\membrodabancadois}{\def \@membrodabancadois}
 \newcommand{\membrodabancatres}{\def \@membrodabancatres}
 \newcommand{\membrodabancaquatro}{\def \@membrodabancaquatro}
+\newcommand{\membrodabancacinco}{\def \@membrodabancacinco}
+\newcommand{\membrodabancaseis}{\def \@membrodabancaseis}
 \newcommand{\membrodabancaumies}{\def \@membrodabancaumies}
 \newcommand{\membrodabancadoisies}{\def \@membrodabancadoisies}
 \newcommand{\membrodabancatresies}{\def \@membrodabancatresies}
 \newcommand{\membrodabancaquatroies}{\def \@membrodabancaquatroies}
+\newcommand{\membrodabancacincoies}{\def \@membrodabancacincoies}
+\newcommand{\membrodabancaseisies}{\def \@membrodabancaseisies}
+\newcommand{\membrodabancadoiscentro}{\def \@membrodabancadoiscentro}
+\newcommand{\membrodabancatrescentro}{\def \@membrodabancatrescentro}
+\newcommand{\membrodabancaquatrocentro}{\def \@membrodabancaquatrocentro}
+\newcommand{\membrodabancacincocentro}{\def \@membrodabancacincocentro}
+\newcommand{\membrodabancaseiscentro}{\def \@membrodabancaseiscentro}
 \newcommand{\orientadories}{\def \@orientadories}
+\newcommand{\orientadorcentro}{\def \@orientadorcentro}
 \newcommand{\coorientadories}{\def \@coorientadories}
+\newcommand{\coorientadorcentro}{\def \@coorientadorcentro}
 
-% Define o nome da universidade do documento
-\ies{Universidade Estadual do Ceará}
-\iessigla{UECE}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Imprimir as Variáveis        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -304,7 +316,8 @@
 \newcommand{\imprimiries}{\@ies}
 \newcommand{\imprimiriessigla}{\@iessigla}
 \newcommand{\imprimircentro}{\@centro}
-\newcommand{\imprimirprograma}{\@programa}
+\newcommand{\imprimirprogramamestrado}{\@programamestrado}
+\newcommand{\imprimirprogramadoutorado}{\@programadoutorado}
 \newcommand{\imprimirmestrado}{\@mestrado}
 \newcommand{\imprimirdoutorado}{\@doutorado}
 \newcommand{\imprimircurso}{\@curso}
@@ -316,30 +329,49 @@
 \newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
 \newcommand{\imprimirpalavraschave}{\@palavraschave}
 \newcommand{\imprimirkeywords}{\@keywords}
+\newcommand{\imprimirgraduacaoem}{\@graduacaoem}
+\newcommand{\imprimirespecializacaoem}{\@especializacaoem}
+\newcommand{\imprimirhabilitacao}{\@habilitacao}
 \newcommand{\imprimirmembrodabancadois}{\@membrodabancadois}
 \newcommand{\imprimirmembrodabancatres}{\@membrodabancatres}
 \newcommand{\imprimirmembrodabancaquatro}{\@membrodabancaquatro}
+\newcommand{\imprimirmembrodabancacinco}{\@membrodabancacinco}
+\newcommand{\imprimirmembrodabancaseis}{\@membrodabancaseis}
 \newcommand{\imprimirmembrodabancaumies}{\@membrodabancaumies}
 \newcommand{\imprimirmembrodabancadoisies}{\@membrodabancadoisies}
 \newcommand{\imprimirmembrodabancatresies}{\@membrodabancatresies}
 \newcommand{\imprimirmembrodabancaquatroies}{\@membrodabancaquatroies}
+\newcommand{\imprimirmembrodabancacincoies}{\@membrodabancacincoies}
+\newcommand{\imprimirmembrodabancaseisies}{\@membrodabancaseisies}
+\newcommand{\imprimirmembrodabancadoiscentro}{\@membrodabancadoiscentro}
+\newcommand{\imprimirmembrodabancatrescentro}{\@membrodabancatrescentro}
+\newcommand{\imprimirmembrodabancaquatrocentro}{\@membrodabancaquatrocentro}
+\newcommand{\imprimirmembrodabancacincocentro}{\@membrodabancacincocentro}
+\newcommand{\imprimirmembrodabancaseiscentro}{\@membrodabancaseiscentro}
 \newcommand{\imprimirorientadories}{\@orientadories}
+\newcommand{\imprimirorientadorcentro}{\@orientadorcentro}
 \newcommand{\imprimircoorientadories}{\@coorientadories}
+\newcommand{\imprimircoorientadorcentro}{\@coorientadorcentro}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       Definições de Variáveis       %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\preambulotese}{
-	Tese apresentada ao Curso de \imprimirdoutorado\ do \imprimirprograma\ da \imprimiries, como requisito parcial à obtenção do título de doutor em \imprimirdoutorem. \imprimirareadeconcetracao \\
+	Tese apresentada ao Curso de \imprimirdoutorado\ do \imprimirprogramadoutorado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de doutor em \imprimirdoutorem. \imprimirareadeconcetracao \\
 }
 
 \newcommand{\preambulodissertacao}{
-	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprograma\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao \\
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao \\
 }
 
 \newcommand{\preambulotccgraduacao}{
-	Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em Serviço Social do Centro de Estudos Sociais Aplicado da Universidade Estadual do Ceará, como requisito parcial à obtenção do grau de bacharel em Serviço Social.
+	Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em \imprimirgraduacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do grau de \imprimirhabilitacao\ em \imprimirgraduacaoem. \\
+}
+
+\newcommand{\preambulotccespecializacao}{
+	Trabalho de Conclusão de Curso apresentado ao Curso de Especialização em \imprimirespecializacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção da certificação de especialista em \imprimirespecializacaoem.
+%Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em \imprimirgraduacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do grau de \imprimirhabilitacao\ em \imprimirgraduacaoem. \\
 }
 
 \preambulo{
@@ -355,7 +387,7 @@
 				\ifthenelse{\boolean{uecetex2@ehtccgraduacao}}{ %
 					\preambulotccgraduacao	 %
 				}{
-					testando
+					\preambulotccespecializacao %
 				}
 			}
 		}
@@ -366,7 +398,7 @@
 %%                Capa                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\imprimircapa}{%
+\newcommand{\imprimircapatese}{%
 	\begin{capa}%
 		% Todos os elementos da capa devem esta centralizado
 		\center
@@ -377,8 +409,38 @@
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
 		\MakeUppercase{\imprimircentro} \\
-		\abntex@ifnotempty{\imprimirprograma}{
-			\MakeUppercase{\imprimirprograma} \\
+		\abntex@ifnotempty{\imprimirprogramadoutorado}{
+			\MakeUppercase{\imprimirprogramadoutorado} \\
+		}		
+		\MakeUppercase{\imprimirdoutorado} \\
+
+		\vspace{\onelineskip}
+
+		\MakeUppercase{\imprimirautor}
+		
+		\vspace{4cm}
+		
+		\MakeUppercase{\imprimirtitulo}
+		
+		\vfill
+		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirdata
+	\end{capa}
+}
+
+\newcommand{\imprimircapadissertacao}{%
+	\begin{capa}%
+		% Todos os elementos da capa devem esta centralizado
+		\center
+		% Todos os elementos da capa devem esta em negrito
+		\bfseries
+
+        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        \vspace{0.1cm}
+		\MakeUppercase{\imprimiries} \\
+		\MakeUppercase{\imprimircentro} \\
+		\abntex@ifnotempty{\imprimirprogramamestrado}{
+			\MakeUppercase{\imprimirprogramamestrado} \\
 		}		
 		\MakeUppercase{\imprimirmestrado} \\
 
@@ -393,9 +455,52 @@
 		\vfill
 		\normalsize\MakeUppercase\imprimirlocal\par	
 		\normalsize\imprimirdata
-	\end{capa}
-%    \pagebreak
+	\end{capa}	
+}
+
+\newcommand{\imprimircapatcc}[1]{%
+	\begin{capa}%
+		% Todos os elementos da capa devem esta centralizado
+		\center
+		% Todos os elementos da capa devem esta em negrito
+		\bfseries
+
+        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        \vspace{0.1cm}
+		\MakeUppercase{\imprimiries} \\
+		\MakeUppercase{\imprimircentro} \\
+		\MakeUppercase{Curso de #1 em \imprimirgraduacaoem} \\
+
+		\vspace{\onelineskip}
+
+		\MakeUppercase{\imprimirautor}
+		
+		\vspace{4cm}
+		
+		\MakeUppercase{\imprimirtitulo}
+		
+		\vfill
+		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirdata
+	\end{capa}	
+}
+
+\renewcommand{\imprimircapa}{%
+	% Toda capa deve ter pagina 0
 	\setcounter{page}{0}
+	\ifthenelse{\boolean{uecetex2@ehdissertacao}}{ %
+			\imprimircapadissertacao %	
+	}{
+		\ifthenelse{\boolean{uecetex2@ehtese}}{ %
+			\imprimircapatese	 %
+		}{
+			\ifthenelse{\boolean{uecetex2@ehtccgraduacao}}{ %
+				\imprimircapatcc{Graduação}	 %
+			}{
+				\imprimircapatcc{Especialização} %
+			}
+		}
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,7 +553,108 @@
 % Espaço entre uma assintura e outra
 \setlength{\ABNTEXsignskip}{\onelineskip}
 
-\newcommand{\imprimirfolhadeaprovacao}{
+\newcommand{\imprimirfolhadeaprovacaotese}{
+	% Define o comprimento da linha das assinaturas na Folha de Aprovacao
+	\setlength{\ABNTEXsignwidth}{8cm}
+	
+	% Espaço entre uma assintura e outra
+	\setlength{\ABNTEXsignskip}{18pt}
+
+	\begin{center}
+		\MakeUppercase{\imprimirautor}\par
+		\vspace{\onelineskip}
+		\vspace{\onelineskip}
+		\MakeUppercase{\imprimirtitulo}
+	\end{center}
+	
+	\vspace{\onelineskip}
+	\vspace{\onelineskip}
+	
+	%Retira o espaço do parágrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
+	\hspace*{8cm}	
+	\begin{minipage}{7.5cm}
+		\begin{SingleSpace}
+			\imprimirpreambulo \\			
+		\end{SingleSpace}		
+	\end{minipage}
+
+	\vspace{\onelineskip}
+		
+	\noindent Aprovada em: \imprimirdataaprovacao
+	
+	\vspace{\onelineskip}
+	
+	\begin{center}
+		BANCA EXAMINADORA
+	\end{center}
+	
+	\vspace{\onelineskip}
+
+	% Membro Um da banca é sempre o Orientador
+	% Membro Dois da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimircoorientador}{
+		\hspace*{-2.5cm}
+		\assinatura*{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadories}		
+		\hspace*{0.7cm} 
+		\assinatura*{\imprimircoorientador\ \artigocoorientadorcomparenteses \\ \imprimircoorientadories}
+		
+		\hspace*{-2.6cm}
+		% Membro Três da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancadois}{
+			\assinatura*{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoisies}
+		}{}
+		\hspace*{0.7cm} 		
+		% Membro Três da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancatres}{
+			\assinatura*{\imprimirmembrodabancatres \\ \imprimirmembrodabancatresies}
+		}{}
+		\hspace*{-0.6cm} 
+		% Membro Quatro da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancaquatro}{
+			\assinatura*{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatroies}
+		}{}	
+		\hspace*{0.7cm} 
+		\ifnotempty{\imprimirmembrodabancacinco}{
+			\assinatura*{\imprimirmembrodabancacinco \\ \imprimirmembrodabancacincoies}
+		}{}
+	}{
+		% Espaço entre uma assintura e outra
+		\setlength{\ABNTEXsignskip}{2pt}
+		\hspace*{-2.5cm}
+		\assinatura*{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadories}		
+		\hspace*{0.7cm} 
+		% Membro Três da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancadois}{
+			\assinatura*{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoisies}
+		}{}
+		
+		\hspace*{-2.6cm}		
+		% Membro Três da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancatres}{
+			\assinatura*{\imprimirmembrodabancatres \\ \imprimirmembrodabancatresies}
+		}{}		
+		\hspace*{0.7cm} 
+		% Membro Quatro da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancaquatro}{
+			\assinatura*{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatroies}
+		}{}
+		
+		\hspace*{-2.65cm}
+		\ifnotempty{\imprimirmembrodabancacinco}{
+			\assinatura*{\imprimirmembrodabancacinco \\ \imprimirmembrodabancacincoies}
+		}{}
+		\hspace*{0.7cm} 
+		% Membro Quatro da banca pode ser o coorientador ou outro membro
+		\ifnotempty{\imprimirmembrodabancaseis}{
+			\assinatura*{\imprimirmembrodabancaseis \\ \imprimirmembrodabancaseisies}
+		}{}
+	}
+	\pagebreak	
+}
+
+\newcommand{\imprimirfolhadeaprovacaodissertacao}{
 
 	\begin{center}
 		\MakeUppercase{\imprimirautor}\par
@@ -505,6 +711,81 @@
 	}	
 	
 	\pagebreak
+}
+
+\newcommand{\imprimirfolhadeaprovacaotcc}{
+
+	\begin{center}
+		\MakeUppercase{\imprimirautor}\par
+		\vspace{\onelineskip}
+		\vspace{\onelineskip}
+		\MakeUppercase{\imprimirtitulo}
+	\end{center}
+	
+	\vspace{\onelineskip}
+	\vspace{\onelineskip}
+	
+	%Retira o espaço do parágrafo
+	\hspace*{-2cm}
+	%Adiciona o espaço da margem
+	\hspace*{8cm}	
+	\begin{minipage}{8cm}
+		\begin{SingleSpace}
+			\imprimirpreambulo \\			
+		\end{SingleSpace}		
+	\end{minipage}
+
+	\vspace{\onelineskip}
+		
+	\noindent Aprovada em: \imprimirdataaprovacao
+	
+	\vspace{\onelineskip}
+	
+	\begin{center}
+		BANCA EXAMINADORA
+	\end{center}
+		\vspace{\onelineskip}
+
+	% Membro Um da banca é sempre o Orientador
+	\assinatura{\imprimirorientador\  \artigoorientadorcomparenteses \\ \imprimirorientadorcentro \\  \imprimirorientadories}
+	
+	% Membro Dois da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimircoorientador}{
+		\assinatura{\imprimircoorientador\ \artigocoorientadorcomparenteses \\ \imprimircoorientadorcentro\\ \imprimircoorientadories}
+	}
+	
+	% Membro Três da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancadois}{
+		\assinatura{\imprimirmembrodabancadois \\ \imprimirmembrodabancadoiscentro \\ \imprimirmembrodabancadoisies}
+	}
+		
+	% Membro Três da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancatres}{
+		\assinatura{\imprimirmembrodabancatres \\ \imprimirmembrodabancatrescentro \\ \imprimirmembrodabancatresies}
+	}
+	
+	% Membro Quatro da banca pode ser o coorientador ou outro membro
+	\ifnotempty{\imprimirmembrodabancaquatro}{
+		\assinatura{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatrocentro \\ \imprimirmembrodabancaquatroies}
+	}	
+	
+	\pagebreak
+}
+
+\newcommand{\imprimirfolhadeaprovacao}{
+	\ifthenelse{\boolean{uecetex2@ehdissertacao}}{ %
+    	\imprimirfolhadeaprovacaodissertacao %	
+    }{
+    	\ifthenelse{\boolean{uecetex2@ehtese}}{ %
+    		\imprimirfolhadeaprovacaotese	 %
+    	}{
+    		\ifthenelse{\boolean{uecetex2@ehtccgraduacao}}{ %
+    			\imprimirfolhadeaprovacaotcc	 %
+    		}{
+    			\imprimirfolhadeaprovacaotcc
+    		}
+    	}
+	}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

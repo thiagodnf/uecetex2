@@ -8,7 +8,10 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
 
 **Trabalhos Acadêmicos**
 
+ - Trabalho de Conclusão de Curso de Graduação
+ - Trabalho de Conclusão de Curso de Especialização
  - Dissertação de Mestrado Acadêmico e Profisional
+ - Tese de Doutorado
  
 **Qualificações**
 
@@ -42,6 +45,8 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
  O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
  
   - O modelo permite a participação de somente um co-orientador
+  - A folha de aprovação da Dissertação suporta no máximo 5 pessoas (Orientador, Co-orientador e 3 membros externos)
+  - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
 
 ##  Atenção
 
