@@ -109,6 +109,7 @@
 \addto\captionsbrazil{
 	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\renewcommand{\indexname}{\'INDICE}
+	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -1123,6 +1124,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Configuração do Sumário      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\contentsname}{}
 
 \newcommand{\imprimirsumario}{ %
 	\pdfbookmark[0]{\contentsname}{toc}
