@@ -257,6 +257,15 @@
 	}
 }
 
+% Adiciona os metadados do documento gerado
+
+\AtBeginDocument{ %
+	\hypersetup{ %
+		pdftitle={\imprimirtitulo},%
+		pdfauthor={\imprimirautor} %
+	}%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
