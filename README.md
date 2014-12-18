@@ -32,13 +32,11 @@ Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessa
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
 **Windows:**
- - Acesse [http://miktex.org/download] e baixe o compilador MiKTeX para o seu computador
- - Acesse [http://texstudio.sourceforge.net/] e baixe o TeXstudio, um editor de texto para editar o seu trabalho
- - Abra o arquivo *documento.tex* no TeXstudio e aperte da tecla F1 para compilar. Se tudo ocorrer bem o PDF aparecerá no programa
+ - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Windows] 
  
 **Linux**
 
- - Em construção...
+ - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux] 
  
 ##  Limitações
  
