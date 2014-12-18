@@ -110,6 +110,7 @@
 	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\renewcommand{\indexname}{\'INDICE}
 	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
+	\renewcommand{\listadesimbolosname}{Lista de Símbolos}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -833,7 +834,6 @@
 \newcommand{\imprimiragradecimentos}[1]{ 
 	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{
 		\begin{agradecimentos}
-			%\imprimiragradecimentoss
 			\begin{paracol}{1}
 				\setlength{\parindent}{0pt}%
 				\input{#1}
@@ -903,7 +903,7 @@
 % Novo list of (listings) para QUADROS
 
 \newcommand{\quadroname}{Quadro}
-\newcommand{\listofquadrosname}{Lista de quadros}
+\newcommand{\listofquadrosname}{Lista de Quadros}
 
 \newfloat[chapter]{quadro}{loq}{\quadroname}
 \newlistof{listofquadros}{loq}{\listofquadrosname}
@@ -916,7 +916,7 @@
 
 
 \newcommand{\imprimirlistadequadros}{ %
-	\pdfbookmark[0]{\listofquadrosname}{loq} %
+	%\pdfbookmark[0]{\listofquadrosname}{loq} %
 	\listofquadros* %
 	\pagebreak %
 }
@@ -1137,7 +1137,7 @@
 \renewcommand{\contentsname}{}
 
 \newcommand{\imprimirsumario}{ %
-	\pdfbookmark[0]{\contentsname}{toc}
+	\pdfbookmark[0]{Sumário}{toc}
 	\tableofcontents*
 	\cleardoublepage
 }
