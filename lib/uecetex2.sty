@@ -304,10 +304,10 @@
 \newcommand{\programadoutorado}{\def \@programadoutorado}
 \newcommand{\nomedomestrado}{\def \@mestrado}
 \newcommand{\nomedodoutorado}{\def \@doutorado}
-\newcommand{\curso}{\def \@curso}
 \newcommand{\mestreem}{\def \@mestreem}
 \newcommand{\doutorem}{\def \@doutorem}
-\newcommand{\areadeconcetracao}{\def \@areadeconcetracao}
+\newcommand{\areadeconcetracaomestrado}{\def \@areadeconcetracao}
+\newcommand{\areadeconcetracaodoutorado}{\def \@areadeconcetracao}
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
 \newcommand{\epigrafee}{\def \@epigrafee}
 \newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
@@ -346,7 +346,6 @@
 \newcommand{\imprimirprogramadoutorado}{\@programadoutorado}
 \newcommand{\imprimirmestrado}{\@mestrado}
 \newcommand{\imprimirdoutorado}{\@doutorado}
-\newcommand{\imprimircurso}{\@curso}
 \newcommand{\imprimirmestreem}{\@mestreem}
 \newcommand{\imprimirdoutorem}{\@doutorem}
 \newcommand{\imprimirareadeconcetracao}{\@areadeconcetracao}
@@ -382,11 +381,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\preambulotese}{
-	Tese apresentada ao Curso de \imprimirdoutorado\ do \imprimirprogramadoutorado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de doutor em \imprimirdoutorem. \imprimirareadeconcetracao \\
+	Tese apresentada ao Curso de \imprimirdoutorado\ do \imprimirprogramadoutorado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de doutor em \imprimirdoutorem. Área de Concentração: \imprimirareadeconcetracao \\
 }
 
 \newcommand{\preambulodissertacao}{
-	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. \imprimirareadeconcetracao \\
+	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcetracao \\
 }
 
 \newcommand{\preambulotccgraduacao}{
@@ -835,8 +834,10 @@
 %%                Errata               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirerrata}[1]{ 
+\newcommand{\imprimirerrata}[1]{
+	\begin{errata} 
 	\input{#1}
+	\end{errata}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
