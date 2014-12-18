@@ -157,6 +157,16 @@
     }
 }
 
+% Altera a cor dos hyperlinks do documento
+\newcommand{\cordohyperlink}[1]{%
+	\ifthenelse{\equal{#1}{sim}}{%
+		\hypersetup{%
+			colorlinks = true,
+			linkcolor = blue
+		}
+	}
+}
+
 % Adiciona o sexo do orientador e do co-orientador no documento atraves
 % do artigo "a".
 
