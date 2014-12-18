@@ -3,12 +3,11 @@
 
 \lipsum[2]
 
-Ola \cite{lamport1986latex}
-\cite{Maia2011}
+O autor \cite{lamport1986latex} e \cite{Maia2011} \lipsum[2] 
 
 \begin{table}[htb]
 	\IBGEtab{%
-		\caption{\label{tabela-ibge} Um Exemplo de tabela alinhada que pode ser longa ou curta,
+		\Caption{\label{tabela-ibge} Um Exemplo de tabela alinhada que pode ser longa ou curta,
 			conforme padrão IBGE.}%		
 	}{%
 	\begin{tabular}{ccc}
@@ -21,14 +20,14 @@ Ola \cite{lamport1986latex}
 		\bottomrule
 	\end{tabular}%
 }{%
-\fonte{Produzido pelos autores}%
-\nota{Esta éuma nota, que diz que os dados são baseados na
+\Fonte{Produzido pelos autores}%
+\Nota{Esta éuma nota, que diz que os dados são baseados na
 	regressão linear.}%
-\nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
+\Nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
 }
 \end{table}
 
-\cite{Huetal2000}
+\cite{Huetal2000} \lipsum[2] 
 
 \section{Exemplo de Algoritmos}
 \lipsum[2]
@@ -94,31 +93,7 @@ Ola \cite{lamport1986latex}
     }
 \end{table}
 
-\lipsum[2] 
-
-Referenciando a \autoref{tab:internal-44}
-
-\begin{table}[h!]	
-	\centering
-	\Caption{\label{tab:internal-44}Internal exon scores}
-	
-	\IBGEtab{}{
-    	\begin{tabular}{cll}
-    		\toprule
-    		Ranking & Exon Coverage & Splice Site Support\\
-    		\midrule \midrule
-    		E1 & Complete coverage by a single transcript & Both splice sites\\
-    		E2 & Complete coverage by more than a single transcript & Both splice sites\\
-    		E3 & Partial coverage & Both splice sites\\
-    		E4 & Partial coverage & One splice site\\
-    		E5 & Complete or partial coverage & No splice sites\\
-    		E6 & No coverage & No splice sites\\
-    		\bottomrule
-    	\end{tabular}
-    }{
-    	\Fonte{os autores}
-    }
-\end{table}
+\lipsum[2] Referenciando a \autoref{tab:internal} \lipsum[2]
 
 \section{Figuras}
 
@@ -129,7 +104,7 @@ como o exemplo da \ref{fig-grafico-1}.
 		\centering
 		\Caption{\label{fig-grafico-1}Produção anual das dissertações de mestrado e teses de doutorado entre os anos de 1990 e 2008}		
 		\IBGEtab{}{
-			\fbox{\includegraphics{figuras/figura-3}}
+			\fbox{\includegraphics[scale=0.5]{figuras/figura-3}}
 		}{
 		\Fonte{os autores}
 	}
