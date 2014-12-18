@@ -311,8 +311,6 @@
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
 \newcommand{\epigrafee}{\def \@epigrafee}
 \newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
-\newcommand{\palavraschave}{\def \@palavraschave}
-\newcommand{\keywords}{\def \@keywords}
 \newcommand{\graduacaoem}{\def \@graduacaoem}
 \newcommand{\especializacaoem}{\def \@especializacaoem}
 \newcommand{\habilitacao}{\def \@habilitacao}
@@ -355,8 +353,6 @@
 \newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
 \newcommand{\imprimirepigrafee}{\@epigrafee}
 \newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
-\newcommand{\imprimirpalavraschave}{\@palavraschave}
-\newcommand{\imprimirkeywords}{\@keywords}
 \newcommand{\imprimirgraduacaoem}{\@graduacaoem}
 \newcommand{\imprimirespecializacaoem}{\@especializacaoem}
 \newcommand{\imprimirhabilitacao}{\@habilitacao}
@@ -891,25 +887,30 @@
 %%               Resumo                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\palavraschave}[1]{ %
+	\vspace{\onelineskip} 
+	\noindent \textbf{Palavras-chave:} #1%
+}
+
+\newcommand{\keywords}[1]{ %
+	\vspace{\onelineskip} 
+	\noindent \textbf{Keywords:} #1%
+}
+
 \newcommand{\imprimirresumo}[1]{ %
 	\begin{resumo} %
-		\input{#1}
-		\vspace{\onelineskip}\\ %
-		\noindent \textbf{Palavras-chaves}: \imprimirpalavraschave %
-	\end{resumo}
+		\input{#1} %
+	\end{resumo} %
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               Abstract              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirabstract}[1]{
-	\begin{resumo}[Abstract]
-		\input{#1}
-		\vspace{\onelineskip}\\
-		\noindent
-		\textbf{Keywords}: \imprimirkeywords
-	\end{resumo}
+\newcommand{\imprimirabstract}[1]{ %
+	\begin{resumo}[Abstract] %
+		\input{#1} %
+	\end{resumo} %
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
