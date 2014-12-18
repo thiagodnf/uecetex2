@@ -8,9 +8,8 @@ Ola \cite{lamport1986latex}
 
 \begin{table}[htb]
 	\IBGEtab{%
-		\caption{Um Exemplo de tabela alinhada que pode ser longa ou curta,
-			conforme padrão IBGE.}%
-		\label{tabela-ibge}
+		\caption{\label{tabela-ibge} Um Exemplo de tabela alinhada que pode ser longa ou curta,
+			conforme padrão IBGE.}%		
 	}{%
 	\begin{tabular}{ccc}
 		\toprule
@@ -76,8 +75,7 @@ Ola \cite{lamport1986latex}
 
 \begin{table}[h!]	
 	\centering
-	\Caption{Internal exon scores}
-	\label{tab:internal}
+	\Caption{\label{tab:internal}Internal exon scores}	
 	\IBGEtab{}{
     	\begin{tabular}{cll}
     		\toprule
@@ -96,12 +94,14 @@ Ola \cite{lamport1986latex}
     }
 \end{table}
 
-\lipsum[2]
+\lipsum[2] 
+
+Referenciando a \autoref{tab:internal-44}
 
 \begin{table}[h!]	
 	\centering
-	\Caption{Internal exon scores}
-	\label{tab:internal-44}
+	\Caption{\label{tab:internal-44}Internal exon scores}
+	
 	\IBGEtab{}{
     	\begin{tabular}{cll}
     		\toprule
@@ -120,4 +120,19 @@ Ola \cite{lamport1986latex}
     }
 \end{table}
 
-\section{Aqui é uma seção}
+\section{Figuras}
+
+\index{figuras}Figuras podem ser criadas diretamente em LaTeX,
+como o exemplo da \ref{fig-grafico-1}.
+
+	\begin{figure}[h!]
+		\centering
+		\Caption{\label{fig-grafico-1}Produção anual das dissertações de mestrado e teses de doutorado entre os anos de 1990 e 2008}		
+		\IBGEtab{}{
+			\fbox{\includegraphics{figuras/figura-3}}
+		}{
+		\Fonte{os autores}
+	}
+	\end{figure}
+
+Ou então figuras podem ser incorporadas de arquivos externos, como é o caso da \autoref{fig-grafico-1}. Se a figura que ser incluída se tratar de um diagrama, um gráfico ou uma ilustração que você mesmo produza, priorize o uso de imagens vetoriais no formato PDF. Com isso, o tamanho do arquivo final do trabalho será menor, e as imagens terão uma apresentação melhor, principalmente quando impressas, uma vez que imagens vetorias são perfeitamente escaláveis para qualquer dimensão. Nesse caso, se for utilizar o Microsoft Excel para produzir gráficos, ou o Microsoft Word para produzir ilustrações, exporte-os como PDF e os incorpore ao documento conforme o exemplo abaixo. No entanto, para manter a coerência no uso de software livre (já que você está usando LaTeX e abnTeX),  teste a ferramenta InkScape\index{InkScape}. ao CorelDraw\index{CorelDraw} ou ao Adobe Illustrator\index{Adobe! Illustrator}.  De todo modo, caso não seja possível  utilizar arquivos de imagens como PDF, utilize qualquer outro formato, como JPEG, GIF, BMP, etc.  Nesse caso, você pode tentar aprimorar as imagens incorporadas com o software livre \index{Gimp}Gimp. Ele é uma alternativa livre ao Adobe Photoshop\index{Adobe! Photoshop}.
