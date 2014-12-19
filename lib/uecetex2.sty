@@ -1102,6 +1102,27 @@
 	}{} % else
 }
 
+% Remove uppercase do apendice e anexos
+\makeatletter
+\ifthenelse{\boolean{ABNTEXsumario-abnt-6027-2012}}{
+	\settocpreprocessor{chapter}{%
+		\ifthenelse{\boolean{abntex@apendiceousecao}}{%
+			\let\tempf@rtoc\f@rtoc%
+			\def\f@rtoc{%
+				\texorpdfstring{\tempf@rtoc}{\tempf@rtoc}}%
+		}{
+		\let\tempf@rtoc\f@rtoc%
+		\def\f@rtoc{%
+			\texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+	}
+}
+\settocpreprocessor{part}{%
+	\let\tempf@rtoc\f@rtoc%
+	\def\f@rtoc{%
+		\texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%
+}
+}{}
+\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           Número das Páginas        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
