@@ -10,12 +10,12 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
 
  - Trabalho de Conclusão de Curso de Graduação
  - Trabalho de Conclusão de Curso de Especialização
- - Dissertação de Mestrado Acadêmico e Profisional
+ - Dissertação de Mestrado Acadêmico e Profissional
  - Tese de Doutorado
  
 **Qualificações**
 
- - Qualificação para Mestrado Acadêmico e Profisional
+ - Qualificação para Mestrado Acadêmico e Profissional
 
 ## Você é iniciante em LaTeX ou em abnTeX2?
 
