@@ -272,7 +272,8 @@
 	% Adiciona os metadados do documento gerado
 	\hypersetup{ %
 		pdftitle={\imprimirtitulo},%
-		pdfauthor={\imprimirautor} %
+		pdfauthor={\imprimirautor}, %
+		pdfsubject={Powered by ueceTeX2 - Acesse https://github.com/thiagodnf/uecetex2} %
 	}%
 	% Define a altura das equacoes matematicas
 %	\abovedisplayskip=-1pt plus 3pt minus 9pt
@@ -907,6 +908,9 @@
 \newcommand{\palavraschave}[1]{ %
 	\vspace{\onelineskip} 
 	\noindent \textbf{Palavras-chave:} #1%
+	\hypersetup{%
+		pdfborder = {0 0 0}
+	}
 }
 
 \newcommand{\keywords}[1]{ %
