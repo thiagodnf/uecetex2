@@ -327,7 +327,7 @@
 \newcommand{\areadeconcentracaodoutorado}{\def \@areadeconcentracao}
 \newcommand{\dataaprovacao}{\def \@dataaprovacao}
 \newcommand{\epigrafee}{\def \@epigrafee}
-\newcommand{\epigrafeeautor}{\def \@epigrafeeautor}
+\newcommand{\autordaepigrafe}{\def \@autordaepigrafe}
 \newcommand{\graduacaoem}{\def \@graduacaoem}
 \newcommand{\especializacaoem}{\def \@especializacaoem}
 \newcommand{\habilitacao}{\def \@habilitacao}
@@ -368,7 +368,7 @@
 \newcommand{\imprimirareadeconcentracao}{\@areadeconcentracao}
 \newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
 \newcommand{\imprimirepigrafee}{\@epigrafee}
-\newcommand{\imprimirepigrafeeautor}{\@epigrafeeautor}
+\newcommand{\imprimirautordaepigrafe}{\@autordaepigrafe}
 \newcommand{\imprimirgraduacaoem}{\@graduacaoem}
 \newcommand{\imprimirespecializacaoem}{\@especializacaoem}
 \newcommand{\imprimirhabilitacao}{\@habilitacao}
@@ -924,22 +924,22 @@
 %%               Epígrafe              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirepigrafe}[2]{
+\newcommand{\imprimirepigrafe}[1]{
 	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{
-		\vspace*{20cm}
+		\vspace*{\fill}
 		\vfill
 		%Retira o espaço do parágrafo
 		\hspace*{-2cm}
 		%Adiciona o espaço da margem
 		\hspace*{8cm}	
 		\begin{minipage}{8cm}
-	%		\imprimirepigrafee
-			\input{#2}
-		\end{minipage}
-		{\raggedleft #1\par}
+			\input{#1}
+			\raggedleft{\imprimirautordaepigrafe \par}
+		\end{minipage}		
 		\pagebreak
 	}
 }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          Ficha Catalografica        %%
