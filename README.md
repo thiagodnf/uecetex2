@@ -46,6 +46,10 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
   - A folha de aprovação da Dissertação suporta no máximo 5 pessoas (Orientador, Co-orientador e 3 membros externos)
   - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
 
+## Quem usou?
+
+Acesse a página [https://github.com/thiagodnf/uecetex2/wiki/Quem-usou%3F] para verificar os alunos que usaram o ueceTeX2 em seus trabalhos
+
 ##  Atenção
 
 O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
