@@ -309,6 +309,31 @@
 \setlist[subalineascomnumero,1]{label={$\arabic*$.},topsep=0pt,itemsep=0pt,leftmargin=*}%
 % ---
 
+% Comandos para formatar a exibicao de codigos-fonte
+
+\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista de Código-Fontes}%
+
+\lstset{
+	commentstyle=\color{Green}\ttfamily,
+	basicstyle=\ttfamily,
+	xleftmargin=15pt,
+	stepnumber=1, 
+	numbers=left,
+	keywordstyle=\color{blue},
+	tabsize=2,	
+	rulecolor=\color{black},
+	upquote=true,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frameround=ftff,
+	frame=single,
+	belowskip=\onelineskip,
+	belowcaptionskip=\onelineskip
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
