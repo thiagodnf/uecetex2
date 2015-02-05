@@ -122,3 +122,59 @@ como o exemplo da \ref{fig-grafico-1}.
 \end{figure}
 
 Ou então figuras podem ser incorporadas de arquivos externos, como é o caso da \autoref{fig-grafico-1}. Se a figura que ser incluída se tratar de um diagrama, um gráfico ou uma ilustração que você mesmo produza, priorize o uso de imagens vetoriais no formato PDF. Com isso, o tamanho do arquivo final do trabalho será menor, e as imagens terão uma apresentação melhor, principalmente quando impressas, uma vez que imagens vetorias são perfeitamente escaláveis para qualquer dimensão. Nesse caso, se for utilizar o Microsoft Excel para produzir gráficos, ou o Microsoft Word para produzir ilustrações, exporte-os como PDF e os incorpore ao documento conforme o exemplo abaixo. No entanto, para manter a coerência no uso de software livre (já que você está usando LaTeX e abnTeX),  teste a ferramenta InkScape\index{InkScape}. ao CorelDraw\index{CorelDraw} ou ao Adobe Illustrator\index{Adobe! Illustrator}.  De todo modo, caso não seja possível  utilizar arquivos de imagens como PDF, utilize qualquer outro formato, como JPEG, GIF, BMP, etc.  Nesse caso, você pode tentar aprimorar as imagens incorporadas com o software livre \index{Gimp}Gimp. Ele é uma alternativa livre ao Adobe Photoshop\index{Adobe! Photoshop}.
+
+\section{Usando Fórmulas Matemáticas}
+
+\lipsum[2]
+
+	\begin{equation}
+		\begin{aligned}
+			x = a_0 + \cfrac{1}{a_1
+				+ \cfrac{1}{a_2
+					+ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+		\end{aligned}
+	\end{equation}
+
+\lipsum[3]
+
+	\begin{equation}
+		\begin{aligned}
+			k_{n+1} = n^2 + k_n^2 - k_{n-1}
+		\end{aligned}
+	\end{equation}
+
+\lipsum[4]
+
+	\begin{equation}
+		\begin{aligned}
+			\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+		\end{aligned}
+	\end{equation}
+	
+\lipsum[5]
+
+	\begin{equation}
+		\begin{aligned}
+			A_{m,n} =
+			\begin{pmatrix}
+			a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+			a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+			\vdots  & \vdots  & \ddots & \vdots  \\
+			a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+			\end{pmatrix}
+		\end{aligned}
+	\end{equation}
+
+\lipsum[6]
+
+	\begin{equation}
+		\begin{aligned}
+			f(n) = \left\{ 
+			\begin{array}{l l}
+			n/2 & \quad \text{if $n$ is even}\\
+			-(n+1)/2 & \quad \text{if $n$ is odd}
+			\end{array} \right.
+		\end{aligned}
+	\end{equation}
+	
+\lipsum[7]
