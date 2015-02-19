@@ -309,33 +309,6 @@
 \setlist[subalineascomnumero,1]{label={$\arabic*$.},topsep=0pt,itemsep=0pt,leftmargin=*}%
 % ---
 
-% Comandos para formatar a exibicao de codigos-fonte
-
-\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
-\renewcommand{\lstlistlistingname}{Lista de Código-Fontes}%
-
-\lstset{
-	commentstyle=\color{Green}\ttfamily,
-	basicstyle=\ttfamily,
-	xleftmargin=15pt,
-	stepnumber=1, 
-	numbers=left,
-	keywordstyle=\color{blue},
-	tabsize=2,	
-	rulecolor=\color{black},
-	upquote=true,
-	numberstyle=\tiny\color{gray},
-	stepnumber=1,
-	numbersep=8pt,
-	showstringspaces=false,
-	breaklines=true,
-	frameround=ftff,
-	frame=single,
-	belowskip=\onelineskip,
-	belowcaptionskip=\onelineskip
-}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Funções                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1045,6 +1018,55 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         Lista de Códigos-fonte      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Comandos para formatar a exibicao de codigos-fonte
+
+\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista de Códigos-Fonte}%
+
+%\AtBeginDocument{ %
+%	\counterwithout{lstlisting}{chapter}
+%}
+
+\lstset{
+	commentstyle=\color{Green}\ttfamily,
+	basicstyle=\ttfamily,
+	xleftmargin=15pt,
+	stepnumber=1, 
+	numbers=left,
+	keywordstyle=\color{blue}\bfseries,
+	tabsize=2,	
+	rulecolor=\color{black},
+	upquote=true,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	belowskip=-2pt,
+	belowcaptionskip=20pt
+}
+
+\newfloat[chapter]{codigofonte}{locf}{\lstlistingname}
+\newlistof{listofcodigosfonte}{locf}{\lstlistlistingname}
+\newlistentry{codigofonte}{locf}{0}
+
+% configurações para atender às regras da ABNT
+\counterwithout{codigofonte}{chapter}
+\renewcommand{\cftcodigofontename}{\lstlistingname\space} 
+\renewcommand*{\cftcodigofonteaftersnum}{\hfill--\hfill}
+
+
+\newcommand{\imprimirlistadecodigosfonte}{ %
+	%\pdfbookmark[0]{\listofquadrosname}{loq} %
+	\listofcodigosfonte* %
+	\pagebreak %
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         Lista de Ilustrações        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1064,6 +1086,7 @@
 
 \newcommand{\imprimirlistadealgoritmos}{
 	\listofalgorithms
+	\pagebreak %
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
