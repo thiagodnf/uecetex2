@@ -1082,7 +1082,9 @@
 
 \newcommand{\imprimirlistadecodigosfonte}{ %
 	%\pdfbookmark[0]{\listofquadrosname}{loq} %
-	\lstlistoflistings %
+	\begin{KeepFromToc} %
+		\lstlistoflistings %
+	\end{KeepFromToc} %
 	\pagebreak %
 }
 
