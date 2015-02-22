@@ -1104,6 +1104,23 @@
 %%         Lista de Algoritmos         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newlength\myAlgoLen
+
+\begingroup
+\makeatletter
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+\globaldefs\@ne \let\c@loadepth\@ne
+\newlistof{algorithms}{loa}{\listalgorithmname}
+\newlistentry{algocf}{loa}{0}
+\makeatother
+\endgroup
+
+\renewcommand\cftalgocfpresnum{\algorithmcfname~}
+\settowidth\myAlgoLen{\cftalgocfpresnum\cftalgocfaftersnum}
+\addtolength\cftalgocfnumwidth{\myAlgoLen} %
+\renewcommand\cftalgocfaftersnum{\hfill\textendash\hfill}
+
+
 % A lista de Algoritmos não deve aparecer no sumário
 
 \newcommand{\imprimirlistadealgoritmos}{
