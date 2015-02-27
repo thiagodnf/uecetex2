@@ -46,6 +46,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
   - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
   
 # Dicas
+Veja a seguir como inserir alguns elementos no seu texto.
 
 ## Como fazer um Tabela
 ```tex
