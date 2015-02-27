@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png)
 
-## Descrição
+# O que é?
 
 O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
 
@@ -17,17 +17,16 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
 
  - Qualificação para Mestrado Acadêmico e Profissional
 
-## Você é iniciante em LaTeX ou em abnTeX2?
+# Por onde começo?
+Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
-Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessar a página desenvolvida pela equipe do abnTeX2. Nesta página é possível acessar diversos links sobre o LaTeX e sobre o abnTeX2 como, por exemplo, a história do LaTeX e alguns minicursos desenvolvidos em outras universidades
+1. Clique [aqui](https://github.com/thiagodnf/uecetex2/archive/master.zip) para baixar o projeto
+2. Descompacte o arquivo no diretório onde vc deseja guardar os arquivos do seu trabalho
+3. Crie o seu texto a partir do arquivo *documento.tex* distribuído no arquivo baixado. O arquivo possui comentários e é, em certa medida, auto-explicativo.
 
-## Por onde começo?
+> Você é iniciante em LaTeX ou em abnTeX2? Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessar a página desenvolvida pela equipe do abnTeX2. Nesta página é possível acessar diversos links sobre o LaTeX e sobre o abnTeX2 como, por exemplo, a história do LaTeX e alguns minicursos desenvolvidos em outras universidades
 
- - Clique [aqui](https://github.com/thiagodnf/uecetex2/archive/master.zip) para baixar o projeto
- - Descompacte o arquivo no diretório onde vc deseja guardar os arquivos do seu trabalho
- - Crie o seu texto a partir do arquivo *documento.tex* distribuído no arquivo baixado. O arquivo possui comentários e é, em certa medida, auto-explicativo.
- 
-##  Como compilar?
+# Como compilar?
 
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
@@ -38,23 +37,37 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux] 
  
-##  Limitações
+# Limitações
  
  O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
  
   - O modelo permite a participação de somente um co-orientador
   - A folha de aprovação da Dissertação suporta no máximo 5 pessoas (Orientador, Co-orientador e 3 membros externos)
   - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
+  
+# Dicas
 
-## Quem usou?
+## Como fazer um Tabela
 
-Acesse a página [https://github.com/thiagodnf/uecetex2/wiki/Quem-usou%3F] para verificar os alunos que usaram o ueceTeX2 em seus trabalhos
+## Como fazer um Quadro
 
-##  Atenção
+## Como importar uma figura
+
+## Como fazer uma alínea
+```tex
+\begin{alineas}
+	\item Lorem ipsum dolor sit amet;
+    \item Praesent vitae nulla varius;
+	\item Praesent quis erat eleifend;
+	\item Mauris facilisis odio eu.
+\end{alineas}
+```
+
+# Atenção
 
 O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
 
-## Agradecimentos
+# Agradecimentos
 
 ![alt tag](http://www.goes.uece.br/style/images/logo_goes.png)
 
