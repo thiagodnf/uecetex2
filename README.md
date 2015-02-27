@@ -48,10 +48,62 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 # Dicas
 
 ## Como fazer um Tabela
+```tex
+\begin{table}[h!]	
+	\centering
+	\Caption{\label{tab:label_da_tabela} Legenda da Tabela}
+	\UECEtab{}{
+		\begin{tabular}{ccll}
+			\toprule
+	    		Quisque & pharetra & tempus & vulputate \\
+			\midrule \midrule
+				E1 & Complete coverage & Both splice sites \\
+				E2 & Complete coverage & Both splice sites \\
+				E3 & Partial coverage & Both splice sites & Both \\
+				E4 & Partial coverage & One splice site & Both \\
+				E5 & Complete or coverage & No splice & Both \\
+				E6 & No coverage & No splice sites\\
+			\bottomrule
+		\end{tabular}
+	}{
+		\Fonte{Elaborado pelo autor}
+    }
+\end{table}
+```
 
 ## Como fazer um Quadro
+```tex
+\begin{quadro}[h!]	
+	\centering
+	\Caption{\label{qua:label_do_quadro} Legenda do Quadro}
+	\UECEqua{}{
+		\begin{tabular}{|c|c|}
+			\hline
+			Quisque & pharetra \\
+			\hline
+			E1 & Complete coverage  \\
+			\hline
+			E2 & Complete coverage \\
+			\hline
+		\end{tabular}
+	}{
+		\Fonte{Elaborado pelo autor}
+	}
+\end{quadro}
+```
 
 ## Como importar uma figura
+```tex
+\begin{figure}[h!]
+	\centering
+	\Caption{\label{fig:label_da_figura} Legenda da Figura}	
+	\UECEfig{}{
+	    \includegraphics[width=8cm]{figuras/figura-1}
+	}{
+	    \Fonte{Elaborado pelo autor}
+	}	
+\end{figure}
+```
 
 ## Como fazer uma alínea
 ```tex
