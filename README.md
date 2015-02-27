@@ -120,6 +120,52 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{alineas}
 ```
 
+### Como criar Capítulos
+```tex
+\chapter{Fundamentação Teórica}
+\label{cap:fundamentacao-teorica}
+```
+
+### Como criar Seções
+```tex
+% Seções Secundárias
+\section{Objetivo Geral 2}
+\label{sec:objetivo-geral-2}
+
+% Seções Terciárias
+\subsection{Objetivo Geral 3}
+\label{sec:objetivo-geral-3}
+
+% Seções Quaternárias
+\subsubsection{Objetivo Geral 4}
+\label{sec:objetivo-geral-4}
+
+% Seções Quinárias
+\subsubsubsection{Objetivo Geral 5}
+\label{sec:objetivo-geral-5}
+```
+
+### Como inserir um algoritmo
+```tex
+\begin{algorithm}[h!]
+	\SetSpacedAlgorithm
+	\caption{\label{alg:algoritmo_de_colonica_de_formigas}Algoritmo de Otimização por Colônia de Formiga}
+	\Entrada{Entrada do Algoritmo}
+	\Saida{Saida do Algoritmo}
+	\Inicio{
+		Atribua os valores dos parâmetros\;
+		Inicialize as trilhas de feromônios\;
+		\Enqto{não atingir o critério de parada}{
+			\Para{cada formiga}{
+				Construa as Soluções\;
+			}
+			Aplique Busca Local (Opcional)\;
+			Atualize o Feromônio\;
+		}	
+	}		
+\end{algorithm}
+```
+
 # Atenção
 
 O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
