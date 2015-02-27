@@ -48,7 +48,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 # Dicas
 Veja a seguir como inserir alguns elementos no seu texto.
 
-## Como fazer um Tabela
+### Como inserir uma Tabela
 ```tex
 \begin{table}[h!]	
 	\centering
@@ -72,7 +72,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{table}
 ```
 
-## Como fazer um Quadro
+### Como inserir um Quadro
 ```tex
 \begin{quadro}[h!]	
 	\centering
@@ -93,7 +93,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{quadro}
 ```
 
-## Como importar uma figura
+### Como inserir uma figura
 ```tex
 \begin{figure}[h!]
 	\centering
@@ -106,13 +106,17 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{figure}
 ```
 
-## Como fazer uma alínea
+### Como inserir uma alínea
 ```tex
 \begin{alineas}
 	\item Lorem ipsum dolor sit amet;
     \item Praesent vitae nulla varius;
 	\item Praesent quis erat eleifend;
-	\item Mauris facilisis odio eu.
+	\item Mauris facilisis odio eu:
+	\begin{subalineas}
+		\item Integer non lacinia magna;
+		\item Proin mattis placerat risus.
+	\end{subalineas}
 \end{alineas}
 ```
 
