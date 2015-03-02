@@ -922,7 +922,23 @@
 \newtheorem{propriedade}{Propriedade}[chapter]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%             Dedicatória             %%
+%%             Questoes                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Contar as questoes
+\newcounter{quest}
+
+\newenvironment{questao}{ %
+	\begin{list}{\textbf{Questão \arabic{quest}.}}{\usecounter{quest} %
+		\setlength{\labelwidth}{-2mm} \setlength{\parsep}{0mm} %
+		\setlength{\topsep}{0mm} \setlength{\leftmargin}{0mm}} %
+	\renewcommand{\labelenumi}{(\alph{enumi})}	%
+}{ %
+	\end{list} %
+} %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             Dedicatoria             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\imprimirdedicatoria}[1]{
