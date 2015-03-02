@@ -48,7 +48,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 # Dicas
 Veja a seguir como inserir alguns elementos no seu texto.
 
-## Como inserir uma Tabela
+### Como inserir uma Tabela
 ```tex
 \begin{table}[h!]	
 	\centering
@@ -72,7 +72,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{table}
 ```
 
-## Como inserir um Quadro
+### Como inserir um Quadro
 ```tex
 \begin{quadro}[h!]	
 	\centering
@@ -93,7 +93,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{quadro}
 ```
 
-## Como inserir uma figura
+### Como inserir uma figura
 ```tex
 \begin{figure}[h!]
 	\centering
@@ -106,7 +106,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{figure}
 ```
 
-## Como inserir uma alínea
+### Como inserir uma alínea
 ```tex
 \begin{alineas}
 	\item Lorem ipsum dolor sit amet;
@@ -120,13 +120,13 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{alineas}
 ```
 
-## Como criar Capítulos
+### Como criar Capítulos
 ```tex
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao-teorica}
 ```
 
-## Como criar Seções
+### Como criar Seções
 ```tex
 % Seções Secundárias
 \section{Objetivo Geral 2}
@@ -145,7 +145,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \label{sec:objetivo-geral-5}
 ```
 
-## Como inserir um algoritmo
+### Como inserir um algoritmo
 ```tex
 \begin{algorithm}[h!]
 	\SetSpacedAlgorithm
