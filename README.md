@@ -30,10 +30,10 @@ Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
-## Windows
+### Windows
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Windows] 
  
-## Linux
+### Linux
 
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux] 
  
