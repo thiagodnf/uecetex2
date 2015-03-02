@@ -4,7 +4,7 @@
 
 O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
 
-## Modelos Disponíveis
+### Modelos Disponíveis
 
 **Trabalhos Acadêmicos**
 
@@ -30,10 +30,10 @@ Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
-**Windows:**
+## Windows
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Windows] 
  
-**Linux**
+## Linux
 
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux] 
  
@@ -48,7 +48,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 # Dicas
 Veja a seguir como inserir alguns elementos no seu texto.
 
-### Como inserir uma Tabela
+## Como inserir uma Tabela
 ```tex
 \begin{table}[h!]	
 	\centering
@@ -72,7 +72,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{table}
 ```
 
-### Como inserir um Quadro
+## Como inserir um Quadro
 ```tex
 \begin{quadro}[h!]	
 	\centering
@@ -93,7 +93,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{quadro}
 ```
 
-### Como inserir uma figura
+## Como inserir uma figura
 ```tex
 \begin{figure}[h!]
 	\centering
@@ -106,7 +106,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{figure}
 ```
 
-### Como inserir uma alínea
+## Como inserir uma alínea
 ```tex
 \begin{alineas}
 	\item Lorem ipsum dolor sit amet;
@@ -120,13 +120,13 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{alineas}
 ```
 
-### Como criar Capítulos
+## Como criar Capítulos
 ```tex
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao-teorica}
 ```
 
-### Como criar Seções
+## Como criar Seções
 ```tex
 % Seções Secundárias
 \section{Objetivo Geral 2}
@@ -145,7 +145,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \label{sec:objetivo-geral-5}
 ```
 
-### Como inserir um algoritmo
+## Como inserir um algoritmo
 ```tex
 \begin{algorithm}[h!]
 	\SetSpacedAlgorithm
@@ -162,7 +162,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 			Aplique Busca Local (Opcional)\;
 			Atualize o Feromônio\;
 		}	
-	}		
+	}
 \end{algorithm}
 ```
 
