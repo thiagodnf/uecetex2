@@ -964,10 +964,12 @@
 %%                Errata               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirerrata}[1]{
-	\begin{errata} 
-	\input{#1}
-	\end{errata}
+\newcommand{\imprimirerrata}[1]{%
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{%
+		\begin{errata} %
+		\input{#1}%
+		\end{errata}%
+	}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1010,8 +1012,10 @@
 %%          Ficha Catalografica        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imprimirfichacatalografica}[1]{
-	\includepdf[pages=1]{#1} %
+\newcommand{\imprimirfichacatalografica}[1]{%
+	\ifthenelse{\boolean{uecetex2@ehqualificacao}}{}{%
+		\includepdf[pages=1]{#1} %
+	}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
