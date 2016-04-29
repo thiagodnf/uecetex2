@@ -124,6 +124,27 @@
 \SetKwFor{Para}{para}{fa\c{c}a}{fim para}
 \SetKwBlock{Inicio}{inicio}{fim}
 
+% Na versao mais nova do algorithm2e (versao 5.1) aparentemente foram adicionados
+% algumas palavras com acentuacao e por isso estava causando erro no template. 
+% Os comandos a seguir foram copiados da versao mais nova para tentar resolver o problema.
+\SetKwInput{Entrada}{Entrada}%
+\SetKwInput{Saida}{Sa\'{i}da}%
+\SetKwInput{Dados}{Dados}%
+\SetKwInput{Resultado}{Resultado}%
+\SetKw{Ate}{at\'{e}}
+\SetKw{KwRetorna}{retorna}%
+\SetKw{Retorna}{retorna}%
+\SetKwBlock{Inicio}{in\'{i}cio}{fim}%
+\SetKwRepeat{Repita}{repita}{at\'{e}}%
+%
+\SetKwIF{Se}{SenaoSe}{Senao}{se}{ent\~{a}o}{sen\~{a}o se}{sen\~{a}o}{fim se}%
+\SetKwSwitch{Selec}{Caso}{Outro}{selecione}{fa\c{c}a}{caso}{sen\~{a}o}{fim caso}{fim selec}%
+\SetKwFor{Para}{para}{fa\c{c}a}{fim para}%
+\SetKwFor{ParaPar}{para}{fa\c{c}a em paralelo}{fim para}
+\SetKwFor{ParaCada}{para cada}{fa\c{c}a}{fim para cada}%
+\SetKwFor{ParaTodo}{para todo}{fa\c{c}a}{fim para todo}%
+\SetKwFor{Enqto}{enquanto}{fa\c{c}a}{fim enqto}%
+
 % Espaco entre as linhas do algoritmo
 \newcommand{\SetSpacedAlgorithm}{
 	\linespread{1.35}\selectfont
