@@ -587,7 +587,7 @@
 	\end{capa}	
 }
 
-\newcommand{\imprimircapatcc}[1]{%
+\newcommand{\imprimircapatcc}[2]{%
 	\begin{capa}%
 		% Todos os elementos da capa devem esta centralizado
 		\center
@@ -598,7 +598,7 @@
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
 		\MakeUppercase{\imprimircentro} \\
-		\MakeUppercase{Curso de #1 em \imprimirgraduacaoem} \\
+		\MakeUppercase{Curso de #1 em #2} \\
 
 		\vspace{\onelineskip}
 
@@ -624,9 +624,9 @@
 			\imprimircapatese	 %
 		}{
 			\ifthenelse{\boolean{uecetex2@ehtccgraduacao}}{ %
-				\imprimircapatcc{Graduação}	 %
+				\imprimircapatcc{Graduação}{\imprimirgraduacaoem}	 %
 			}{
-				\imprimircapatcc{Especialização} %
+				\imprimircapatcc{Especialização}{\imprimirespecializacaoem} %
 			}
 		}
 	}
