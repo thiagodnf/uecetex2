@@ -98,8 +98,15 @@
 % Margen da legenda da figura e da tabela
 \captionsetup{
 	justification=centering,% Centraliza o caption
-	skip=0pt                %Retira o espaco entre a figura/tabela e o caption
+	skip=0pt,                %Retira o espaco entre a figura/tabela e o caption
+	labelfont=bf, % A palavra 'Figure 1' agora eh negrito
+	font=bf	% O texto depois de 'Figure 1' agora eh negrito
 }
+% Os items da lista de figura agora sao negritos
+\renewcommand{\cftfigurefont}{\bfseries}
+% Os items da lista de tabela e quadro agora sao negritos
+\renewcommand{\cfttablefont}{\bfseries}
+
 
 % Remove o ponto final de cada entrada da 
 %lista de abreviaturas e siglas
@@ -1090,7 +1097,8 @@
 \counterwithout{quadro}{chapter}
 \renewcommand{\cftquadroname}{\quadroname\space} 
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
-
+% agora a lista de quadro eh negrito
+\renewcommand{\cftquadrofont}{\bfseries}
 
 \newcommand{\imprimirlistadequadros}{ %
 	%\pdfbookmark[0]{\listofquadrosname}{loq} %
@@ -1106,6 +1114,7 @@
 
 \renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
 \renewcommand{\lstlistlistingname}{Lista de Códigos-Fonte}%
+
 
 %\AtBeginDocument{ %
 %	\counterwithout{lstlisting}{chapter}
@@ -1168,6 +1177,8 @@
 	\end{KeepFromToc} %
 	\pagebreak %
 }
+% agora a lista de quadro eh negrito
+\renewcommand{\cftlstlistingfont}{\bfseries}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         Lista de Ilustrações        %%
@@ -1208,6 +1219,9 @@
 	\listofalgorithms
 	\pagebreak %
 }
+
+% agora a lista de quadro eh negrito
+\renewcommand{\cftalgocffont}{\bfseries}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            Lista de Tabelas         %%
