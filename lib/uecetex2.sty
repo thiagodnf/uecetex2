@@ -1,3 +1,6 @@
+% !TeX encoding = UTF-8
+% !TeX root = ../documento.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Customizações do abnTeX2 (http://abnTeX2.googlecode.com)           %%
 %% para a Universidade Estadual do Ceara - UECE                       %%
@@ -1484,4 +1487,21 @@
 	\oldcontentsline{#1}{#2}%
 }%
 }
+\makeatother
+
+\makeatletter
+\renewcommand{\fonte}[2][\fontename]{%
+	\M@gettitle{#2}%
+	\memlegendinfo{#2}%
+	\par
+	\begingroup
+	\@parboxrestore
+	\if@minipage
+	\@setminipage
+	\fi
+	\ABNTEXfontereduzida
+	\configureseparator
+	\captiondelim{\ABNTEXcaptionfontedelim}
+	\@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
+	\endgroup}
 \makeatother
