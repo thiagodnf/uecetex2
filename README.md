@@ -166,6 +166,14 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{algorithm}
 ```
 
+# Supporte ao Inglês
+
+Se o seu trabalho será escrito em inglês, adicione o seguinte comando depois do \begin{document}
+
+```tex
+\selectlanguage{english}
+```
+
 # Atenção
 
 O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
