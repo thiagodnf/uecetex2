@@ -121,11 +121,38 @@
 % Retira espaço extra obsoleto entre as frases.
 %\frenchspacing
 
+\newcommand{\listofquadrosname}{Lista de Quadros}
+\newcommand{\glossarioname}{GLOSS\'ARIO}
+
 \addto\captionsbrazil{
 	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\renewcommand{\indexname}{\'INDICE}
 	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
 	\renewcommand{\listadesimbolosname}{Lista de Símbolos}
+	\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
+	\renewcommand{\lstlistlistingname}{Lista de Códigos-Fontes}%
+	\renewcommand{\listalgorithmcfname}{Lista de Algoritmos}%
+	\renewcommand{\algorithmcfname}{Algoritmo}%
+	\renewcommand{\cftquadroname}{Quadro\space}%
+	\renewcommand{\apendicesname}{AP\^ENDICES}%
+	\renewcommand{\anexosname}{ANEXOS}%
+}
+
+\addto\captionsenglish{% ingles
+	\renewcommand{\lstlistingname}{Code}% Listing -> Algorithm
+	\renewcommand{\lstlistlistingname}{List of Source Codes}%
+	\renewcommand{\listalgorithmcfname}{Lists of Algorithms}%
+	\renewcommand{\algorithmcfname}{Algorithm}%
+	\renewcommand{\cftquadroname}{Chart\space}%
+	\renewcommand{\listofquadrosname}{List of Charts}%
+	\renewcommand{\apendicesname}{APPENDICES}%
+	\renewcommand{\anexosname}{ANNEXES}%
+	\renewcommand{\glossarioname}{GLOSSARY}%
+	\def\tableautorefname{Table}
+	\def\figureautorefname{Figure}
+	\def\sectionautorefname{Section}
+	\def\chapterautorefname{Chapter}
+	\def\subsectionautorefname{Subsection}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -159,9 +186,6 @@
 \newcommand{\SetSpacedAlgorithm}{
 	\linespread{1.35}\selectfont
 }
-
-% Altera o titulo para esse
-\renewcommand{\listalgorithmcfname}{Lista de Algoritmos}%
 
 % Espaco entre o caption e o algoritmo
 %\SetAlCapSkip{\onelineskip}
@@ -1068,7 +1092,7 @@
 }
 
 \newcommand{\imprimirresumo}[1]{ %
-	\begin{resumo} %
+	\begin{resumo}[Resumo] %
 		\input{#1} %
 	\end{resumo} %
 }
@@ -1089,16 +1113,16 @@
 
 % Novo list of (listings) para QUADROS
 
-\newcommand{\quadroname}{Quadro}
-\newcommand{\listofquadrosname}{Lista de Quadros}
+%\newcommand{\quadroname}{Quadro}
+%\newcommand{\listofquadrosname}{Lista de Quadros}
 
-\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newfloat[chapter]{quadro}{loq}{\cftquadroname}
 \newlistof{listofquadros}{loq}{\listofquadrosname}
 \newlistentry{quadro}{loq}{0}
 
 % configurações para atender às regras da ABNT
 \counterwithout{quadro}{chapter}
-\renewcommand{\cftquadroname}{\quadroname\space} 
+%\renewcommand{\cftquadroname}{\quadroname\space} 
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 % agora a lista de quadro eh negrito
 \renewcommand{\cftquadrofont}{\bfseries}
@@ -1114,9 +1138,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comandos para formatar a exibicao de codigos-fonte
-
-\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
-\renewcommand{\lstlistlistingname}{Lista de Códigos-Fonte}%
 
 
 %\AtBeginDocument{ %
@@ -1285,8 +1306,8 @@
 
 \newcommand{\imprimirglossario}{ %
 	\glossarystyle{glossario-uece} %	
-	\printglossary[title=GLOSSÁRIO,toctitle=GLOSSÁRIO] %
-	\addcontentsline{toc}{chapter}{GLOSSÁRIO}
+	\printglossary[title=\glossarioname,toctitle=\glossarioname] %
+	\addcontentsline{toc}{chapter}{\glossarioname}
 }
 
 
@@ -1311,9 +1332,9 @@
 % O nome APÊNDICES deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaapendices}{ %
 	\newpage %
-	\addcontentsline{toc}{chapter}{AP\^ENDICES} %
+	\addcontentsline{toc}{chapter}{\apendicesname} %
 	\begin{vplace}[0.7] %
-		\centering\textbf{AP\^ENDICES} %
+		\centering\textbf{\apendicesname} %
 	\end{vplace} %
 	\clearpage
 }
@@ -1411,9 +1432,9 @@
 % O nome ANEXOS deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaanexo}{ %
 	\newpage %
-	\addcontentsline{toc}{chapter}{ANEXOS} %
+	\addcontentsline{toc}{chapter}{\anexosname} %
 	\begin{vplace}[0.7] %
-		\centering\textbf{ANEXOS} %
+		\centering\textbf{\anexosname} %
 	\end{vplace} %
 	\clearpage
 }
