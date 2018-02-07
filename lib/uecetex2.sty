@@ -123,6 +123,11 @@
 
 \newcommand{\listofquadrosname}{Lista de Quadros}
 \newcommand{\glossarioname}{GLOSS\'ARIO}
+\newcommand{\teoremaname}{Teorema}
+\newcommand{\proposicaoname}{Proposição}
+\newcommand{\exemploname}{Exemplo}
+\newcommand{\definicaoname}{Definição}
+\newcommand{\questaoname}{Questão}
 
 \addto\captionsbrazil{
 	\renewcommand{\bibname}{REFER\^ENCIAS}
@@ -153,6 +158,11 @@
 	\def\sectionautorefname{Section}
 	\def\chapterautorefname{Chapter}
 	\def\subsectionautorefname{Subsection}
+	\renewcommand{\teoremaname}{Theorem}
+	\renewcommand{\proposicaoname}{Proposition}
+	\renewcommand{\exemploname}{Example}
+	\renewcommand{\definicaoname}{Definition}
+	\renewcommand{\questaoname}{Question}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -967,19 +977,20 @@
 \newcommand{\estacontido}{\subset}
 \newtheorem{afirmacao}{{\sc Afirma\c{c}\~{a}o}}[section]
 \newtheorem{argumento}{\sc Argumento~}[section]
-\newtheorem{teo}{Teorema}[section]
+\newtheorem{teo}{\teoremaname}[section]
 \newtheorem{lema}{Lema}[section]
 \newtheorem{cor}{Corolário}[section]
-\newtheorem{prop}[teo]{Proposição}
+\newtheorem{prop}[teo]{\proposicaoname}
 \newtheorem{conjec}{Conjectura}[section]
 \newtheorem{premissa}{Premissa}[chapter]
 \newtheorem{procedimento}{Procedimentos}[section]
 \newtheorem{heuristica}{Heurística}[section]
 \newtheorem{axioma}{Axioma}[section]
-\newtheorem{exem}{Exemplo}
-\newtheorem{xdefinicao}{Definição}[section]
-\newtheorem{cdefinicao}{Definição}[chapter]
+\newtheorem{exem}{\exemploname}
+\newtheorem{xdefinicao}{\definicaoname}[section]
+\newtheorem{cdefinicao}{\definicaoname}[chapter]
 \newtheorem{propriedade}{Propriedade}[chapter]
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Questoes                %%
@@ -989,7 +1000,7 @@
 \newcounter{quest}
 
 \newenvironment{questao}{ %
-	\begin{list}{\textbf{Questão \arabic{quest}.}}{\usecounter{quest} %
+	\begin{list}{\textbf{\questaoname~\arabic{quest}.}}{\usecounter{quest} %
 		\setlength{\labelwidth}{-2mm} \setlength{\parsep}{0mm} %
 		\setlength{\topsep}{0mm} \setlength{\leftmargin}{0mm}} %
 	\renewcommand{\labelenumi}{(\alph{enumi})}	%
@@ -1191,7 +1202,7 @@
 \renewcommand\cftlstlistingpresnum{\lstlistingname~}
 \settowidth\mylen{\cftlstlistingpresnum\cftlstlistingaftersnum}
 \addtolength\cftlstlistingnumwidth{\mylen} %
-\renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}
+\renewcommand\cftlstlistingaftersnum{~\hfill\textendash\hfill}
 
 
 \newcommand{\imprimirlistadecodigosfonte}{ %
