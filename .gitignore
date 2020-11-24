@@ -33,3 +33,4 @@ documento.pdf
 *.lol
 *.locf
 *.DS_Store
+*.synctex(busy)
