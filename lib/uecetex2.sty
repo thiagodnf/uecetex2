@@ -132,7 +132,7 @@
 \addto\captionsbrazil{
 	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\renewcommand{\indexname}{\'INDICE}
-	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
+	\renewcommand{\contentsname}{Sum\'ario}
 	\renewcommand{\listadesimbolosname}{Lista de Símbolos}
 	\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
 	\renewcommand{\lstlistlistingname}{Lista de Códigos-Fontes}%
@@ -142,6 +142,7 @@
 	\renewcommand{\apendicesname}{AP\^ENDICES}%
 	\renewcommand{\anexosname}{ANEXOS}%
 	\renewcommand{\listfigurename}{Lista de Ilustra\c{c}\~{o}es}
+	\renewcommand{\listadesiglasname}{Lista de Abreviaturas e Siglas}
 }
 
 \addto\captionsenglish{% ingles
@@ -165,6 +166,8 @@
 	\renewcommand{\definicaoname}{Definition}
 	\renewcommand{\questaoname}{Question}
 	\renewcommand{\listfigurename}{List of Figures}
+	\renewcommand{\contentsname}{Table of Contents}
+	\renewcommand{\listadesiglasname}{List of Abbreviations and Acronyms}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -1279,7 +1282,7 @@
 \setlength{\glsdescwidth}{\linewidth}
 
 \newcommand{\imprimirlistadeabreviaturasesiglas}{ %
-	\printglossary[type=\acronymtype,style=long,nonumberlist,title={Lista de Abreviaturas e Siglas\vspace{-0.3cm}}] %
+	\printglossary[type=\acronymtype,style=long,nonumberlist,title={\listadesiglasname\vspace{-0.3cm}}] %
 	\pagebreak %
 }
 
@@ -1476,10 +1479,8 @@
 %%        Configuração do Sumário      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\contentsname}{}
-
 \newcommand{\imprimirsumario}{ %
-	\pdfbookmark[0]{Sumário}{toc}
+	\pdfbookmark[0]{\contentsname}{toc}
 	\tableofcontents*
 	\cleardoublepage
 }
