@@ -83,15 +83,16 @@
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 
 % Estilo da section 1.1
-\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
+\setboolean{ABNTEXuppersection}{false}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1
-\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries\normalfont}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1.1
-\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsubsubsectionfont}{\itshape\bfseries}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1.1
@@ -1493,10 +1494,10 @@
 \setlength{\cftbeforesubsubsectionskip}{0pt}
 \setlength{\cftbeforechapterskip}{0pt}
 
-%\renewcommand\cftchapterfont{\normalsize}
-\renewcommand\cftsectionfont{\normalsize\normalfont}
-\renewcommand\cftsubsectionfont{\normalsize}
-\renewcommand\cftsubsubsectionfont{\normalsize\normalfont}
+\renewcommand\cftchapterfont{\bfseries\normalsize}
+\renewcommand\cftsectionfont{\bfseries\normalsize}
+\renewcommand\cftsubsectionfont{\normalsize\normalfont}
+\renewcommand\cftsubsubsectionfont{\itshape\bfseries\normalsize}
 % Altera a fonte da seção quinária
 \renewcommand*{\cftparagraphfont}{\normalsize\normalfont\itshape}
 
@@ -1507,7 +1508,7 @@
 % Altera a fonte da seção quinária
 \renewcommand\cftparagraphpagefont{\normalfont}
 
-% Secao Secundaria (Section): Caixa alta, Não Negrito, tamanho 12
+% Secao Secundaria (Section): Caixa alta e baixa com negrito, tamanho 12
 \makeatletter
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
@@ -1517,7 +1518,7 @@
 	\expandafter\@secondoftwo %
 	\fi %
 	{%
-		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+		\oldcontentsline{#1}{#2}%
 	}{%
 	\oldcontentsline{#1}{#2}%
 }%
