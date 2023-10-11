@@ -32,6 +32,8 @@
 %%             Definições              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\RequirePackage{ifplatform}
+
 % Importa o arquivo com as entradas do glassario
 \input{elementos-pos-textuais/glossario}
 \input{elementos-pre-textuais/lista-de-abreviaturas-e-siglas}
@@ -367,7 +369,15 @@
 \SetKwBlock{Inicio}{início}{fim}
 
 % Numeracao da tabela comeca em 1
+\ifwindows
+\setcounter{table}{-1}
+\fi
+\iflinux
+\setcounter{table}{-1}
+\fi
+\ifmacosx
 \setcounter{table}{0}
+\fi % This needs to be \fi, not \if
 
 % Comandos para inserir figuras, tabelas e quadros
 \newcommand{\UECEfig}[3]{\IBGEtab{#1}{#2}{#3}}
