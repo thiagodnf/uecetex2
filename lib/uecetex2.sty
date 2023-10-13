@@ -1331,13 +1331,13 @@
 	%
 	\renewcommand*{\glsgroupskip}{}%
 	% Depois da palavra, colocar o ":" e no fim o ponto final "."
-	\renewcommand*{\glossaryentryfield}[5]{%
-		\item[\glstarget{##1}{##2}:] ##3.%
+	\renewcommand*{\glossentry}[2]{%
+		\item[\glossentryname{##1}:] \glossentrydesc{##1}.%
 	}%
 }
 
 \newcommand{\imprimirglossario}{ %
-	\glossarystyle{glossario-uece} %	
+	\setglossarystyle{glossario-uece} %	
 	\printglossary[title=\glossarioname,toctitle=\glossarioname] %
 	\addcontentsline{toc}{chapter}{\glossarioname}
 }
