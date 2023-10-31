@@ -250,8 +250,18 @@
 	}
 }
 
+\newcommand{\createBooleanVariable}[2]{ %
+	\provideboolean{#1} %
+	\setboolean{#1}{#2} %
+} %
+
 % Adiciona o sexo do orientador e do co-orientador no documento atraves
 % do artigo "a".
+
+\createBooleanVariable{uecetex2@adicionarPaginaAnexosNoSumario}{true}
+\createBooleanVariable{uecetex2@adicionarPaginaAnexosNoCorpoDoTexto}{true}
+\createBooleanVariable{uecetex2@adicionarPaginaApendicesNoSumario}{true}
+\createBooleanVariable{uecetex2@adicionarPaginaApendicesNoCorpoDoTexto}{true}
 
 \provideboolean{uecetex2@orientadorfeminino}
 \provideboolean{uecetex2@coorientadorfeminino}
@@ -1363,12 +1373,19 @@
 
 % O nome APÊNDICES deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaapendices}{ %
+	
 	\newpage %
-	\addcontentsline{toc}{chapter}{\apendicesname} %
-	\begin{vplace}[0.7] %
-		\centering\textbf{\apendicesname} %
-	\end{vplace} %
-	\clearpage
+	
+	\ifthenelse{\boolean{uecetex2@adicionarPaginaApendicesNoSumario}}{ %
+		\addcontentsline{toc}{chapter}{\apendicesname} %
+	}{} %
+	
+	\ifthenelse{\boolean{uecetex2@adicionarPaginaApendicesNoCorpoDoTexto}}{ %
+		\begin{vplace}[0.7] %
+			\centering\textbf{\apendicesname} %
+		\end{vplace} %
+		\clearpage %
+	}{} %
 }
 
 % Altera a fonte da letra titulo do apendice para nao negrito
@@ -1463,12 +1480,19 @@
 
 % O nome ANEXOS deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaanexo}{ %
+	
 	\newpage %
-	\addcontentsline{toc}{chapter}{\bfseries\anexosname} %
-	\begin{vplace}[0.7] %
-		\centering\textbf{\anexosname} %
-	\end{vplace} %
-	\clearpage
+	
+	\ifthenelse{\boolean{uecetex2@adicionarPaginaAnexosNoSumario}}{ %
+		\addcontentsline{toc}{chapter}{\bfseries\anexosname} %
+	}{} %
+	
+	\ifthenelse{\boolean{uecetex2@adicionarPaginaAnexosNoCorpoDoTexto}}{ %
+		\begin{vplace}[0.7] %
+			\centering\textbf{\anexosname} %
+		\end{vplace} %
+		\clearpage
+	}{}
 }
 
 \newcommand{\imprimiranexos}{ %
