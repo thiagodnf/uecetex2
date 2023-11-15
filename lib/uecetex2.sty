@@ -33,6 +33,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{ifplatform}
+\ProvidesPackage{url6023}
 
 % Importa o arquivo com as entradas do glassario
 \input{elementos-pos-textuais/glossario}
@@ -1022,6 +1023,14 @@
 \newtheorem{cdefinicao}{\definicaoname}[chapter]
 \newtheorem{propriedade}{Propriedade}[chapter]
 
+
+\makeatletter
+\@ifpackageloaded{url}{%
+	\addtociteoptionlist{abnt-url-package=url}
+	\def\UrlLeft{}
+	\def\UrlRight{}
+	\urlstyle{same}}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Questoes                %%
