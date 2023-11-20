@@ -34,8 +34,10 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Windows] 
  
 ### Linux
+ - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux]
 
- - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-instalar-no-Linux] 
+### Overleaf
+ - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-usar-no-Overleaf] 
  
 # Limitações
  
