@@ -34,3 +34,4 @@ documento.pdf
 *.locf
 *.DS_Store
 *.synctex(busy)
+project/build/

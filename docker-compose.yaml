@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ubuntu-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./project:/project
+    environment:
+      - HOME=/project
+    working_dir: /project
+    tty: true
