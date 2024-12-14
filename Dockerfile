@@ -37,6 +37,9 @@ RUN \
 
 # Add files
 
+# Limpando possíveis conflitos
+RUN rm -rf /project/.vscode-server
+
 # Set environment variables
 ENV HOME /project
 
