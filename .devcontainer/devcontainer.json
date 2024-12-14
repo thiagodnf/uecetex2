@@ -1,0 +1,41 @@
+{
+  "name": "LaTeX Development Container",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "workspaceMount": "source=${localWorkspaceFolder}/project,target=/project,type=bind,consistency=cached",
+  "workspaceFolder": "/project",
+  "settings": {
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.view.pdf.viewer": "tab"
+  },
+  "extensions": [
+    "james-yu.latex-workshop"
+  ],
+  "postCreateCommand": "tlmgr update --self && tlmgr install latexmk",
+  "customizations": {
+    "vscode": {
+      "tasks": [
+        {
+          "label": "Compilar LaTeX",
+          "type": "shell",
+          "command": "latexmk",
+          "args": [
+            "-pdf",
+            "-outdir=build",
+            "documento.tex"
+          ],
+          "problemMatcher": [],
+          "group": {
+            "kind": "build",
+            "isDefault": true
+          },
+          "presentation": {
+            "reveal": "always"
+          }
+        }
+      ]
+    }
+  }
+}

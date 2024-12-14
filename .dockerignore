@@ -1,0 +1,4 @@
+.vscode-server/
+.vscode/
+.git/
+node_modules/

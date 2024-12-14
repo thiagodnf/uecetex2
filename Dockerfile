@@ -5,7 +5,8 @@
 #
 
 # Pull base image.
-FROM ubuntu:14.04
+#FROM ubuntu:14.04
+FROM ubuntu:24.04
 
 # Install.
 RUN \
@@ -20,17 +21,19 @@ RUN \
 # Enables default latex comands
 RUN \
   apt-get update && \
-  sudo apt-get install -y texlive texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-science texlive-fonts-recommended texlive-bibtex-extra texlive-generic-extra
+  apt-get install -y texlive texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-science texlive-fonts-recommended texlive-bibtex-extra
+
+# texlive-generic-extra
 
 # Allows automatization of process
 RUN \
   apt-get update && \
-  sudo apt-get install -y latexmk
+  apt-get install -y latexmk
 
 # Uncomment if you need extra latex packages
 # RUN \
 #   apt-get update && \
-#   sudo apt-get install texlive-full
+#   apt-get install texlive-full
 
 # Add files
 

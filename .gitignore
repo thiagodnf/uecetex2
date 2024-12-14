@@ -35,3 +35,10 @@ documento.pdf
 *.DS_Store
 *.synctex(busy)
 project/build/
+.vscode-server/
+.ssh
+project/.devcontainer*
+project/.texlive*
+project/.texlive*
+project/lib/preambulo.f*
+.gitconfig
