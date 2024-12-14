@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run LaTeX Build",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "Compile LaTeX",
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.pdf",
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false
+        }
+    ]
+}

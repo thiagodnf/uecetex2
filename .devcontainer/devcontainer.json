@@ -3,30 +3,36 @@
   "dockerComposeFile": "../docker-compose.yaml",
   "service": "ubuntu-service",
   "workspaceFolder": "/project",
-  "extensions": [
-    "James-Yu.latex-workshop"
-  ],
-  "postCreateCommand": "mkdir -p build && cd /project && latexmk -pdf -outdir=/project/build /project/documento.tex",
-  "settings": {
-    "latex-workshop.latex.tools": [
-      {
-        "name": "latexmk",
-        "command": "latexmk",
-        "args": [
-          "-pdf",
-          "-outdir=/project/build",
-          "/project/documento.tex"
-        ]
+  
+  "postCreateCommand": "mkdir -p /project/build && latexmk -pdf -outdir=/project/build /project/documento.tex",
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-pdf",
+              "-outdir=/project/build",
+              "/project/documento.tex"
+            ]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk",
+            "tools": ["latexmk"]
+          }
+        ],
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.view.pdf.viewer": "tab",
+        "editor.formatOnSave": true
       }
-    ],
-    "latex-workshop.latex.recipes": [
-      {
-        "name": "latexmk",
-        "tools": ["latexmk"]
-      }
-    ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "editor.formatOnSave": true
+    }
   }
 }
