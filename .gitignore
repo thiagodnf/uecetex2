@@ -44,3 +44,5 @@ project/lib/preambulo.f*
 project/.viminfo
 project/.bash_history
 .gitconfig
+project/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk
+project/.texmf-var/*

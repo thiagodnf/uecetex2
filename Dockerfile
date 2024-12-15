@@ -24,8 +24,6 @@ RUN \
   apt-get update && \
   apt-get install -y texlive texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-science texlive-fonts-recommended texlive-bibtex-extra
 
-# texlive-generic-extra
-
 # Allows automatization of process
 RUN \
   apt-get update && \
