@@ -1,25 +1,29 @@
-# Comando 1: não gera bibliografia e glossário
+# Comandos para Compilação de Documentos LaTeX
 
+## Comando 1: Não Gera Bibliografia e Glossário
+
+```bash
 pdflatex -output-directory=build documento.tex
+```
 
+## Comando 2: Gera Bibliografia e Glossário
 
-# Comando 2: possui vários comandos e gera bibliografia e glossário
-
-Versão multilinhas:
+### Versão Multilinhas:
+```bash
 mkdir -p build
 pdflatex -output-directory=build documento.tex
 bibtex build/documento
 makeglossaries -d build documento
 pdflatex -output-directory=build documento.tex
 pdflatex -output-directory=build documento.tex
+```
 
-Versão em única linha:
-
+### Versão em Única Linha:
+```bash
 mkdir -p build && pdflatex -output-directory=build documento.tex && bibtex build/documento && makeglossaries -d build documento && pdflatex -output-directory=build documento.tex && pdflatex -output-directory=build documento.tex
+```
 
+## Comando 3: Automatiza Tudo (Gera Bibliografia e Glossário)
 
-# Comando 3: automatiza tudo, gerando bibliografia e glossário
-
+```bash
 latexmk -pdf -outdir=build documento.tex
-
-
