@@ -41,4 +41,6 @@ project/.devcontainer*
 project/.texlive*
 project/.texlive*
 project/lib/preambulo.f*
+project/.viminfo
+project/.bash_history
 .gitconfig
