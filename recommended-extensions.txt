@@ -1,0 +1,37 @@
+- Instale no VsCode uma extensão de Docker.
+Recomendada:
+Nome: Docker
+ID: ms-azuretools.vscode-docker
+Descrição: Makes it easy to create, manage, and debug containerized applications.
+Versão: 1.29.2
+Editor: Microsoft
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
+
+- Instale um kit de enstensões para container:
+Recomendada:
+Nome: Remote Development
+ID: ms-vscode-remote.vscode-remote-extensionpack
+Descrição: An extension pack that lets you open any folder in a container, on a remote machine, or in WSL and take advantage of VS Code's full feature set.
+Versão: 0.26.0
+Editor: Microsoft
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+
+- Instale no VsCode uma extensão para executar tasks.
+Recomendada:
+Nome: Task Runner
+ID: SanaAjani.taskrunnercode
+Descrição: VS Code extension to view and run tasks from Explorer pane
+Versão: 0.3.0
+Editor: Sana Ajani
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=SanaAjani.taskrunnercode
+
+
+- Instale no VsCode uma extensão para visualizar pdfs. 
+Recomendada:
+Nome: vscode-pdf
+ID: tomoki1207.pdf
+Descrição: Display pdf file in VSCode.
+Versão: 1.2.2
+Editor: tomoki1207
+Link do Marketplace do VS: https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf
+
