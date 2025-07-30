@@ -1,0 +1,8 @@
+services:
+  uecetex2:
+    build:
+       context: .
+       dockerfile: Dockerfile
+    volumes:
+      - .:/build
+    restart: "unless-stopped"
