@@ -1,6 +1,3 @@
-% !TeX encoding = UTF-8
-% !TeX root = ../documento.tex
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Customizações do abnTeX2 (http://abnTeX2.googlecode.com)           %%
 %% para a Universidade Estadual do Ceara - UECE                       %%
@@ -31,9 +28,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Definições              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\RequirePackage{ifplatform}
-\ProvidesPackage{url6023}
 
 % Importa o arquivo com as entradas do glassario
 \input{elementos-pos-textuais/glossario}
@@ -86,16 +80,15 @@
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 
 % Estilo da section 1.1
-\renewcommand{\ABNTEXsectionfont}{\bfseries}
-\setboolean{ABNTEXuppersection}{false}
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1
-\renewcommand{\ABNTEXsubsectionfont}{\bfseries\normalfont}
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1.1
-\renewcommand{\ABNTEXsubsubsectionfont}{\itshape\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1.1
@@ -125,53 +118,11 @@
 % Retira espaço extra obsoleto entre as frases.
 %\frenchspacing
 
-\newcommand{\listofquadrosname}{Lista de Quadros}
-\newcommand{\glossarioname}{GLOSS\'ARIO}
-\newcommand{\teoremaname}{Teorema}
-\newcommand{\proposicaoname}{Proposição}
-\newcommand{\exemploname}{Exemplo}
-\newcommand{\definicaoname}{Definição}
-\newcommand{\questaoname}{Questão}
-
 \addto\captionsbrazil{
 	\renewcommand{\bibname}{REFER\^ENCIAS}
 	\renewcommand{\indexname}{\'INDICE}
-	\renewcommand{\contentsname}{Sum\'ario}
+	\renewcommand{\contentsname}{Sum\'ario \vspace{5pt}}
 	\renewcommand{\listadesimbolosname}{Lista de Símbolos}
-	\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
-	\renewcommand{\lstlistlistingname}{Lista de Códigos-Fontes}%
-	\renewcommand{\listalgorithmcfname}{Lista de Algoritmos}%
-	\renewcommand{\algorithmcfname}{Algoritmo}%
-	\renewcommand{\cftquadroname}{Quadro\space}%
-	\renewcommand{\apendicesname}{AP\^ENDICES}%
-	\renewcommand{\anexosname}{ANEXOS}%
-	\renewcommand{\listfigurename}{Lista de Ilustra\c{c}\~{o}es}
-	\renewcommand{\listadesiglasname}{Lista de Abreviaturas e Siglas}
-}
-
-\addto\captionsenglish{% ingles
-	\renewcommand{\lstlistingname}{Code}% Listing -> Algorithm
-	\renewcommand{\lstlistlistingname}{List of Source Codes}%
-	\renewcommand{\listalgorithmcfname}{Lists of Algorithms}%
-	\renewcommand{\algorithmcfname}{Algorithm}%
-	\renewcommand{\cftquadroname}{Chart\space}%
-	\renewcommand{\listofquadrosname}{List of Charts}%
-	\renewcommand{\apendicesname}{APPENDICES}%
-	\renewcommand{\anexosname}{ANNEXES}%
-	\renewcommand{\glossarioname}{GLOSSARY}%
-	\def\tableautorefname{Table}
-	\def\figureautorefname{Figure}
-	\def\sectionautorefname{Section}
-	\def\chapterautorefname{Chapter}
-	\def\subsectionautorefname{Subsection}
-	\renewcommand{\teoremaname}{Theorem}
-	\renewcommand{\proposicaoname}{Proposition}
-	\renewcommand{\exemploname}{Example}
-	\renewcommand{\definicaoname}{Definition}
-	\renewcommand{\questaoname}{Question}
-	\renewcommand{\listfigurename}{List of Figures}
-	\renewcommand{\contentsname}{Table of Contents}
-	\renewcommand{\listadesiglasname}{List of Abbreviations and Acronyms}
 }
 
 % Por algum motivo, o algorithm2e estava pegando algumas palavras do espanhol.
@@ -205,6 +156,9 @@
 \newcommand{\SetSpacedAlgorithm}{
 	\linespread{1.35}\selectfont
 }
+
+% Altera o titulo para esse
+\renewcommand{\listalgorithmcfname}{Lista de Algoritmos}%
 
 % Espaco entre o caption e o algoritmo
 %\SetAlCapSkip{\onelineskip}
@@ -251,18 +205,8 @@
 	}
 }
 
-\newcommand{\createBooleanVariable}[2]{ %
-	\provideboolean{#1} %
-	\setboolean{#1}{#2} %
-} %
-
 % Adiciona o sexo do orientador e do co-orientador no documento atraves
 % do artigo "a".
-
-\createBooleanVariable{uecetex2@adicionarPaginaAnexosNoSumario}{false}
-\createBooleanVariable{uecetex2@adicionarPaginaAnexosNoCorpoDoTexto}{false}
-\createBooleanVariable{uecetex2@adicionarPaginaApendicesNoSumario}{false}
-\createBooleanVariable{uecetex2@adicionarPaginaApendicesNoCorpoDoTexto}{false}
 
 \provideboolean{uecetex2@orientadorfeminino}
 \provideboolean{uecetex2@coorientadorfeminino}
@@ -380,15 +324,7 @@
 \SetKwBlock{Inicio}{início}{fim}
 
 % Numeracao da tabela comeca em 1
-\ifwindows
-\setcounter{table}{-1}
-\fi
-\iflinux
-\setcounter{table}{-1}
-\fi
-\ifmacosx
 \setcounter{table}{0}
-\fi % This needs to be \fi, not \if
 
 % Comandos para inserir figuras, tabelas e quadros
 \newcommand{\UECEfig}[3]{\IBGEtab{#1}{#2}{#3}}
@@ -909,11 +845,6 @@
 	\ifnotempty{\imprimirmembrodabancaquatro}{
 		\assinatura{\imprimirmembrodabancaquatro \\ \imprimirmembrodabancaquatroies}
 	}	
-
-	% Membro Quatro da banca pode ser o coorientador ou outro membro
-	\ifnotempty{\imprimirmembrodabancacinco}{
-		\assinatura{\imprimirmembrodabancacinco \\ \imprimirmembrodabancacincoies}
-	}	
 	
 	\pagebreak
 }
@@ -1009,28 +940,19 @@
 \newcommand{\estacontido}{\subset}
 \newtheorem{afirmacao}{{\sc Afirma\c{c}\~{a}o}}[section]
 \newtheorem{argumento}{\sc Argumento~}[section]
-\newtheorem{teo}{\teoremaname}[section]
+\newtheorem{teo}{Teorema}[section]
 \newtheorem{lema}{Lema}[section]
 \newtheorem{cor}{Corolário}[section]
-\newtheorem{prop}[teo]{\proposicaoname}
+\newtheorem{prop}[teo]{Proposição}
 \newtheorem{conjec}{Conjectura}[section]
 \newtheorem{premissa}{Premissa}[chapter]
 \newtheorem{procedimento}{Procedimentos}[section]
 \newtheorem{heuristica}{Heurística}[section]
 \newtheorem{axioma}{Axioma}[section]
-\newtheorem{exem}{\exemploname}
-\newtheorem{xdefinicao}{\definicaoname}[section]
-\newtheorem{cdefinicao}{\definicaoname}[chapter]
+\newtheorem{exem}{Exemplo}
+\newtheorem{xdefinicao}{Definição}[section]
+\newtheorem{cdefinicao}{Definição}[chapter]
 \newtheorem{propriedade}{Propriedade}[chapter]
-
-
-\makeatletter
-\@ifpackageloaded{url}{%
-	\addtociteoptionlist{abnt-url-package=url}
-	\def\UrlLeft{}
-	\def\UrlRight{}
-	\urlstyle{same}}
-\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Questoes                %%
@@ -1040,7 +962,7 @@
 \newcounter{quest}
 
 \newenvironment{questao}{ %
-	\begin{list}{\textbf{\questaoname~\arabic{quest}.}}{\usecounter{quest} %
+	\begin{list}{\textbf{Questão \arabic{quest}.}}{\usecounter{quest} %
 		\setlength{\labelwidth}{-2mm} \setlength{\parsep}{0mm} %
 		\setlength{\topsep}{0mm} \setlength{\leftmargin}{0mm}} %
 	\renewcommand{\labelenumi}{(\alph{enumi})}	%
@@ -1143,7 +1065,7 @@
 }
 
 \newcommand{\imprimirresumo}[1]{ %
-	\begin{resumo}[Resumo] %
+	\begin{resumo} %
 		\input{#1} %
 	\end{resumo} %
 }
@@ -1164,16 +1086,16 @@
 
 % Novo list of (listings) para QUADROS
 
-%\newcommand{\quadroname}{Quadro}
-%\newcommand{\listofquadrosname}{Lista de Quadros}
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de Quadros}
 
-\newfloat[chapter]{quadro}{loq}{\cftquadroname}
+\newfloat[chapter]{quadro}{loq}{\quadroname}
 \newlistof{listofquadros}{loq}{\listofquadrosname}
 \newlistentry{quadro}{loq}{0}
 
 % configurações para atender às regras da ABNT
 \counterwithout{quadro}{chapter}
-%\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand{\cftquadroname}{\quadroname\space} 
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 % agora a lista de quadro eh negrito
 \renewcommand{\cftquadrofont}{\bfseries}
@@ -1189,6 +1111,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comandos para formatar a exibicao de codigos-fonte
+
+\renewcommand{\lstlistingname}{Código-fonte}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista de Códigos-Fonte}%
 
 
 %\AtBeginDocument{ %
@@ -1240,9 +1165,9 @@
 \endgroup
 
 \renewcommand\cftlstlistingpresnum{\lstlistingname~}
-\settowidth\mylen{\cftlstlistingpresnum\hspace{1cm}\cftlstlistingaftersnum}
+\settowidth\mylen{\cftlstlistingpresnum\cftlstlistingaftersnum}
 \addtolength\cftlstlistingnumwidth{\mylen} %
-\renewcommand\cftlstlistingaftersnum{~\hfill\textendash\hfill}
+\renewcommand\cftlstlistingaftersnum{\hfill\textendash\hfill}
 
 
 \newcommand{\imprimirlistadecodigosfonte}{ %
@@ -1260,6 +1185,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % A lista de Ilustrações não deve aparecer no sumário
+
+\addto\captionsbrazil{\renewcommand{\listfigurename}{Lista de figuras}}
 
 \newcommand{\imprimirlistadeilustracoes}{
 	\begin{KeepFromToc} %
@@ -1317,7 +1244,7 @@
 \setlength{\glsdescwidth}{\linewidth}
 
 \newcommand{\imprimirlistadeabreviaturasesiglas}{ %
-	\printglossary[type=\acronymtype,style=long,nonumberlist,title={\listadesiglasname\vspace{-0.3cm}}] %
+	\printglossary[type=\acronymtype,style=long,nonumberlist,title={Lista de Abreviaturas e Siglas\vspace{-0.3cm}}] %
 	\pagebreak %
 }
 
@@ -1350,15 +1277,15 @@
 	%
 	\renewcommand*{\glsgroupskip}{}%
 	% Depois da palavra, colocar o ":" e no fim o ponto final "."
-	\renewcommand*{\glossentry}[2]{%
-		\item[\glossentryname{##1}:] \glossentrydesc{##1}.%
+	\renewcommand*{\glossaryentryfield}[5]{%
+		\item[\glstarget{##1}{##2}:] ##3.%
 	}%
 }
 
 \newcommand{\imprimirglossario}{ %
-	\setglossarystyle{glossario-uece} %	
-	\printglossary[title=\glossarioname,toctitle=\glossarioname] %
-	\addcontentsline{toc}{chapter}{\glossarioname}
+	\glossarystyle{glossario-uece} %	
+	\printglossary[title=GLOSSÁRIO,toctitle=GLOSSÁRIO] %
+	\addcontentsline{toc}{chapter}{GLOSSÁRIO}
 }
 
 
@@ -1377,32 +1304,25 @@
 %%               Apendices             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Define o titulo no sumario do Apendice para negrito
-\newcommand{\apendice}[1]{\chapter{\normalfont\bfseries\uppercase{#1}}}
+% Define o titulo no sumario do Apendice para nao negrito
+\newcommand{\apendice}[1]{\chapter{#1}}
 
 % O nome APÊNDICES deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaapendices}{ %
-	
 	\newpage %
-	
-	\ifthenelse{\boolean{uecetex2@adicionarPaginaApendicesNoSumario}}{ %
-		\addcontentsline{toc}{chapter}{\apendicesname} %
-	}{} %
-	
-	\ifthenelse{\boolean{uecetex2@adicionarPaginaApendicesNoCorpoDoTexto}}{ %
-		\begin{vplace}[0.7] %
-			\centering\textbf{\apendicesname} %
-		\end{vplace} %
-		\clearpage %
-	}{} %
+	\addcontentsline{toc}{chapter}{AP\^ENDICES} %
+	\begin{vplace}[0.7] %
+		\centering\textbf{AP\^ENDICES} %
+	\end{vplace} %
+	\clearpage
 }
 
 % Altera a fonte da letra titulo do apendice para nao negrito
 \renewcommand{\chaptitlefont}{ %
 	\ifthenelse{\boolean{abntex@apendiceousecao}}{ %
-		\normalfont\normalsize\bfseries %
+		\normalfont\normalsize %
 	}{%
-		\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize %
+		\ABNTEXchapterfont\ABNTEXchapterfontsize %
 	}%
 }
 
@@ -1414,7 +1334,7 @@
 			\normalfont
 			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
 			\hspace{-0.3cm} %
-			\textbf{#1} %	\ABNTEXchapterupperifneeded{#1}%
+			#1 %	\ABNTEXchapterupperifneeded{#1}%
 		}{%
 			\settowidth{\chapternamenumlength}{\printchaptername\printchapternum\afterchapternum}%
 			\parbox[t]{\columnwidth-\chapternamenumlength}{\ABNTEXchapterupperifneeded{#1}}
@@ -1426,7 +1346,7 @@
 	\imprimirpaginaapendices
 	\apendices %
 	% Retira o negrito da palavra "Apendice"
-	\PRIVATEapendiceconfig{\normalfont\bfseries\apendicename}{\normalfont\bfseries\apendicesname} %
+	\PRIVATEapendiceconfig{\apendicename}{\apendicesname} %
 	
 }
 
@@ -1485,30 +1405,23 @@
 
 
 % Define o titulo no sumario do Anexo para nao negrito
-\newcommand{\anexo}[1]{\chapter{\normalfont\bfseries\uppercase{#1}}}
+\newcommand{\anexo}[1]{\chapter{\normalfont{#1}}}
 
 % O nome ANEXOS deve vir em página distinta, redigido em letras maiúsculas, centralizado, negritado, tamanho da fonte 12.
 \newcommand{\imprimirpaginaanexo}{ %
-	
 	\newpage %
-	
-	\ifthenelse{\boolean{uecetex2@adicionarPaginaAnexosNoSumario}}{ %
-		\addcontentsline{toc}{chapter}{\bfseries\anexosname} %
-	}{} %
-	
-	\ifthenelse{\boolean{uecetex2@adicionarPaginaAnexosNoCorpoDoTexto}}{ %
-		\begin{vplace}[0.7] %
-			\centering\textbf{\anexosname} %
-		\end{vplace} %
-		\clearpage
-	}{}
+	\addcontentsline{toc}{chapter}{ANEXOS} %
+	\begin{vplace}[0.7] %
+		\centering\textbf{ANEXOS} %
+	\end{vplace} %
+	\clearpage
 }
 
 \newcommand{\imprimiranexos}{ %
 	\imprimirpaginaanexo
 	\anexos %
 	% Retira o negrito da palavra "Apendice"
-	\PRIVATEapendiceconfig{\normalfont\bfseries\anexoname}{\normalfont\bfseries\anexosname} %
+	\PRIVATEapendiceconfig{\normalfont\anexoname}{\normalfont\anexosname} %
 	
 }
 
@@ -1528,8 +1441,10 @@
 %%        Configuração do Sumário      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\renewcommand{\contentsname}{}
+
 \newcommand{\imprimirsumario}{ %
-	\pdfbookmark[0]{\contentsname}{toc}
+	\pdfbookmark[0]{Sumário}{toc}
 	\tableofcontents*
 	\cleardoublepage
 }
@@ -1542,10 +1457,10 @@
 \setlength{\cftbeforesubsubsectionskip}{0pt}
 \setlength{\cftbeforechapterskip}{0pt}
 
-\renewcommand\cftchapterfont{\bfseries\normalsize}
-\renewcommand\cftsectionfont{\bfseries\normalsize}
-\renewcommand\cftsubsectionfont{\normalsize\normalfont}
-\renewcommand\cftsubsubsectionfont{\itshape\bfseries\normalsize}
+%\renewcommand\cftchapterfont{\normalsize}
+\renewcommand\cftsectionfont{\normalsize}
+\renewcommand\cftsubsectionfont{\normalfont\normalsize}
+\renewcommand\cftsubsubsectionfont{\normalsize\normalfont}
 % Altera a fonte da seção quinária
 \renewcommand*{\cftparagraphfont}{\normalsize\normalfont\itshape}
 
@@ -1556,7 +1471,7 @@
 % Altera a fonte da seção quinária
 \renewcommand\cftparagraphpagefont{\normalfont}
 
-% Secao Secundaria (Section): Caixa alta e baixa com negrito, tamanho 12
+% Secao Secundaria (Section): Sem caixa alta, Negrito, tamanho 12
 \makeatletter
 \let\oldcontentsline\contentsline
 \def\contentsline#1#2{%
@@ -1571,21 +1486,4 @@
 	\oldcontentsline{#1}{#2}%
 }%
 }
-\makeatother
-
-\makeatletter
-\renewcommand{\fonte}[2][\fontename]{%
-	\M@gettitle{#2}%
-	\memlegendinfo{#2}%
-	\par
-	\begingroup
-	\@parboxrestore
-	\if@minipage
-	\@setminipage
-	\fi
-	\ABNTEXfontereduzida
-	\configureseparator
-	\captiondelim{\ABNTEXcaptionfontedelim}
-	\@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
-	\endgroup}
 \makeatother
