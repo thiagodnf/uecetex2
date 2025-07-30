@@ -6,7 +6,7 @@
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
 
-# O que é?
+## O que é?
 
 O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
 
@@ -23,7 +23,7 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
 
  - Qualificação para Mestrado Acadêmico e Profissional
 
-# Por onde começo?
+## Por onde começo?
 Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 1. Clique [aqui](https://github.com/thiagodnf/uecetex2/archive/master.zip) para baixar o projeto
@@ -32,7 +32,7 @@ Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 > Você é iniciante em LaTeX ou em abnTeX2? Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessar a página desenvolvida pela equipe do abnTeX2. Nesta página é possível acessar diversos links sobre o LaTeX e sobre o abnTeX2 como, por exemplo, a história do LaTeX e alguns minicursos desenvolvidos em outras universidades
 
-# Como compilar?
+## Como compilar?
 
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
@@ -45,7 +45,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 ### Overleaf
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-usar-no-Overleaf] 
  
-# Limitações
+## Limitações
  
  O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
  
@@ -53,7 +53,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
   - A folha de aprovação da Dissertação suporta no máximo 5 pessoas (Orientador, Co-orientador e 3 membros externos)
   - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
   
-# Dicas
+## Dicas
 Veja a seguir como inserir alguns elementos no seu texto.
 
 ### Como inserir uma Tabela
@@ -174,7 +174,7 @@ Veja a seguir como inserir alguns elementos no seu texto.
 \end{algorithm}
 ```
 
-# Supporte ao Inglês
+## Supporte ao Inglês
 
 Se o seu trabalho será escrito em inglês, adicione o seguinte comando depois do \begin{document}
 
@@ -182,17 +182,9 @@ Se o seu trabalho será escrito em inglês, adicione o seguinte comando depois d
 \selectlanguage{english}
 ```
 
-# Atenção
+## Atenção
 
 O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
-
-# Agradecimentos
-
-![alt tag](http://www.goes.uece.br/style/images/logo_goes.png)
-
-Grupo de Otimização em Engenharia de Software
-
-[http://www.goes.uece.br]
 
 [Por Onde Comecar]:https://code.google.com/p/abntex2/wiki/PorOndeComecar
 [http://www.goes.uece.br]:http://www.goes.uece.br
