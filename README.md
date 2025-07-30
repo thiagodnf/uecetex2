@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png)
+<img src="https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png" width="300px">
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
 
