@@ -1,6 +1,6 @@
 <picture >
   <source srcset="figuras/uecetex2-logo-dark-mode.png" media="(prefers-color-scheme: dark)">
-  <img src="figuras/uecetex2-logo-light-mode.png" width="400px">
+  <img style="margin-bottom: 18px" src="figuras/uecetex2-logo-light-mode.png" width="500px">
 </picture>
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
