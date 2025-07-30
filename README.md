@@ -1,4 +1,7 @@
-<img src="https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png" width="400px">
+<picture >
+  <source srcset="figuras/uecetex2-logo-dark-mode.png" media="(prefers-color-scheme: dark)">
+  <img src="figuras/uecetex2-logo-light-mode.png" width="400px">
+</picture>
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
 
