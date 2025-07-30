@@ -6,6 +6,13 @@
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
 
+[![GitHub Release](https://img.shields.io/github/release/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/releases/latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/graphs/contributors)
+[![GitHub stars](https://img.shields.io/github/stars/thiagodnf/uecetex2.svg)](https://github.com/almende/thiagodnf/uecetex2)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
 # O que é?
 
 O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
