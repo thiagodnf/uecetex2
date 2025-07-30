@@ -8,7 +8,7 @@ Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) e
 
 [![GitHub Release](https://img.shields.io/github/release/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/graphs/contributors)
-[![GitHub stars](https://img.shields.io/github/stars/thiagodnf/uecetex2.svg)](https://github.com/almende/thiagodnf/uecetex2)
+[![GitHub stars](https://img.shields.io/github/stars/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
