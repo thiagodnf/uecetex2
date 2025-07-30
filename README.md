@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png" width="300px">
+<img src="https://raw.githubusercontent.com/thiagodnf/uecetex2/master/figuras/uecetex2-logo.png" width="400px">
 
 Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
 
