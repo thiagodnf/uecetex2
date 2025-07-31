@@ -15,7 +15,7 @@ Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) e
 
 ## 📘 O que é?
 
-O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. O objetivo do projeto é oferecer um modelo que atenda integralmente às normas da ABNT, permitindo que o autor foque no conteúdo sem se preocupar com a formatação
+O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. O objetivo do projeto é oferecer um modelo que atenda integralmente às normas da universidade, permitindo que o autor foque no conteúdo sem se preocupar com a formatação
 
 Este projeto oferece os seguintes modelos prontos para trabalhos acadêmicos:
 
