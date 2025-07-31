@@ -52,7 +52,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 ### Overleaf
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-usar-no-Overleaf] 
  
-## Limitações
+## 🧩 Limitações
  
  O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
  
