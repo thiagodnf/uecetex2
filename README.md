@@ -62,7 +62,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
   
 ## Formatação
 
-Veja dicas de formatação para seu documento (como tabelas, figuras e seções)[nesta página](wiki/Formatação).
+Veja dicas de formatação para seu documento (como tabelas, figuras e seções) [nesta página](wiki/Formatação).
 
 ## Supporte ao Inglês
 
