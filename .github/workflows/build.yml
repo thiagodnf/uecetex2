@@ -2,8 +2,8 @@ name: LaTeX Build
 
 on:
   push:
-    branches:
-      - master
+    paths:
+      - '**.tex'
   pull_request:
 
 jobs:
