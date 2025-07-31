@@ -198,3 +198,4 @@ O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído 
 [abnTeX2]:https://code.google.com/p/abntex2/
 [http://miktex.org/download]:http://miktex.org/download
 [http://texstudio.sourceforge.net/]:http://texstudio.sourceforge.net/
+
