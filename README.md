@@ -72,6 +72,10 @@ Se o seu trabalho será escrito em inglês, adicione o comando abaixo logo após
 \selectlanguage{english}
 ```
 
+## 🙌 Precisamos da sua Ajuda
+
+O guia de normalização da UECE é atualizado constatemente, e o ueceTeX2 precisa ser ajustado para refletir as novas exigências. Se você tem acesso ao guia atualizado ou deseja contribuir com correções e melhorias, sua ajuda será muito bem-vinda!
+
 ## ⚠️ Atenção
 
 O ueceTeX2 é um projeto gratuito, distribuído sem garantias, voltado exclusivamente para fins acadêmicos. Trata-se de uma iniciativa extraoficial, sem vínculo institucional com a Universidade Estadual do Ceará (UECE).
