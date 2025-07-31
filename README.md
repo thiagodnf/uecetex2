@@ -66,7 +66,7 @@ Veja dicas de formatação para seu documento (como tabelas, figuras e seções)
 
 ## 🌍 Supporte ao Inglês
 
-Se o seu trabalho será escrito em inglês, adicione o seguinte comando depois do \begin{document}
+Se o seu trabalho será escrito em inglês, adicione o comando abaixo logo após `\begin{document}`:
 
 ```tex
 \selectlanguage{english}
