@@ -1,0 +1,24 @@
+name: LaTeX Build
+
+on:
+  push:
+    paths:
+      - '**.tex'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        run: |
+          apt-get update && apt-get install -y make
+          latexmk -pdf -output-directory=build documento.tex
+
+      - name: Check output
+        run: test -f build/documento.pdf

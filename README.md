@@ -9,15 +9,15 @@ Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) e
 [![GitHub Release](https://img.shields.io/github/release/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/graphs/contributors)
 [![GitHub stars](https://img.shields.io/github/stars/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+![GitHub License](https://img.shields.io/github/license/thiagodnf/uecetex2)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 
-## O que é?
+## 📘 O que é?
 
-O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. Espera-se que o projeto seja um modelo de trabalho acadêmico que implemente todas as exigências das normas da ABNT sem a necessidade de se preocupar com o estilo ou formatação do documento.
+O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os alunos da Universidade Estadual do Ceará - UECE em seus trabalhos de monografias de graduação, dissertações de mestrado e teses de doutorado. Embora tenha sido escrita para ser utilizada principalmente pelos alunos da Computação, a ueceTeX2 é suficientemente configurável e facilmente adaptável para ser utilizada em praticamente todos os cursos da UECE. O objetivo do projeto é oferecer um modelo que atenda integralmente às normas da universidade, permitindo que o autor foque no conteúdo sem se preocupar com a formatação
 
-### Modelos Disponíveis
+Este projeto oferece os seguintes modelos prontos para trabalhos acadêmicos:
 
 **Trabalhos Acadêmicos**
 
@@ -30,7 +30,8 @@ O **ueceTeX2** é um projeto baseado no [abnTeX2] desenvolvido para auxiliar os 
 
  - Qualificação para Mestrado Acadêmico e Profissional
 
-## Por onde começo?
+## 🚀 Por onde começo?
+
 Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 1. Clique [aqui](https://github.com/thiagodnf/uecetex2/archive/master.zip) para baixar o projeto
@@ -39,7 +40,7 @@ Para utilizar o ueceTeX2 você precisa seguir os seguintes passos:
 
 > Você é iniciante em LaTeX ou em abnTeX2? Clique [aqui](https://code.google.com/p/abntex2/wiki/PorOndeComecar) para acessar a página desenvolvida pela equipe do abnTeX2. Nesta página é possível acessar diversos links sobre o LaTeX e sobre o abnTeX2 como, por exemplo, a história do LaTeX e alguns minicursos desenvolvidos em outras universidades
 
-## Como compilar?
+## ⚙️ Como compilar?
 
 Uma vez que todas as informações foram colocadas no documento, você precisará de um programa para compilar e gerar o PDF do seu trabalho.
 
@@ -52,7 +53,7 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 ### Overleaf
  - Acesse [https://github.com/thiagodnf/uecetex2/wiki/Como-usar-no-Overleaf] 
  
-## Limitações
+## 🧩 Limitações
  
  O modelo atual possui algumas limitações que podem ser corrigidas ou implementadas em alguma versão futura. São elas:
  
@@ -60,141 +61,22 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
   - A folha de aprovação da Dissertação suporta no máximo 5 pessoas (Orientador, Co-orientador e 3 membros externos)
   - A folha de aprovação da Tese suporta no máximo 6 pessoas (Orientador, Co-orientador e 4 membros externos)
   
-## Dicas
-Veja a seguir como inserir alguns elementos no seu texto.
+## 🎨 Formatação
 
-### Como inserir uma Tabela
-```tex
-\begin{table}[h!]	
-	\centering
-	\Caption{\label{tab:label_da_tabela} Legenda da Tabela}
-	\UECEtab{}{
-		\begin{tabular}{ccll}
-			\toprule
-	    		Quisque & pharetra & tempus & vulputate \\
-			\midrule \midrule
-				E1 & Complete coverage & Both splice sites \\
-				E2 & Complete coverage & Both splice sites \\
-				E3 & Partial coverage & Both splice sites & Both \\
-				E4 & Partial coverage & One splice site & Both \\
-				E5 & Complete or coverage & No splice & Both \\
-				E6 & No coverage & No splice sites\\
-			\bottomrule
-		\end{tabular}
-	}{
-		\Fonte{Elaborado pelo autor}
-    }
-\end{table}
-```
+Veja dicas de formatação para seu documento (como tabelas, figuras e seções) [nesta página](https://github.com/thiagodnf/uecetex2/wiki/Formatação).
 
-### Como inserir um Quadro
-```tex
-\begin{quadro}[h!]	
-	\centering
-	\Caption{\label{qua:label_do_quadro} Legenda do Quadro}
-	\UECEqua{}{
-		\begin{tabular}{|c|c|}
-			\hline
-			Quisque & pharetra \\
-			\hline
-			E1 & Complete coverage  \\
-			\hline
-			E2 & Complete coverage \\
-			\hline
-		\end{tabular}
-	}{
-		\Fonte{Elaborado pelo autor}
-	}
-\end{quadro}
-```
+## 🌍 Supporte ao Inglês
 
-### Como inserir uma figura
-```tex
-\begin{figure}[h!]
-	\centering
-	\Caption{\label{fig:label_da_figura} Legenda da Figura}	
-	\UECEfig{}{
-	    \includegraphics[width=8cm]{figuras/figura-1}
-	}{
-	    \Fonte{Elaborado pelo autor}
-	}	
-\end{figure}
-```
-
-### Como inserir uma alínea
-```tex
-\begin{alineas}
-	\item Lorem ipsum dolor sit amet;
-    \item Praesent vitae nulla varius;
-	\item Praesent quis erat eleifend;
-	\item Mauris facilisis odio eu:
-	\begin{subalineas}
-		\item Integer non lacinia magna;
-		\item Proin mattis placerat risus.
-	\end{subalineas}
-\end{alineas}
-```
-
-### Como criar Capítulos
-```tex
-\chapter{Fundamentação Teórica}
-\label{cap:fundamentacao-teorica}
-```
-
-### Como criar Seções
-```tex
-% Seções Secundárias
-\section{Objetivo Geral 2}
-\label{sec:objetivo-geral-2}
-
-% Seções Terciárias
-\subsection{Objetivo Geral 3}
-\label{sec:objetivo-geral-3}
-
-% Seções Quaternárias
-\subsubsection{Objetivo Geral 4}
-\label{sec:objetivo-geral-4}
-
-% Seções Quinárias
-\subsubsubsection{Objetivo Geral 5}
-\label{sec:objetivo-geral-5}
-```
-
-### Como inserir um algoritmo
-```tex
-\begin{algorithm}[h!]
-	\SetSpacedAlgorithm
-	\caption{\label{alg:algoritmo_de_colonica_de_formigas}Algoritmo de Otimização por Colônia de Formiga}
-	\Entrada{Entrada do Algoritmo}
-	\Saida{Saida do Algoritmo}
-	\Inicio{
-		Atribua os valores dos parâmetros\;
-		Inicialize as trilhas de feromônios\;
-		\Enqto{não atingir o critério de parada}{
-			\Para{cada formiga}{
-				Construa as Soluções\;
-			}
-			Aplique Busca Local (Opcional)\;
-			Atualize o Feromônio\;
-		}	
-	}
-\end{algorithm}
-```
-
-## Supporte ao Inglês
-
-Se o seu trabalho será escrito em inglês, adicione o seguinte comando depois do \begin{document}
+Se o seu trabalho será escrito em inglês, adicione o comando abaixo logo após `\begin{document}`:
 
 ```tex
 \selectlanguage{english}
 ```
 
-## Atenção
+## 🙌 Precisamos da sua Ajuda
 
-O ueceTeX2 é fornecido gratuitamente e sem garantias e pode ser redistribuído livremente para fins acadêmicos. O ueceTeX2 é um produto extra-oficial e não está oficialmente vinculada à Universidade Estadual do Ceará - UECE.
+O ueceTeX2 precisa ser constantemente ajustado para refletir as exigências mais recentes do guia de normalização da UECE. Se você tem acesso ao guia atualizado ou deseja contribuir com correções e melhorias, sua ajuda será muito bem-vinda!
 
-[Por Onde Comecar]:https://code.google.com/p/abntex2/wiki/PorOndeComecar
-[http://www.goes.uece.br]:http://www.goes.uece.br
-[abnTeX2]:https://code.google.com/p/abntex2/
-[http://miktex.org/download]:http://miktex.org/download
-[http://texstudio.sourceforge.net/]:http://texstudio.sourceforge.net/
+## ⚠️ Atenção
+
+O ueceTeX2 é um projeto gratuito, distribuído sem garantias, voltado exclusivamente para fins acadêmicos. Trata-se de uma iniciativa extraoficial, sem vínculo institucional com a Universidade Estadual do Ceará (UECE).
