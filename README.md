@@ -4,7 +4,7 @@
 </picture>
 <br/><br/>
 
-Modelos de Trabalhos Acadêmicos para a Universidade Estadual do Ceará (UECE) em LaTeX
+Modelos de Trabalhos Acadêmicos em LaTeX para a Universidade Estadual do Ceará (UECE)
 
 [![GitHub Release](https://img.shields.io/github/release/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/uecetex2.svg)](https://github.com/thiagodnf/uecetex2/graphs/contributors)
