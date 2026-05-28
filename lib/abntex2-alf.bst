@@ -1,3 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Adaptação do abntex2-alf.bst (https://github.com/abntex/abntex2/tree/master/bibtex/bst/abntex2) para a ABNT NBR 10520:2023
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Alterações: Francisco Renato C. Araújo (UECE), adaptado em 19/05/2026.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% As principais mudanças necessárias no abntex2-alf.bst para adequação à ABNT NBR 10520:2023 são:
+%%
+%% 1. Autores nas citações em formato Autor e não mais AUTOR.
+%% 2. Uso de et al. em itálico.
+%% 3. Ajuste de pontuação nas citações.
+%% 4. Pessoas jurídicas em maiúsculas/minúsculas.
+%% 5. Compatibilidade com citações autor-data no novo padrão.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %% abntex2-alf.bst, v<VERSION> laurocesar
 %% Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at http://www.abntex.net.br/ 
 %%
@@ -251,7 +266,7 @@ FUNCTION {bbl.editor} { "Ed." }
 FUNCTION {bbl.edby} { "editado por" }
 FUNCTION {bbl.edition} { "ed." }
 FUNCTION {bbl.empty} {""}
-FUNCTION {bbl.etal}{abnt.etal.text "" = {""} {" " abnt.etal.text *} if$}
+FUNCTION {bbl.etal} { " {\textit{et~al.}}" }
 FUNCTION {bbl.doi.url} {"http://dx.doi.org/"}
 FUNCTION {bbl.in}{ "In" iso.abbreviation 'skip$ { bbl.colon *} if$}
 FUNCTION {bbl.ldots} %#0 use nothing, #1 use \ldots, #2 use $\ldots$, 3# use {...}
@@ -1211,8 +1226,7 @@ FUNCTION {format.journal}
   journal emphasize *
 }
 
-
-%generates the first label in \abntrefinfo to be used with \citeonline
+%generates the first label in \abntrefinfo to be used with \citeonline - NBR 10520:2023
 FUNCTION {format.names.for.label1} %abnt-alf only
 { 's := "" 't :=
    #1 'nameptr :=  s num.names$ 'numnames :=
@@ -1223,7 +1237,8 @@ FUNCTION {format.names.for.label1} %abnt-alf only
        {s nameptr "{ll}" format.name$ #1 "{ll}" format.name$
         s nameptr "{ jj}" format.name$ *}
      if$
-     't :=
+     %@@'t :=
+     "t" change.case$ 't :=
       nameptr #1 >
         {namesleft #1 >
           { numnames abnt.etal.cite > abnt.etal.cite #0 = not and
@@ -1245,17 +1260,19 @@ FUNCTION {format.names.for.label1} %abnt-alf only
 }
 
 %generates the second label in \abntrefinfo to be used with \cite
-FUNCTION {format.names.for.label2} %abnt-alf only
+FUNCTION {format.names.for.label2} 
 { 's := "" 't :=
    #1 'nameptr :=  s num.names$ 'numnames :=
     numnames 'namesleft :=
     { namesleft #0 > }
-    {abnt.last.names
+    {
+     abnt.last.names
        {s nameptr "{ll}{ jj}" format.name$}
        {s nameptr "{ll}" format.name$ #1 "{ll}" format.name$
         s nameptr "{ jj}" format.name$ *}
      if$
-     abnt.cite.style #0 = {"u" change.case$} 'skip$ if$ 't :=
+     "t" change.case$ 't :=
+     %@@'t :=
       nameptr #1 >
         {namesleft #1 >
             { numnames abnt.etal.cite > 
@@ -1290,9 +1307,9 @@ FUNCTION {format.title.for.label}
   while$
 s t = %title equals first word, dont use bbl.ldots
   {t  "}{" * t
-  abnt.cite.style #0 = {"u" change.case$ * } 'skip$ if$}
+  abnt.cite.style #0 = {"t" change.case$ * } 'skip$ if$}
   {t bbl.ldots * "}{" * t
-  abnt.cite.style #0 = {"u" change.case$} 'skip$ if$ * bbl.ldots *}
+  abnt.cite.style #0 = {"t" change.case$} 'skip$ if$ * bbl.ldots *}
 if$
 }
 
@@ -1318,7 +1335,7 @@ FUNCTION {extract.cvs.key} %we borrow the functionality of format.title.for.labe
   t
 }
 
-%generates and extended label of type {Author}{AUTHOR}{YEAR}
+%generates and extended label of type {Author}{Author}{YEAR} - NBR 10520:2023
 %for abnt.cite.style=1 they will be of type {Author}{Author}{YEAR}
 %final result is placed into variable label
 FUNCTION {calc.extended.label}
@@ -1328,9 +1345,9 @@ FUNCTION {calc.extended.label}
     {editor empty$ not
      {editor format.names.for.label1 * "}{" *  editor format.names.for.label2 *}
      {org-short empty$ not
-      {org-short * "}{" * org-short "u" change.case$ *}
+      {org-short * "}{" * org-short "t" change.case$ *}
       {organization empty$ not
-       {organization * "}{" * organization "u" change.case$ *}
+       {organization * "}{" * organization "t" change.case$ *}
         {title empty$ not
          {title format.title.for.label *}
          {"nada}{NADA" *}
@@ -1344,6 +1361,7 @@ FUNCTION {calc.extended.label}
  'label := %place the stack into label
  % final } will be placed in reverse.pass
 }
+
 %generates and simple label of type "Author YEAR"
 %final result is placed onto the stack
 FUNCTION {calc.simple.label}
