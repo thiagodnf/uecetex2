@@ -65,6 +65,18 @@ Uma vez que todas as informações foram colocadas no documento, você precisar�
 
 Veja dicas de formatação para seu documento (como tabelas, figuras e seções) [nesta página](https://github.com/thiagodnf/uecetex2/wiki/Formatação).
 
+## 🎓 Cursos a distância / UAB / polos do interior
+
+Se o seu trabalho é de um curso vinculado à Universidade Aberta do Brasil (UAB), o `documento.tex` já traz duas macros para isso, próximas de `\ehqualificacao`:
+
+```tex
+\ehuab{sim}
+\localdopolo{Limoeiro do Norte -- Ceará}
+```
+
+ - `\ehuab{sim}` adiciona o brasão da UAB (`lib/logo_uab.png`, já incluído no projeto) ao lado do brasão da UECE na capa, a linha "Universidade Aberta do Brasil" na hierarquia da capa e a frase "em parceria com a Universidade Aberta do Brasil" na folha de rosto — conforme as Figuras 5 e 11 do Guia de Normalização da UECE.
+ - `\localdopolo{...}` define a cidade impressa **somente na capa**. Isso não é um erro do template: o próprio guia mostra, para um mesmo trabalho, a capa com a cidade do polo (ex.: Limoeiro do Norte) e a folha de rosto/folha de aprovação com a cidade-sede definida em `\local` (normalmente Fortaleza). Deixe `\localdopolo{}` em branco se a cidade for a mesma do `\local`.
+
 ## 🌍 Supporte ao Inglês
 
 Se o seu trabalho será escrito em inglês, adicione o comando abaixo logo após `\begin{document}`:
