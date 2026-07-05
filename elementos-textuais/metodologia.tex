@@ -1,311 +1,120 @@
 \chapter{Metodologia}
 \label{chap:metodologia}
 
-Sed aliquam tortor non laoreet semper. Nunc aliquam dapibus urna, eu tincidunt ex viverra et. Mauris dapibus sagittis consectetur. Integer leo ligula, aliquam et consectetur non, fermentum at mi. Aliquam sodales fringilla rhoncus. Vivamus quis tortor magna. Donec semper odio libero, nec scelerisque massa dignissim eget. Morbi lectus metus, semper sed lacinia sit amet, porta nec turpis. Duis pretium mi eget consequat sagittis. Praesent porttitor elementum nisl, et molestie quam. Suspendisse vehicula vitae metus eu rhoncus. Nam vitae est augue. Fusce nec diam non nunc consequat aliquam id vitae lectus. In malesuada neque nec justo sagittis, in iaculis neque feugiat. Fusce eu risus purus.
+Corresponde ao item ``material e métodos'' do Guia UECE 2026 (2.2.3.3, item d) -- pode também se chamar Método, Desenho Metodológico ou Percurso Metodológico, a critério do autor. Esta seção precisa descrever o caminho percorrido com detalhe suficiente para que outro pesquisador consiga reproduzir o estudo e chegar a resultados equivalentes. Procure responder:
 
-O autor \cite{lamport1986latex} e \cite{Maia2011} e \cite{ibge23} 
+\begin{alineas}
+	\item que tipo de pesquisa é esta (bibliográfica, experimental, estudo de caso, desenvolvimento de software etc.) e qual a abordagem (qualitativa, quantitativa ou mista)?
+	\item qual é o local da pesquisa, a população ou o material estudado, e como se deu a amostragem (quando aplicável)?
+	\item quais técnicas, ferramentas, instrumentos ou tecnologias foram utilizados?
+	\item como os dados foram coletados e, principalmente, como foram tratados/analisados?
+\end{alineas}
 
-Proin sodales tortor a odio euismod, tristique pellentesque felis porttitor. Donec suscipit non est ac auctor. Suspendisse in sollicitudin erat. Quisque at tempus libero. Morbi efficitur enim tellus, vel varius libero pharetra in. Phasellus et ultricies nibh. Sed quis sagittis sem. Nam a arcu id mi ultricies congue. Duis nec mauris ac ex ultricies vulputate. Vestibulum et tristique massa. In convallis quam sed tristique venenatis. Nullam dapibus odio quis arcu dignissim pellentesque. Vestibulum laoreet nisl quis metus mattis, quis tincidunt tellus ornare. Proin ultricies nulla ac dolor lacinia, ut gravida felis dapibus. Maecenas sed aliquet ex. Proin sodales lacus maximus quam pellentesque, non efficitur velit posuere.
+Toda escolha metodológica relevante deve vir apoiada em citação de quem propôs ou consolidou o método, por exemplo \cite{lamport1986latex}, \cite{Maia2011} e \cite{ibge23}.
+
+Os blocos a seguir demonstram, a título de exemplo, recursos do template que costumam aparecer neste capítulo (tabelas, equações, algoritmos, código-fonte) -- mantenha-os como referência de sintaxe e substitua o conteúdo pelo material do seu próprio trabalho.
 
 \begin{table}[ht!]
-	\Caption{\label{tabela-ibge} Um Exemplo de tabela alinhada que pode ser longa ou curta, conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE. conforme padrão IBGE.}%
+	\Caption{\label{tabela-ibge} Exemplo de tabela no padrão IBGE, útil para apresentar dados quantitativos coletados na pesquisa}%
 	\IBGEtab{}{%
 		\begin{tabular}{ccc}
 			\toprule
-			Nome & Nascimento & Documento \\
+			Variável & Categoria & Valor \\
 			\midrule \midrule
-			Maria da Silva & 11/11/1111 & 111.111.111-11 \\
-			Maria da Silva & 11/11/1111 & 111.111.111-11 \\
-			Maria da Silva & 11/11/1111 & 111.111.111-11 \\
+			Substitua & pelos seus & dados \\
+			Substitua & pelos seus & dados \\
 			\bottomrule
 		\end{tabular}%
 	}{%
-	\Fonte{Produzido pelos autores}%
-	\Nota{Esta éuma nota, que diz que os dados são baseados na
-		regressão linear.}%
-	\Nota[Anotações]{Uma anotação adicional, seguida de várias outras.}%
+	\Fonte{Elaborado pelo autor}%
+	\Nota{Use \textbackslash Nota para esclarecer algo sobre os dados (ex.: método de cálculo).}%
 }
 \end{table}
 
+Referenciando a \autoref{tabela-ibge}, explique o que os dados mostram e como eles fundamentam a escolha metodológica~\cite{Huetal2000}.
 
-
-Pellentesque at purus justo~\cite{Huetal2000}. Fusce iaculis urna sed dolor pharetra tempor. Morbi mollis tellus sit amet massa auctor, ut scelerisque odio faucibus. Nulla interdum eget nunc nec viverra. Nunc venenatis feugiat nibh, quis consequat tortor finibus vel. Nam rutrum lorem id mi laoreet fringilla. Nullam ac imperdiet nulla. Nunc auctor tincidunt metus, eu suscipit nunc pharetra at. Fusce diam est, ornare eget lobortis in, posuere non mi. Fusce sed pellentesque elit, vitae imperdiet libero. Nam gravida blandit diam vitae venenatis.
-
-\section{Exemplo de Algoritmos e Figuras}
+\section{Usando Figuras, Equações, Algoritmos e Código-fonte}
 \label{sec:exemplo-de-algoritmos-e-figuras}
 
-Cras scelerisque ante vel erat hendrerit, sit amet lobortis lorem suscipit. Duis varius odio fermentum, pharetra est ac, congue nibh. Donec eget ullamcorper purus. Sed nulla magna, scelerisque in dolor in, aliquet accumsan mauris. Curabitur mi nisi, posuere sit amet magna ut, auctor dapibus dui. Donec erat sem, sodales non quam sed, pharetra consectetur enim. Pellentesque malesuada fermentum ex quis euismod. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse nisi odio, elementum eu odio eget, egestas hendrerit ante.
+Quando a metodologia envolver um algoritmo, um fluxo de processamento ou uma fórmula, descreva-o em texto corrido e, se ajudar a clareza, formalize-o também com os recursos abaixo.
 
 \begin{algorithm}[ht!]
 	\SetSpacedAlgorithm
-	\caption{\label{exemplo-de-algoritmo}Como escrever algoritmos no \LaTeX2e}
-	\Entrada{o proprio texto}
-	\Saida{como escrever algoritmos com \LaTeX2e }
+	\caption{\label{exemplo-de-algoritmo}Substitua pelo nome do seu algoritmo}
+	\Entrada{Descreva a entrada do algoritmo}
+	\Saida{Descreva a saída do algoritmo}
 	\Inicio{
 		inicializa\c{c}\~ao\;
-		\Repita{fim do texto}{
-			leia o atual\;
-			\Se{entendeu}{
-				vá para o próximo\;
-				próximo se torna o atual\;}
-			\Senao{volte ao início da seção\;}
+		\Repita{condição de parada}{
+			passo 1\;
+			\Se{condição}{
+				ação a\;}
+			\Senao{ação b\;}
 		}
-	}	
+	}
 \end{algorithm}
 
-Pellentesque commodo felis ac ipsum tincidunt, sit amet pharetra metus sagittis. Fusce congue, arcu ac efficitur laoreet, nisl urna consequat lorem, condimentum sollicitudin mauris velit sit amet est. Suspendisse quis eros maximus, cursus velit a, ornare sem. Vivamus vulputate eros id eros sagittis, a vestibulum diam tempor. Pellentesque arcu arcu, semper vel ex quis, sollicitudin venenatis ex. Sed luctus, sapien id egestas dictum, lorem sapien finibus quam, ut interdum eros massa at nisi. Sed ornare, justo eget ullamcorper dignissim, lacus dui fermentum erat, at feugiat elit lorem vestibulum odio. Mauris mattis ex nisl, eget volutpat nunc egestas at. Sed feugiat ut urna in pulvinar. Nulla facilisis aliquet nunc, quis commodo erat volutpat imperdiet. Phasellus eleifend mi vitae tellus eleifend pretium. Mauris faucibus erat leo, vel varius elit lobortis eget. Nam ac ipsum pulvinar, feugiat nisi vitae, egestas diam. Sed pellentesque nec nulla at venenatis. Proin id interdum mi, nec pulvinar purus. Maecenas quis nisi auctor, tincidunt enim in, varius nunc.
-%\begin{algorithm}[H]
-%	\Entrada{o proprio texto}
-%	\Saida{como escrever algoritmos com \LaTeX2e }
-%	\Inicio{
-%		inicializa\c{c}\~ao\;
-%		\Repita{fim do texto}{
-%			leia o atual\;
-%			\Se{entendeu}{
-%				vá para o próximo\;
-%				próximo se torna o atual\;}
-%			\Senao{volte ao início da seção\;}
-%		}
-%	}
-%	\caption{Exemplo de Algoritmo Versao 02}
-%\end{algorithm}
+Comente o algoritmo logo após apresentá-lo: qual problema ele resolve, qual sua complexidade, e por que ele foi escolhido em vez de alternativas.
 
-%\begin{algorithm}
-%	\begin{algorithmic}
-%	\Entrada{o proprio texto}
-%	\Saida{como escrever algoritmos com \LaTeX2e }	
-%	\end{algorithmic}
-%\end{algorithm}
-
-Exemplo de alíneas com números:
+Exemplo de alíneas numeradas, úteis para listar passos de um procedimento:
 
 \begin{alineascomnumero}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-	\item Praesent vitae nulla varius, pulvinar quam at, dapibus nisi. Aenean in commodo tellus. Mauris molestie est sed justo malesuada, quis feugiat tellus venenatis.
-	\item Praesent quis erat eleifend, lacinia turpis in, tristique tellus. Nunc dictum sed tortor nec viverra.
-	\item Mauris facilisis odio eu ornare tempor. Nunc dictum sed tortor nec viverra.
-	\item Curabitur convallis odio at eros consequat pretium.
+	\item Substitua por um primeiro passo do procedimento.
+	\item Substitua por um segundo passo do procedimento.
+	\item Substitua por um terceiro passo do procedimento.
 \end{alineascomnumero}
 
-Donec id nulla porttitor, dapibus lacus a, tempus libero. Pellentesque vulputate suscipit ipsum, ac varius nunc efficitur sed. Sed mollis magna in est pellentesque scelerisque at quis libero. Vivamus id scelerisque eros. Proin eget interdum felis, ac varius orci. Duis et auctor arcu. Curabitur porttitor lobortis pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a luctus metus. Donec lorem diam, vulputate suscipit tincidunt vel, aliquet sed tellus. Praesent luctus justo aliquet interdum dignissim. Fusce interdum tortor vel turpis condimentum semper. Donec nunc urna, tristique sit amet vehicula non, mattis nec nisi.
+Conforme o Guia (2.3.9), equações e fórmulas devem aparecer destacadas e centralizadas no texto e, quando necessário, numeradas com algarismos arábicos entre parênteses alinhados à direita; quando ocuparem mais de uma linha, a quebra deve ocorrer antes do sinal de igualdade ou depois dos sinais de adição, subtração, multiplicação ou divisão.
 
-\begin{table}[ht!]	
-	\centering
-	\Caption{\label{tab:internal}Internal exon scores}	
-	\IBGEtab{}{
-		\begin{tabular}{cll}
-			\toprule
-			Ranking & Exon Coverage & Splice Site Support\\
-			\midrule \midrule
-			E1 & Complete coverage by a single transcript & Both splice sites\\
-			E2 & Complete coverage by more than a single transcript & Both splice sites\\
-			E3 & Partial coverage & Both splice sites\\
-			E4 & Partial coverage & One splice site\\
-			E5 & Complete or partial coverage & No splice sites\\
-			E6 & No coverage & No splice sites\\
-			\bottomrule
-		\end{tabular}
-	}{
-	\Fonte{os autores}
-}
-\end{table}
+\begin{equation}
+	\begin{aligned}
+		x = a_0 + \cfrac{1}{a_1
+			+ \cfrac{1}{a_2
+				+ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+	\end{aligned}
+\end{equation}
 
-Nulla convallis justo enim, a congue justo aliquam et. Aliquam viverra sed leo nec auctor. In ac semper nisi. Etiam volutpat egestas enim id consequat. Mauris sit amet mattis arcu. Nam commodo nibh id molestie maximus. Aliquam sodales cursus ante eu maximus. In scelerisque magna sit amet felis vestibulum, quis semper est rhoncus. Fusce et rutrum magna, et placerat libero. Phasellus auctor molestie ullamcorper. Integer posuere odio nec porta rutrum. Mauris blandit mi eget commodo congue. Pellentesque metus odio, faucibus sit amet massa ultricies, placerat bibendum mi.
+Se o seu trabalho envolver desenvolvimento de software, é comum apresentar trechos de código-fonte relevantes (não o código inteiro -- apenas os trechos que ilustram a solução proposta), sempre comentando o que o trecho faz e por que ele é relevante:
 
-Referenciando a \autoref{tab:internal} 
-
-Praesent vestibulum, metus at suscipit rhoncus, metus eros elementum tortor, hendrerit finibus quam est egestas magna. Aliquam erat volutpat. Cras semper vel justo et vestibulum. Duis condimentum a sem eu posuere. Suspendisse varius, mi id interdum sollicitudin, velit metus auctor dolor, ac pellentesque ligula enim sed urna. Nulla finibus interdum ornare. Duis porttitor, nunc tempus vestibulum rutrum, diam ipsum lacinia diam, a molestie felis dui ac neque. Phasellus vestibulum vitae nunc non congue. Sed a mi gravida, posuere massa non, aliquet libero. Phasellus et diam viverra, fermentum dolor ac, ornare erat. Fusce vestibulum magna ut pretium consectetur. Sed bibendum sapien augue. Suspendisse vitae enim sollicitudin, posuere tellus et, interdum enim. Curabitur porttitor ultricies metus in pretium. Nunc quis tortor dui.
-
-\index{figuras}Figuras podem ser criadas diretamente em LaTeX,
-como o exemplo da \ref{fig-grafico-1}.
-
-\begin{figure}[ht!]
-	\centering
-	\Caption{\label{fig-grafico-1}Produção anual das dissertações de mestrado e teses de doutorado entre os anos de 1990 e 2008}		
-	\IBGEtab{}{
-		\fbox{\includegraphics[scale=0.5]{figuras/figura-3}}
-	}{
-	\Fonte{os autores}
-}
-\end{figure}
-
-Ou então figuras podem ser incorporadas de arquivos externos, como é o caso da \autoref{fig-grafico-1}. Se a figura que ser incluída se tratar de um diagrama, um gráfico ou uma ilustração que você mesmo produza, priorize o uso de imagens vetoriais no formato PDF. Com isso, o tamanho do arquivo final do trabalho será menor, e as imagens terão uma apresentação melhor, principalmente quando impressas, uma vez que imagens vetorias são perfeitamente escaláveis para qualquer dimensão. Nesse caso, se for utilizar o Microsoft Excel para produzir gráficos, ou o Microsoft Word para produzir ilustrações, exporte-os como PDF e os incorpore ao documento conforme o exemplo abaixo. No entanto, para manter a coerência no uso de software livre (já que você está usando LaTeX e abnTeX),  teste a ferramenta InkScape\index{InkScape}. ao CorelDraw\index{CorelDraw} ou ao Adobe Illustrator\index{Adobe! Illustrator}.  De todo modo, caso não seja possível  utilizar arquivos de imagens como PDF, utilize qualquer outro formato, como JPEG, GIF, BMP, etc.  Nesse caso, você pode tentar aprimorar as imagens incorporadas com o software livre \index{Gimp}Gimp. Ele é uma alternativa livre ao Adobe Photoshop\index{Adobe! Photoshop}.
-
-\section{Usando Fórmulas Matemáticas}
-
-Phasellus venenatis leo tellus. Nulla eu fringilla sapien. Duis suscipit tellus diam, ac commodo mauris faucibus sit amet. Duis dapibus consequat tellus, sit amet volutpat urna sodales non. Morbi eu nisl et ex placerat blandit a sit amet ex. Nulla elit metus, egestas ac orci a, venenatis pulvinar arcu. Vestibulum cursus vulputate ipsum ac convallis. Maecenas gravida mauris id purus convallis, vel consequat lorem ultrices. Morbi facilisis, dolor interdum feugiat luctus, tellus tellus accumsan massa, nec sollicitudin ligula mi nec neque. Aliquam varius ante velit, nec suscipit neque fringilla nec.
-
-	\begin{equation}
-		\begin{aligned}
-			x = a_0 + \cfrac{1}{a_1
-				+ \cfrac{1}{a_2
-					+ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
-		\end{aligned}
-	\end{equation}
-
-Aenean placerat tempor velit, id tristique erat vestibulum vitae. Nunc lacus ex, porta eget libero sit amet, tincidunt vestibulum diam. Aliquam sagittis ullamcorper risus, id maximus odio aliquet eu. Phasellus sed eros sed augue varius ornare non eu ante. Morbi tristique blandit magna, nec semper elit dignissim vel. Praesent lacinia tortor nec nulla tempor ultrices. Donec nec efficitur orci, quis pretium lectus. Proin pretium augue at dolor efficitur egestas. Etiam facilisis augue vel dictum ullamcorper. Aliquam erat volutpat. In ac ante nisl. Quisque mattis orci non fermentum eleifend. Cras ullamcorper ex ut leo ornare ornare. Morbi sodales hendrerit augue vel varius. Vestibulum nec erat urna. Morbi vel risus nibh.
-
-	\begin{equation}
-		\begin{aligned}
-			k_{n+1} = n^2 + k_n^2 - k_{n-1}
-		\end{aligned}
-	\end{equation}
-
-Donec non ipsum nec sapien tincidunt tempor eget nec quam. Maecenas convallis eget mauris vel pretium. Nunc vitae dignissim lectus. Nam et odio at lacus dapibus pharetra eget id nisi. Aenean nec urna et dui lacinia efficitur. Mauris vitae velit semper, tincidunt dolor vitae, pulvinar est. Fusce pretium egestas lectus, vel lobortis arcu commodo ut.
-
-	\begin{equation}
-		\begin{aligned}
-			\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
-		\end{aligned}
-	\end{equation}
-	
-Vestibulum dignissim pharetra purus, a interdum enim egestas sed. Pellentesque leo ligula, malesuada suscipit euismod ut, euismod ut mi. Nullam condimentum ligula id odio porttitor aliquet. Aenean dictum enim tincidunt tincidunt dignissim. Nam pretium, neque nec eleifend posuere, lorem sapien viverra leo, sed efficitur sapien purus id felis. Praesent porttitor dui ac scelerisque luctus. Ut auctor orci non velit placerat dapibus. Quisque tortor eros, lacinia at sodales a, vulputate ut augue.
-
-	\begin{equation}
-		\begin{aligned}
-			A_{m,n} =
-			\begin{pmatrix}
-			a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
-			a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
-			\vdots  & \vdots  & \ddots & \vdots  \\
-			a_{m,1} & a_{m,2} & \cdots & a_{m,n}
-			\end{pmatrix}
-		\end{aligned}
-	\end{equation}
-
-Nulla metus ligula, faucibus vel sodales dictum, lacinia sed sapien. Curabitur elit nisi, aliquet at nisi a, porttitor pellentesque orci. Sed gravida rutrum diam, vitae maximus nisi pulvinar eu. Quisque id lobortis dolor, quis tempus tellus. Donec facilisis ante at dignissim dignissim. Vestibulum fermentum orci sit amet risus egestas gravida. Praesent eleifend dolor quam.
-
-	\begin{equation}
-		\begin{aligned}
-			f(n) = \left\{ 
-			\begin{array}{l l}
-			n/2 & \quad \text{if $n$ is even}\\
-			-(n+1)/2 & \quad \text{if $n$ is odd}
-			\end{array} \right.
-		\end{aligned}
-	\end{equation}
-	
-Nulla facilisi. Pellentesque eu interdum nulla. Phasellus pellentesque libero dignissim quam sagittis, sit amet varius dolor lobortis. Nam non dui scelerisque, convallis dui id, feugiat sem. Proin rutrum dapibus odio et vestibulum. Curabitur blandit porta pretium. Donec iaculis leo ut ultrices pretium. Cras vel aliquet ante. Ut nibh sem, pellentesque vel tempus sit amet, ornare dapibus augue.
-
-\section{Usando Algoritmos}
-
-Integer ac malesuada leo. Etiam ut volutpat purus, eget tempus orci. Suspendisse molestie odio ut velit venenatis placerat. Nunc egestas mauris quis ex varius, et maximus tellus vestibulum. Pellentesque felis nisi, varius at mauris vulputate, euismod vehicula mauris. Ut iaculis urna eget molestie ultricies. Vivamus lobortis, nunc sodales molestie malesuada, odio tortor condimentum tortor, vel laoreet lacus nunc vel turpis. Aliquam tortor risus, convallis at lectus in, vulputate tincidunt tortor.
-
-\begin{algorithm}[ht!]
-	\SetSpacedAlgorithm
-	\caption{\label{alg:algoritmo_de_colonica_de_formigas}Algoritmo de Otimização por Colônia de Formiga}
-	\Entrada{Entrada do Algoritmo}
-	\Saida{Saida do Algoritmo}
-	\Inicio{
-		Atribua os valores dos parâmetros\;
-		Inicialize as trilhas de feromônios\;
-		\Enqto{não atingir o critério de parada}{
-			\Para{cada formiga}{
-				Construa as Soluções\;
-			}
-			Aplique Busca Local (Opcional)\;
-			Atualize o Feromônio\;
-		}	
-	}		
-\end{algorithm}
-
-Aliquam tempor laoreet felis at interdum. Ut molestie enim at nisl ultricies tempor. Mauris porta tristique orci sit amet gravida. Aenean at nulla neque. Suspendisse potenti. Pellentesque condimentum, lacus id tristique imperdiet, justo eros pulvinar ex, vel imperdiet purus augue vel erat. Donec dolor purus, sodales nec tincidunt et, semper vel risus. Aliquam at nisi aliquet, dictum lorem a, aliquam velit. Proin ipsum arcu, feugiat eu lectus quis, volutpat hendrerit tortor. Pellentesque efficitur ac ipsum non sodales. Ut scelerisque vulputate orci, non semper purus.
-
-\section{Usando Código-fonte}
-
-Nullam aliquam quam feugiat consequat tristique. In pharetra tellus est, id facilisis quam hendrerit sit amet. Morbi non lobortis erat. Etiam a velit libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis risus quis pulvinar convallis. Cras eget eleifend justo, vitae fringilla velit. Vestibulum faucibus ante nec risus ultrices tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat risus nec facilisis rhoncus.
-
-\lstinputlisting[language=C++,caption={Hello World em C++}]{figuras/main.cpp}
-
-Aliquam tempus, nulla eu mattis vulputate, turpis orci sollicitudin enim, nec dapibus leo nunc ac augue. Aenean blandit, magna quis sagittis sodales, dolor sapien luctus est, ut dignissim enim metus at ipsum. Duis diam libero, viverra id sollicitudin eget, rhoncus eu mi. Morbi consequat turpis velit, a mollis arcu mollis eu. Nam sed risus ac sapien ornare semper. Nunc efficitur eu leo eu efficitur. Duis varius ex non elit dignissim iaculis. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eros nunc, mollis nec semper in, malesuada id libero. Duis sodales nisl enim, in eleifend nisi venenatis vel.
-
-\begin{lstlisting}[language=Java,caption={Hello World em Java}]
-public class HelloWorld {
+\begin{lstlisting}[language=Java,caption={Substitua pela legenda do seu trecho de código}]
+public class Exemplo {
 	public static void main(String[] args) {
-		// This is a comment in Java
-		/* This is also a comment in Java */
-		// Este comentário está em português
-		System.out.println("Hello World!");
+		// Comente o que este trecho demonstra
+		System.out.println("Substitua pelo seu código");
 	}
 }
 \end{lstlisting}
 
-Nunc id scelerisque turpis. Praesent justo metus, volutpat id arcu in, sagittis lobortis felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque sapien sem, vestibulum a commodo eget, iaculis nec ex. Cras aliquet scelerisque iaculis. Maecenas sit amet feugiat nulla. 
+\section{Usando Teoremas, Proposições e Definições}
 
-\begin{lstlisting}[language=c++,caption={Simulação de falha: LED amarelo desativado}]
-void setup () {
-	pinMode (3, OUTPUT);
-	pinMode (4, OUTPUT); // amarelo (não acende)
-	pinMode (5, OUTPUT);
-}
-\end{lstlisting}
+Se o seu trabalho for de natureza formal/matemática, os ambientes abaixo permitem apresentar teoremas, proposições, exemplos e definições de forma padronizada. Caso contrário, esta seção pode ser removida.
 
-Nunc id scelerisque turpis. Praesent justo metus, volutpat id arcu in, sagittis lobortis felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque sapien sem, vestibulum a commodo eget, iaculis nec ex. Cras aliquet scelerisque iaculis. Maecenas sit amet feugiat nulla. Etiam cursus feugiat lacus et varius. Phasellus dignissim sagittis venenatis. Ut luctus risus nibh, et blandit neque placerat eu. Vestibulum vitae vulputate erat, feugiat vehicula lorem. Pellentesque purus tellus, convallis eu lacinia eget, cursus eu diam. Pellentesque vulputate ullamcorper felis, quis tincidunt lectus condimentum quis. Curabitur felis felis, suscipit elementum blandit ac, placerat a sem.
-
-\section{Usando Teoremas, Proposições, etc}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-
-\begin{teo}[Pitágoras]
-	Em todo triângulo retângulo o quadrado do comprimento da
-	hipotenusa é igual a soma dos quadrados dos comprimentos dos catetos.
+\begin{teo}[Nome do teorema]
+	Enuncie aqui o teorema relevante para o seu trabalho.
 \end{teo}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-
-\begin{teo}[Fermat]
-	Não existem inteiros $n > 2$, e $x, y, z$ tais que $x^n + y^n = z$
-\end{teo}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
 
 \begin{prop}
-	Para demonstrar o Teorema de Pitágoras...
+	Enuncie aqui uma proposição decorrente do teorema anterior.
 \end{prop}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-
-\begin{exem}
-	Este é um exemplo do uso do ambiente exe definido acima.
-\end{exem}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-
 \begin{xdefinicao}
-	Definimos o produto de ...
+	Defina aqui um conceito formal utilizado no restante do trabalho.
 \end{xdefinicao}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
 
 \section{Usando Questões}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
+Se a coleta de dados envolveu questionário ou roteiro de entrevista, o ambiente \texttt{questao} permite listá-lo de forma organizada -- útil também como apêndice, caso o instrumento completo seja extenso.
 
 \begin{questao}
-	\item Esta é a primeira questão com alguns itens:
-		\begin{enumerate}
-			\item Este é o primeiro item
-			\item Segundo item
-		\end{enumerate}
-	\item Esta é a segunda questão:
-		\begin{enumerate}
-			\item Este é o primeiro item
-			\item Segundo item
-		\end{enumerate}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum sed tortor nec viverra. consectetur adipiscing elit. Nunc dictum sed tortor nec viverra.
-		\begin{enumerate}
-			\item consectetur
-			\item adipiscing
-			\item Nunc
-			\item dictum
-		\end{enumerate}
+	\item Substitua pela primeira pergunta do seu instrumento de coleta.
+	\item Substitua pela segunda pergunta do seu instrumento de coleta.
 \end{questao}
 
 \section{Citações}
 
 \subsection{Documentos com três autores}
 
-Quando houver três autores na citação, apresentam se os três, separados por ponto e vírgula, caso estes estejam após o texto. Se os autores estiverem incluídos no texto, devem ser separados por vírgula e pela conjunção "e".
+Quando houver três autores na citação, apresentam-se os três, separados por ponto e vírgula, caso estes estejam após o texto. Se os autores estiverem incluídos no texto, devem ser separados por vírgula e pela conjunção ``e''.
 
 \citeautoronline{tresautores} ou \citeonline{tresautores}
 
@@ -320,11 +129,10 @@ Havendo mais de três autores, indica-se o primeiro seguido da expressão \texti
 
 \subsection{Documentos de vários autores}
 
-Havendo    citações    indiretas de    diversos    documentos    de    vários    autores, mencionados  simultaneamente e  que  expressam  a  mesma  ideia,  separam-se  os  autores  por ponto e vírgula, em ordem alfabética.
+Havendo citações indiretas de diversos documentos de vários autores, mencionados simultaneamente e que expressam a mesma ideia, separam-se os autores por ponto e vírgula, em ordem alfabética.
 
 \cite{tresautores, quatroautores}
 
 \section{Notas de Rodap\'{e}}
 
-Deve-se utilizar o sistema autor-data para as  citações no texto e o numérico para notas explicativas\footnote{Veja - se como exemplo desse tipo de abordagem o estudo de Netzer (1976)}. As notas de rodapé podem e devem ser alinhadas, a partir da segunda linha da mesma nota, abaixo da primeira letra da primeira palavra, de forma a destacar o expoente \footnote{Encontramos  esse  tipo  de  perspectiva  na  2ª  parte  do  verbete  referido  na  nota  anterior,  em  grande  parte  do estudo de Rahner (1962).} e sem espaço entre elas e com fonte menor (tamanho 10).
-
+Deve-se utilizar o sistema autor-data para as citações no texto e o numérico para notas explicativas\footnote{Use notas de rodapé para comentários que interrompem a leitura direta do texto, como neste exemplo.}. As notas de rodapé devem ser alinhadas, a partir da segunda linha da mesma nota, abaixo da primeira letra da primeira palavra, de forma a destacar o expoente\footnote{Segundo exemplo de nota explicativa, mostrando o alinhamento de uma nota mais longa que ocupa mais de uma linha.} e sem espaço entre elas e com fonte menor (tamanho 10).
