@@ -324,6 +324,20 @@
 	}
 }
 
+% Variavel utilizada para cursos vinculados a Universidade Aberta do Brasil - UAB
+% Adiciona o brasao da UAB ao lado do brasao da UECE e a linha "Universidade
+% Aberta do Brasil" na capa, alem da frase de parceria na folha de rosto
+\provideboolean{uecetex2@ehuab}
+\setboolean{uecetex2@ehuab}{false}
+
+\newcommand{\ehuab}[1]{
+	\ifthenelse{\equal{#1}{sim}}{%
+		\setboolean{uecetex2@ehuab}{true}
+	}{%
+		\setboolean{uecetex2@ehuab}{false}
+	}
+}
+
 % Determina o tipo do trabalho apresentado
 % Definicao das variaveis
 \provideboolean{uecetex2@ehtccgraduacao}
@@ -462,6 +476,7 @@
 \newcommand{\orientadorcentro}{\def \@orientadorcentro}
 \newcommand{\coorientadories}{\def \@coorientadories}
 \newcommand{\coorientadorcentro}{\def \@coorientadorcentro}
+\newcommand{\localdopolo}{\def \@localdopolo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Imprimir as Variáveis        %%
@@ -504,6 +519,17 @@
 \newcommand{\imprimirorientadorcentro}{\@orientadorcentro}
 \newcommand{\imprimircoorientadories}{\@coorientadories}
 \newcommand{\imprimircoorientadorcentro}{\@coorientadorcentro}
+\newcommand{\imprimirlocaldopolo}{\@localdopolo}
+
+% Cidade usada na CAPA (ja em maiusculas): se \localdopolo estiver definido,
+% prevalece sobre \local (uso tipico de cursos a distancia/UAB ofertados em
+% polo do interior, onde a capa leva a cidade do polo e a folha de rosto
+% continua com a sede). O \ifempty precisa ser resolvido aqui, fora de
+% \MakeUppercase, pois \MakeUppercase forca a expansao do seu argumento e
+% \ifthenelse/\equal nao sobrevivem a essa expansao forcada
+\newcommand{\imprimirlocalnacapa}{%
+	\ifempty{\imprimirlocaldopolo}{\MakeUppercase\imprimirlocal}{\MakeUppercase\imprimirlocaldopolo}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           Valor de Padrão           %%
@@ -528,6 +554,7 @@
 \titulo{}
 \data{}
 \local{}
+\localdopolo{}
 \dataaprovacao{}
 \orientador{}
 \orientadories{}
@@ -565,12 +592,19 @@
 	Dissertação apresentada ao Curso de \imprimirmestrado\ do \imprimirprogramamestrado\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do título de mestre em \imprimirmestreem. Área de Concentração: \imprimirareadeconcentracaomestrado \\
 }
 
+% Frase de parceria acrescentada apos o nome da IES para cursos vinculados a
+% Universidade Aberta do Brasil (\ehuab{sim}), conforme o Guia de
+% Normalizacao da UECE (folha de rosto de curso a distancia)
+\newcommand{\imprimirparceriauab}{%
+	\ifthenelse{\boolean{uecetex2@ehuab}}{\ em parceria com a Universidade Aberta do Brasil}{}%
+}
+
 \newcommand{\preambulotccgraduacao}{
-	Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em \imprimirgraduacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do grau de \imprimirhabilitacao\ em \imprimirgraduacaoem. \\
+	Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em \imprimirgraduacaoem\ do \imprimircentro\ da \imprimiries\imprimirparceriauab, como requisito parcial à obtenção do grau de \imprimirhabilitacao\ em \imprimirgraduacaoem. \\
 }
 
 \newcommand{\preambulotccespecializacao}{
-	Trabalho de Conclusão de Curso apresentado ao Curso de Especialização em \imprimirespecializacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção da certificação de especialista em \imprimirespecializacaoem.
+	Trabalho de Conclusão de Curso apresentado ao Curso de Especialização em \imprimirespecializacaoem\ do \imprimircentro\ da \imprimiries\imprimirparceriauab, como requisito parcial à obtenção da certificação de especialista em \imprimirespecializacaoem.
 %Trabalho de Conclusão de Curso apresentado ao Curso de Graduação em \imprimirgraduacaoem\ do \imprimircentro\ da \imprimiries, como requisito parcial à obtenção do grau de \imprimirhabilitacao\ em \imprimirgraduacaoem. \\
 }
 
@@ -598,6 +632,27 @@
 %%                Capa                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Imprime o(s) brasao(oes) da capa. Para cursos vinculados a UAB (\ehuab{sim})
+% o brasao da UAB e impresso ao lado direito do brasao da UECE, conforme o
+% Guia de Normalizacao da UECE
+\newcommand{\imprimirbrasoes}{%
+	\ifthenelse{\boolean{uecetex2@ehuab}}{%
+		\includegraphics[scale=0.12]{lib/logo-uece}%
+		\hspace{0.25cm}%
+		\raisebox{0.3cm}{\includegraphics[scale=0.05]{lib/logo_uab}}%
+	}{%
+		\includegraphics[scale=0.12]{lib/logo-uece}%
+	}\\
+}
+
+% Imprime a linha "Universidade Aberta do Brasil" na hierarquia da capa
+% quando o trabalho for de um curso vinculado a UAB (\ehuab{sim})
+\newcommand{\imprimirhierarquiauab}{%
+	\ifthenelse{\boolean{uecetex2@ehuab}}{%
+		\MakeUppercase{Universidade Aberta do Brasil} \\
+	}{}%
+}
+
 \newcommand{\imprimircapatese}{%
 	\begin{capa}%
 		% Todos os elementos da capa devem esta centralizado
@@ -605,25 +660,26 @@
 		% Todos os elementos da capa devem esta em negrito
 		\bfseries
 
-        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        \imprimirbrasoes
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
+		\imprimirhierarquiauab
 		\MakeUppercase{\imprimircentro} \\
 		\abntex@ifnotempty{\imprimirprogramadoutorado}{
 			\MakeUppercase{\imprimirprogramadoutorado} \\
-		}		
+		}
 		\MakeUppercase{\imprimirdoutorado} \\
 
 		\vspace{\onelineskip}
 
 		\MakeUppercase{\imprimirautor}
-		
+
 		\vspace{5cm}
-		
+
 		\MakeUppercase{\imprimirtitulo}
-		
+
 		\vfill
-		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirlocalnacapa\par
 		\normalsize\imprimirdata
 	\end{capa}
 }
@@ -635,27 +691,28 @@
 		% Todos os elementos da capa devem esta em negrito
 		\bfseries
 
-        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        \imprimirbrasoes
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
+		\imprimirhierarquiauab
 		\MakeUppercase{\imprimircentro} \\
 		\abntex@ifnotempty{\imprimirprogramamestrado}{
 			\MakeUppercase{\imprimirprogramamestrado} \\
-		}		
+		}
 		\MakeUppercase{\imprimirmestrado} \\
 
 		\vspace{\onelineskip}
 
 		\MakeUppercase{\imprimirautor}
-		
+
 		\vspace{5cm}
-		
+
 		\MakeUppercase{\imprimirtitulo}
-		
+
 		\vfill
-		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirlocalnacapa\par
 		\normalsize\imprimirdata
-	\end{capa}	
+	\end{capa}
 }
 
 \newcommand{\imprimircapatcc}[2]{%
@@ -665,24 +722,25 @@
 		% Todos os elementos da capa devem esta em negrito
 		\bfseries
 
-        \includegraphics[scale=0.12]{lib/logo-uece} \\
+        \imprimirbrasoes
         \vspace{0.1cm}
 		\MakeUppercase{\imprimiries} \\
+		\imprimirhierarquiauab
 		\MakeUppercase{\imprimircentro} \\
 		\MakeUppercase{Curso de #1 em #2} \\
 
 		\vspace{\onelineskip}
 
 		\MakeUppercase{\imprimirautor}
-		
+
 		\vspace{5cm}
-		
+
 		\MakeUppercase{\imprimirtitulo}
-		
+
 		\vfill
-		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirlocalnacapa\par
 		\normalsize\imprimirdata
-	\end{capa}	
+	\end{capa}
 }
 
 \renewcommand{\imprimircapa}{%
